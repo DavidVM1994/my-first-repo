@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jndi:namedResource xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:jdbc="http://xsd.tns.tibco.com/amf/models/sharedresource/jdbc" xmlns:jndi="http://xsd.tns.tibco.com/amf/models/sharedresource/jndi" xmlns:subject="http://xsd.tns.tibco.com/trinity/models/identity/subject" xmi:id="_wot6oRzUEe-vEMrrhSSR9A" name="rentcars_fe.JDBCConnectionResource" type="jdbc:JdbcDataSource">
+  <jndi:reference xmi:id="_wpwccBzUEe-vEMrrhSSR9A" key="subjectJndiName" type="subject:SubjectConfiguration" value=""/>
+  <jndi:configuration xsi:type="jdbc:JdbcDataSource" xmi:id="_wpwccRzUEe-vEMrrhSSR9A" username="postgres" password="#!S2y0/HUNUuLH/6OBnKfl9qrJnh4t54eC+CfJlSlgsWw=">
+    <connectionConfig xsi:type="jdbc:NonXaConnection" xmi:id="_wpwcchzUEe-vEMrrhSSR9A" jdbcDriver="tibcosoftwareinc.jdbc.postgresql.PostgreSQLDriver" dbURL="jdbc:tibcosoftwareinc:postgresql://localhost:5432;DatabaseName=NoleggioAuto"/>
+  </jndi:configuration>
+</jndi:namedResource>

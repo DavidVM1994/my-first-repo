@@ -1,0 +1,120 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "version" : "1.0",
+    "title" : "Check",
+    "description" : "Check service"
+  },
+  "host" : "localhost:8080",
+  "basePath" : "/",
+  "schemes" : [ "http" ],
+  "paths" : {
+    "/check/{CarCategoryOptional}" : {
+      "post" : {
+        "summary" : "postCheck",
+        "description" : "postCheck",
+        "operationId" : "post-check",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "body",
+          "in" : "body",
+          "description" : "",
+          "schema" : {
+            "$ref" : "#/definitions/CarSearchInput"
+          },
+          "required" : true
+        }, {
+          "name" : "Credential",
+          "in" : "header",
+          "description" : "",
+          "type" : "string",
+          "required" : false
+        }, {
+          "name" : "CarCategoryOptional",
+          "in" : "path",
+          "description" : "",
+          "type" : "string",
+          "required" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "a CarSearchOutput to be returned",
+            "schema" : {
+              "$ref" : "#/definitions/CarSearchOutput"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions" : {
+    "Car" : {
+      "type" : "object",
+      "required" : [ "CarIDCategory", "CarModel", "CarID", "CarBrand" ],
+      "properties" : {
+        "CarID" : {
+          "type" : "string"
+        },
+        "CarIDCategory" : {
+          "type" : "string"
+        },
+        "CarBrand" : {
+          "type" : "string"
+        },
+        "CarModel" : {
+          "type" : "string"
+        }
+      }
+    },
+    "CarSearchInput" : {
+      "type" : "object",
+      "required" : [ "Brand", "IDCategory", "Surcharge", "Model", "optional", "ID" ],
+      "properties" : {
+        "ID" : {
+          "type" : "string"
+        },
+        "IDCategory" : {
+          "type" : "string"
+        },
+        "Brand" : {
+          "type" : "string"
+        },
+        "Model" : {
+          "type" : "string"
+        },
+        "optional" : {
+          "type" : "boolean"
+        },
+        "Surcharge" : {
+          "type" : "string"
+        }
+      }
+    },
+    "CarSearchOutput" : {
+      "type" : "object",
+      "required" : [ "FailedCarSearch", "SuccessCarSearch" ],
+      "properties" : {
+        "SuccessCarSearch" : {
+          "$ref" : "#/definitions/SuccessCarSearchType"
+        },
+        "FailedCarSearch" : {
+          "type" : "string"
+        }
+      }
+    },
+    "SuccessCarSearchType" : {
+      "type" : "object",
+      "required" : [ "Car" ],
+      "properties" : {
+        "Car" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/Car",
+            "uniqueItems" : false
+          }
+        }
+      }
+    }
+  }
+}

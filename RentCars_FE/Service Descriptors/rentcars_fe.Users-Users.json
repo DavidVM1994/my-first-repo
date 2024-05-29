@@ -1,0 +1,68 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "version" : "1.0",
+    "title" : "Users",
+    "description" : "Users service"
+  },
+  "host" : "localhost:8080",
+  "basePath" : "/",
+  "schemes" : [ "http" ],
+  "paths" : {
+    "/users" : {
+      "post" : {
+        "summary" : "postUsers",
+        "description" : "postUsers",
+        "operationId" : "post-users",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "body",
+          "in" : "body",
+          "description" : "",
+          "schema" : {
+            "$ref" : "#/definitions/RegistrationInput"
+          },
+          "required" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "a string to be returned",
+            "schema" : {
+              "type" : "string"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions" : {
+    "RegistrationInput" : {
+      "type" : "object",
+      "required" : [ "UserNAme", "ZipCode", "Street", "City", "Surname", "Name", "Password" ],
+      "properties" : {
+        "Name" : {
+          "type" : "string"
+        },
+        "Surname" : {
+          "type" : "string"
+        },
+        "Street" : {
+          "type" : "string"
+        },
+        "City" : {
+          "type" : "string"
+        },
+        "ZipCode" : {
+          "type" : "string"
+        },
+        "UserNAme" : {
+          "type" : "string"
+        },
+        "Password" : {
+          "type" : "string"
+        }
+      }
+    }
+  }
+}
