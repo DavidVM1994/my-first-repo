@@ -742,8 +742,8 @@
                                     <layoutConstraint
                                     height="40"
                                     width="40"
-                                    x="27"
-                                    xsi:type="notation:Bounds" y="112"/>
+                                    x="24"
+                                    xsi:type="notation:Bounds" y="72"/>
                                     </children>
 
                                     <children type="4002">
