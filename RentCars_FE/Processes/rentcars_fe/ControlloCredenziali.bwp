@@ -215,7 +215,24 @@
                     <sequence>
                         <element maxOccurs="unbounded" minOccurs="0" name="Record">
                             <complexType>
-                                <sequence/>
+                                <sequence>
+                                    <element maxOccurs="1" minOccurs="0"
+                                    name="id" nillable="false" type="int"/>
+                                    <element maxOccurs="1" minOccurs="0"
+                                    name="name" nillable="false" type="string"/>
+                                    <element maxOccurs="1" minOccurs="0"
+                                    name="surname" nillable="false" type="string"/>
+                                    <element maxOccurs="1" minOccurs="0"
+                                    name="street" nillable="false" type="string"/>
+                                    <element maxOccurs="1" minOccurs="0"
+                                    name="city" nillable="false" type="string"/>
+                                    <element maxOccurs="1" minOccurs="0"
+                                    name="zipcode" nillable="false" type="string"/>
+                                    <element maxOccurs="1" minOccurs="0"
+                                    name="username" nillable="false" type="string"/>
+                                    <element maxOccurs="1" minOccurs="0"
+                                    name="password" nillable="false" type="string"/>
+                                </sequence>
                             </complexType>
                         </element>
                     </sequence>
@@ -644,6 +661,37 @@
                                     <PreparedParameters
                                     DataType="12"
                                     DataTypeDisplayValue="VARCHAR" ParameterName="Password"/>
+                                    <columnMetadata columnIndex="1"
+                                    columnName="id" dataType="4"
+                                    status="OptionalElement" typeName="INTEGER"/>
+                                    <columnMetadata columnIndex="2"
+                                    columnName="name"
+                                    dataType="12"
+                                    status="OptionalElement" typeName="CHARACTER VARYING"/>
+                                    <columnMetadata columnIndex="3"
+                                    columnName="surname"
+                                    dataType="12"
+                                    status="OptionalElement" typeName="CHARACTER VARYING"/>
+                                    <columnMetadata columnIndex="4"
+                                    columnName="street"
+                                    dataType="12"
+                                    status="OptionalElement" typeName="CHARACTER VARYING"/>
+                                    <columnMetadata columnIndex="5"
+                                    columnName="city"
+                                    dataType="12"
+                                    status="OptionalElement" typeName="CHARACTER VARYING"/>
+                                    <columnMetadata columnIndex="6"
+                                    columnName="zipcode"
+                                    dataType="12"
+                                    status="OptionalElement" typeName="CHARACTER VARYING"/>
+                                    <columnMetadata columnIndex="7"
+                                    columnName="username"
+                                    dataType="12"
+                                    status="OptionalElement" typeName="CHARACTER VARYING"/>
+                                    <columnMetadata columnIndex="8"
+                                    columnName="password"
+                                    dataType="12"
+                                    status="OptionalElement" typeName="CHARACTER VARYING"/>
                                     </value>
                                 </properties>
                             </activityConfig>

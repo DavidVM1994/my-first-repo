@@ -36,18 +36,11 @@
   <complexType name="CarSearchInputType">
       
     <sequence>
-          
-      <element maxOccurs="1" minOccurs="1" name="ID" type="positiveInteger"/>
-          
-      <element maxOccurs="1" minOccurs="1" name="IDCategory" type="positiveInteger"/>
-          
+             
       <element maxOccurs="1" minOccurs="1" name="Brand" type="string"/>
           
       <element maxOccurs="1" minOccurs="1" name="Model" type="string"/>
           
-      <element maxOccurs="1" minOccurs="1" name="optional" type="boolean"/>
-          
-      <element maxOccurs="1" minOccurs="1" name="Surcharge" type="string"/>
         
     </sequence>
     

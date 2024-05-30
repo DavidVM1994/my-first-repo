@@ -5,7 +5,7 @@
     "title" : "Check",
     "description" : "Check service"
   },
-  "host" : "localhost:8080",
+  "host" : "192.168.56.1:8080",
   "basePath" : "/",
   "schemes" : [ "http" ],
   "paths" : {
@@ -69,24 +69,12 @@
     },
     "CarSearchInput" : {
       "type" : "object",
-      "required" : [ "Brand", "IDCategory", "Surcharge", "Model", "optional", "ID" ],
+      "required" : [ "Brand", "Model" ],
       "properties" : {
-        "ID" : {
-          "type" : "string"
-        },
-        "IDCategory" : {
-          "type" : "string"
-        },
         "Brand" : {
           "type" : "string"
         },
         "Model" : {
-          "type" : "string"
-        },
-        "optional" : {
-          "type" : "boolean"
-        },
-        "Surcharge" : {
           "type" : "string"
         }
       }
