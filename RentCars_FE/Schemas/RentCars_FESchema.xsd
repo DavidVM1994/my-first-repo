@@ -109,4 +109,14 @@
       
   <element name="CarSearchOutputArray" type="tns:CarSearchOutputArray"/>
   
+  <!-- definizione elemento per Activity Controllo Credenziali -->
+  <complexType name="CredentialsType">
+    <sequence>
+      <element minOccurs="1" maxOccurs="1" name="UserName" type="string"/>
+      <element minOccurs="1" maxOccurs="1" name="Password" type="string"/>
+    </sequence>
+  </complexType>
+  
+  <element name="Credentials" type="tns:CredentialsType"/>
+  
 </schema>

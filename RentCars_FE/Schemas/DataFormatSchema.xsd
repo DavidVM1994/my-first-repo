@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xsd:schema xmlns:dataformat="http://ns.tibco.com/bw/palette/dataformat/cec7f723-cd68-41ed-8421-e494ba3b1e3d" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://ns.tibco.com/bw/palette/dataformat/cec7f723-cd68-41ed-8421-e494ba3b1e3d">
+    
+  <xsd:element name="Credentials" tibex:source="sr.index.dataFormatResource">
+        
+    <xsd:complexType>
+            
+      <xsd:sequence>
+        <xsd:element name="UserName" type="xsd:string"/>
+        <xsd:element name="Password" type="xsd:string"/>
+      </xsd:sequence>
+          
+    </xsd:complexType>
+      
+  </xsd:element>
+  
+</xsd:schema>

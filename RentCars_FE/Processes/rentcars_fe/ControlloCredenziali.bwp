@@ -193,16 +193,6 @@
             <element name="jdbcQueryActivityInput">
                 <complexType>
                     <sequence>
-                        <element maxOccurs="1" minOccurs="1" name="Name"
-                            nillable="true" type="string"/>
-                        <element maxOccurs="1" minOccurs="1"
-                            name="Surname" nillable="true" type="string"/>
-                        <element maxOccurs="1" minOccurs="1"
-                            name="Street" nillable="true" type="string"/>
-                        <element maxOccurs="1" minOccurs="1" name="City"
-                            nillable="true" type="string"/>
-                        <element maxOccurs="1" minOccurs="1"
-                            name="ZipCode" nillable="true" type="string"/>
                         <element maxOccurs="1" minOccurs="1"
                             name="UserName" nillable="true" type="string"/>
                         <element maxOccurs="1" minOccurs="1"
@@ -342,7 +332,7 @@
         productVersion="6.9.0 V26 2022-11-02" scalable="true"
         singleton="true" stateless="false" type="IT"/>
     <tibex:ProcessInterface context=""
-        input="{http://www.example.org/RentCars_FESchema}RegistrationInput" output="{http://www.example.org/RentCars_FESchema}CredentialCheck"/>
+        input="{http://www.example.org/RentCars_FESchema}Credentials" output="{http://www.example.org/RentCars_FESchema}CredentialCheck"/>
     <tibex:ProcessTemplateConfigurations/>
     <notation:Diagram measurementUnit="Pixel" type="BWProcess"
         xmlns:bwnotation="http://tns.tibco.com/bw/runtime/BWNotation"
@@ -564,7 +554,7 @@
         </bpws:variable>
         <bpws:variable element="ns0:CredentialCheck" name="End-input"
             sca-bpel:internal="true" tibex:parameter="out"/>
-        <bpws:variable element="ns0:RegistrationInput" name="Start"
+        <bpws:variable element="ns0:Credentials" name="Start"
             sca-bpel:internal="true" tibex:parameter="in"/>
     </bpws:variables>
     <bpws:extensions>
@@ -633,7 +623,7 @@
                     </bpws:sources>
                     <tibex:inputBindings>
                         <tibex:inputBinding
-                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns=&quot;http://www.tibco.com/namespaces/tnt/plugins/jdbc+9a5c005b-e6de-4bdf-aa8e-a214e5e57d49+input&quot; xmlns:tns1=&quot;http://www.example.org/RentCars_FESchema&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;Start&quot;/>&lt;xsl:template name=&quot;JDBCQuery-input&quot; match=&quot;/&quot;>&lt;tns:jdbcQueryActivityInput>&lt;Name>&lt;xsl:value-of select=&quot;$Start/tns1:Name&quot;/>&lt;/Name>&lt;Surname>&lt;xsl:value-of select=&quot;$Start/tns1:Surname&quot;/>&lt;/Surname>&lt;Street>&lt;xsl:value-of select=&quot;$Start/tns1:Street&quot;/>&lt;/Street>&lt;City>&lt;xsl:value-of select=&quot;$Start/tns1:City&quot;/>&lt;/City>&lt;ZipCode>&lt;xsl:value-of select=&quot;$Start/tns1:ZipCode&quot;/>&lt;/ZipCode>&lt;UserName>&lt;xsl:value-of select=&quot;$Start/tns1:UserNAme&quot;/>&lt;/UserName>&lt;Password>&lt;xsl:value-of select=&quot;$Start/tns1:Password&quot;/>&lt;/Password>&lt;/tns:jdbcQueryActivityInput>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns=&quot;http://www.tibco.com/namespaces/tnt/plugins/jdbc+9a5c005b-e6de-4bdf-aa8e-a214e5e57d49+input&quot; xmlns:tns1=&quot;http://www.example.org/RentCars_FESchema&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;Start&quot;/>&lt;xsl:template name=&quot;JDBCQuery-input&quot; match=&quot;/&quot;>&lt;tns:jdbcQueryActivityInput>&lt;UserName>&lt;xsl:value-of select=&quot;$Start/tns1:UserName&quot;/>&lt;/UserName>&lt;Password>&lt;xsl:value-of select=&quot;$Start/tns1:Password&quot;/>&lt;/Password>&lt;/tns:jdbcQueryActivityInput>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                     </tibex:inputBindings>
                     <tibex:config>
                         <bwext:BWActivity
@@ -646,23 +636,8 @@
                                     <type href="http://ns.tibco.com/bw/palette/jdbc#//JDBCQueryActivity"/>
                                     <value maxRows="100"
                                     sharedResourceProperty="jdbcProperty"
-                                    sqlStatement="SELECT* &#xd;&#xa;FROM &quot;USER&quot;&#xd;&#xa;WHERE NAME=? AND SURNAME=? AND STREET=? AND CITY=? AND ZIPCODE=? AND USERNAME=? AND PASSWORD=?"
+                                    sqlStatement="SELECT* &#xd;&#xa;FROM &quot;USER&quot;&#xd;&#xa;WHERE USERNAME=? AND PASSWORD=?"
                                     timeout="10" xsi:type="jdbcPalette:JDBCQueryActivity">
-                                    <PreparedParameters
-                                    DataType="12"
-                                    DataTypeDisplayValue="VARCHAR" ParameterName="Name"/>
-                                    <PreparedParameters
-                                    DataType="12"
-                                    DataTypeDisplayValue="VARCHAR" ParameterName="Surname"/>
-                                    <PreparedParameters
-                                    DataType="12"
-                                    DataTypeDisplayValue="VARCHAR" ParameterName="Street"/>
-                                    <PreparedParameters
-                                    DataType="12"
-                                    DataTypeDisplayValue="VARCHAR" ParameterName="City"/>
-                                    <PreparedParameters
-                                    DataType="12"
-                                    DataTypeDisplayValue="VARCHAR" ParameterName="ZipCode"/>
                                     <PreparedParameters
                                     DataType="12"
                                     DataTypeDisplayValue="VARCHAR" ParameterName="UserName"/>

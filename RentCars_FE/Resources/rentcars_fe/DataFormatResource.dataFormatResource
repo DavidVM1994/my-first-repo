@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jndi:namedResource xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cec7f723-cd68-41ed-8421-e494ba3b1e3d="http://ns.tibco.com/bw/palette/dataformat/cec7f723-cd68-41ed-8421-e494ba3b1e3d" xmlns:dataformat="http://ns.tibco.com/bw/palette/dataformat" xmlns:jndi="http://xsd.tns.tibco.com/amf/models/sharedresource/jndi" xmi:id="_uVosUB5WEe-GAL6E-y9mMA" name="rentcars_fe.DataFormatResource" type="dataformat:DataFormat">
+  <imports xmi:id="_7srJcB5XEe-d2oF2spEmwQ" importType="http://www.w3.org/2001/XMLSchema" namespace="http://ns.tibco.com/bw/palette/dataformat/cec7f723-cd68-41ed-8421-e494ba3b1e3d"/>
+  <jndi:configuration xsi:type="dataformat:DataFormat" xmi:id="_uVqhgB5WEe-GAL6E-y9mMA" formatType="Delimiter separated" colSeparator="," colSeparatorParseRule="Treat all characters as entered as a single column separator string" lineSeparator="Carriage Return/Line Feed (windows)" fillCharacter="Space" schemaElementQName="cec7f723-cd68-41ed-8421-e494ba3b1e3d:Credentials" fieldOffsetsStr="UserName(0,0)&#xA;Password(0,0)">
+    <fieldOffsets xmi:id="_7tkhUB5XEe-d2oF2spEmwQ" name="UserName"/>
+    <fieldOffsets xmi:id="_7tkhUR5XEe-d2oF2spEmwQ" name="Password"/>
+  </jndi:configuration>
+</jndi:namedResource>
