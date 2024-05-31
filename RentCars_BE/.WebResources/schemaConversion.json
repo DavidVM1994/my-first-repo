@@ -1,0 +1,12 @@
+{"records": [
+    {
+        "jsonSchemaLocation": "/RentCars_BE/Service Descriptors/rentcars_be.Process-Authentication.json",
+        "conversionType": "linked",
+        "xsdSchemaTargetNamespace": "http://www.example.org/RentCars_BESchema"
+    },
+    {
+        "jsonSchemaLocation": "/RentCars_BE/Service Descriptors/rentcars_be.CategoryCheck-Categories.json",
+        "conversionType": "linked",
+        "xsdSchemaTargetNamespace": "http://www.example.org/RentCars_BESchema"
+    }
+]}

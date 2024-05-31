@@ -1,0 +1,136 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "version" : "1.0",
+    "title" : "Categories",
+    "description" : "Categories service"
+  },
+  "host" : "192.168.56.1:8081",
+  "basePath" : "/",
+  "schemes" : [ "http" ],
+  "paths" : {
+    "/categories" : {
+      "post" : {
+        "summary" : "postCategories",
+        "description" : "postCategories",
+        "operationId" : "post-categories",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "body",
+          "in" : "body",
+          "description" : "",
+          "schema" : {
+            "$ref" : "#/definitions/Category"
+          },
+          "required" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "a string to be returned",
+            "schema" : {
+              "type" : "string"
+            }
+          }
+        }
+      },
+      "get" : {
+        "summary" : "getCategories",
+        "description" : "getCategories",
+        "operationId" : "get-categories",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ ],
+        "responses" : {
+          "200" : {
+            "description" : "a GetCategoryResponse to be returned",
+            "schema" : {
+              "$ref" : "#/definitions/GetCategoryResponse"
+            }
+          }
+        }
+      },
+      "put" : {
+        "summary" : "putCategories",
+        "description" : "putCategories",
+        "operationId" : "put-categories",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "body",
+          "in" : "body",
+          "description" : "",
+          "schema" : {
+            "$ref" : "#/definitions/Category"
+          },
+          "required" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "a string to be returned",
+            "schema" : {
+              "type" : "string"
+            }
+          }
+        }
+      },
+      "delete" : {
+        "summary" : "deleteCategories",
+        "description" : "deleteCategories",
+        "operationId" : "delete-categories",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ ],
+        "responses" : {
+          "200" : {
+            "description" : "a string to be returned",
+            "schema" : {
+              "type" : "string"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions" : {
+    "GetCategory" : {
+      "type" : "object",
+      "required" : [ "CategoryID", "CategoryPrice", "CategoryName" ],
+      "properties" : {
+        "CategoryID" : {
+          "type" : "string"
+        },
+        "CategoryName" : {
+          "type" : "string"
+        },
+        "CategoryPrice" : {
+          "type" : "integer"
+        }
+      }
+    },
+    "Category" : {
+      "type" : "object",
+      "required" : [ "CategoryPrice", "CategoryName" ],
+      "properties" : {
+        "CategoryName" : {
+          "type" : "string"
+        },
+        "CategoryPrice" : {
+          "type" : "integer"
+        }
+      }
+    },
+    "GetCategoryResponse" : {
+      "type" : "object",
+      "properties" : {
+        "GetCategory" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/GetCategory",
+            "uniqueItems" : false
+          }
+        }
+      }
+    }
+  }
+}

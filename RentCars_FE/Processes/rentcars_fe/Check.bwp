@@ -11,6 +11,8 @@
     xmlns:ns11="http://www.tibco.com/namespaces/tnt/plugins/jdbc+206a5a47-14d7-44be-bb18-87848301aafa+output"
     xmlns:ns12="http://www.tibco.com/namespaces/tnt/plugins/jdbc+177782bf-988b-40fd-9614-d1eba35a2c17+input"
     xmlns:ns13="http://www.tibco.com/namespaces/tnt/plugins/jdbc+177782bf-988b-40fd-9614-d1eba35a2c17+output"
+    xmlns:ns14="http://tns.tibco.com/bw/palette/internal/activityerror+328ffc13-48e7-4247-b992-2a3f5bb38831"
+    xmlns:ns15="http://tns.tibco.com/bw/palette/internal/activityerror+d21b2b42-01e4-474a-9ea5-c672b758f554"
     xmlns:ns2="http://www.example.org/RentCars_FESchema"
     xmlns:ns3="http://tns.tibco.com/bw/palette/internal/activityerror+bw.restjson.JsonParser"
     xmlns:ns4="http://www.tibco.com/namespaces/tnt/plugins/jdbc+d2699846-1ef5-4205-af4f-d5e91ad936b7+input"
@@ -37,15 +39,9 @@
                 <variable>JDBCQuery</variable>
             </endingVariables>
         </task>
-        <task name="ControlloCredenziali">
-            <endingVariables>
-                <variable>ControlloCredenziali-input</variable>
-            </endingVariables>
-        </task>
         <task name="ReplyNotRegistered">
             <endingVariables>
                 <variable>ReplyNotRegistered-input</variable>
-                <variable>ControlloCredenziali</variable>
             </endingVariables>
         </task>
         <task name="JDBCQuery">
@@ -67,6 +63,12 @@
             <endingVariables>
                 <variable>Reply-input</variable>
                 <variable>JDBCQuery1</variable>
+            </endingVariables>
+        </task>
+        <task name="get">
+            <endingVariables>
+                <variable>get-input</variable>
+                <variable>get</variable>
             </endingVariables>
         </task>
     </tibex:VariableDescriptor>
@@ -436,12 +438,29 @@
                 </complexType>
             </element>
         </schema>
+        <schema elementFormDefault="unqualified"
+            targetNamespace="http://tns.tibco.com/bw/palette/internal/activityerror+d21b2b42-01e4-474a-9ea5-c672b758f554"
+            xmlns="http://www.w3.org/2001/XMLSchema"
+            xmlns:Q1="http://schemas.tibco.com/bw/pe/plugin/5.0/exceptions"
+            xmlns:Q2="http://tns.tibco.com/bw/REST" xmlns:tns="http://tns.tibco.com/bw/palette/internal/activityerror+d21b2b42-01e4-474a-9ea5-c672b758f554">
+            <import namespace="http://tns.tibco.com/bw/REST"/>
+            <import namespace="http://schemas.tibco.com/bw/pe/plugin/5.0/exceptions"/>
+            <element name="ActivityErrorData" type="tns:ActivityErrorDataType"/>
+            <complexType name="ActivityErrorDataType">
+                <choice>
+                    <element maxOccurs="1" minOccurs="0" ref="Q1:ActivityTimedOutException"/>
+                    <element maxOccurs="1" minOccurs="1" ref="Q2:client4XXError"/>
+                    <element maxOccurs="1" minOccurs="1" ref="Q2:server5XXError"/>
+                </choice>
+            </complexType>
+        </schema>
         <wsdl:definitions
             targetNamespace="http://xmlns.example.com/20240529100906PLT"
             xmlns:extns="http://www.example.org/RentCars_FESchema"
             xmlns:extns1="http://tns.tibco.com/bw/REST"
             xmlns:extns2="http://xmlns.example.com/Check/parameters"
             xmlns:extns3="http://xmlns.example.com/Check/headerParameters"
+            xmlns:extns4="http://xmlns.example.com/Default/parameters"
             xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype"
             xmlns:tibex="http://www.tibco.com/bpel/2007/extensions"
             xmlns:tns="http://xmlns.example.com/20240529100906PLT"
@@ -457,6 +476,7 @@
             <wsdl:import namespace="http://tns.tibco.com/bw/REST"/>
             <wsdl:import namespace="http://xmlns.example.com/Check/parameters"/>
             <wsdl:import namespace="http://xmlns.example.com/Check/headerParameters"/>
+            <wsdl:import namespace="http://xmlns.example.com/Default/parameters"/>
             <wsdl:message name="postRequest">
                 <wsdl:part element="extns:CarSearchInput"
                     name="CheckRequest" tibex:hasMultipleNamespaces="false"/>
@@ -484,6 +504,8 @@
                     name="httpHeaders" tibex:source="bw.rest"/>
                 <wsdl:part element="extns1:dynamicConfigurations"
                     name="dynamicConfigurations" tibex:source="bw.rest"/>
+                <wsdl:part element="extns4:RestReferenceGetParameters"
+                    name="parameters" tibex:source="bw.rest"/>
             </wsdl:message>
             <wsdl:message name="getResponse">
                 <wsdl:part name="CheckCredentialsResponse"
@@ -510,8 +532,8 @@
                 </wsdl:operation>
             </wsdl:portType>
             <wsdl:portType name="RestReference"
-                tibex:bw.rest.apipath="/" tibex:bw.rest.basepath="/"
-                tibex:bw.rest.host=""
+                tibex:bw.rest.apipath="/user/check/{username}"
+                tibex:bw.rest.basepath="/" tibex:bw.rest.host=""
                 tibex:bw.rest.resource.source="generated" tibex:source="bw.rest.reference">
                 <wsdl:documentation>summary documentation</wsdl:documentation>
                 <wsdl:operation name="get">
@@ -715,60 +737,6 @@
                                     xsi:type="notation:Bounds" y="143"/>
                                     </children>
 
-                                    <children type="4002">
-
-                                    <children type="4017">
-
-                                    <styles
-                                    fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-
-                                    <layoutConstraint xsi:type="notation:Bounds"/>
-                                    </children>
-
-                                    <children type="4017">
-
-                                    <styles
-                                    fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-
-                                    <layoutConstraint xsi:type="notation:Bounds"/>
-                                    </children>
-
-                                    <children type="4017">
-
-                                    <styles
-                                    fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-
-                                    <layoutConstraint xsi:type="notation:Bounds"/>
-                                    </children>
-
-                                    <children type="4017">
-
-                                    <styles
-                                    fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-
-                                    <layoutConstraint xsi:type="notation:Bounds"/>
-                                    </children>
-
-                                    <styles
-                                    fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-
-                                    <styles
-                                    backgroundColor="16777215"
-                                    gradientEndColor="50431"
-                                    gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
-
-                                    <element href="//0/@process/@activity/@activity/@activities.0/@messages.0/@activity/@activity/@activities.3"/>
-
-                                    <layoutConstraint
-                                    x="169"
-                                    xsi:type="notation:Bounds" y="201"/>
-                                    </children>
-
                                     <children type="4002 com.tibco.bw.core.design.process.editor.Activity_4002_Reply">
 
                                     <children type="4017">
@@ -816,7 +784,7 @@
                                     gradientEndColor="50431"
                                     gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
 
-                                    <element href="//0/@process/@activity/@activity/@activities.0/@messages.0/@activity/@activity/@activities.4"/>
+                                    <element href="//0/@process/@activity/@activity/@activities.0/@messages.0/@activity/@activity/@activities.3"/>
 
                                     <layoutConstraint
                                     height="40"
@@ -872,7 +840,7 @@
                                     gradientEndColor="50431"
                                     gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
 
-                                    <element href="//0/@process/@activity/@activity/@activities.0/@messages.0/@activity/@activity/@activities.5"/>
+                                    <element href="//0/@process/@activity/@activity/@activities.0/@messages.0/@activity/@activity/@activities.4"/>
 
                                     <layoutConstraint
                                     height="40"
@@ -928,7 +896,7 @@
                                     gradientEndColor="50431"
                                     gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
 
-                                    <element href="//0/@process/@activity/@activity/@activities.0/@messages.0/@activity/@activity/@activities.6"/>
+                                    <element href="//0/@process/@activity/@activity/@activities.0/@messages.0/@activity/@activity/@activities.5"/>
 
                                     <layoutConstraint
                                     height="40"
@@ -984,7 +952,7 @@
                                     gradientEndColor="50431"
                                     gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
 
-                                    <element href="//0/@process/@activity/@activity/@activities.0/@messages.0/@activity/@activity/@activities.7"/>
+                                    <element href="//0/@process/@activity/@activity/@activities.0/@messages.0/@activity/@activity/@activities.6"/>
 
                                     <layoutConstraint
                                     height="40"
@@ -1040,13 +1008,67 @@
                                     gradientEndColor="50431"
                                     gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
 
-                                    <element href="//0/@process/@activity/@activity/@activities.0/@messages.0/@activity/@activity/@activities.8"/>
+                                    <element href="//0/@process/@activity/@activity/@activities.0/@messages.0/@activity/@activity/@activities.7"/>
 
                                     <layoutConstraint
                                     height="40"
                                     width="40"
                                     x="623"
                                     xsi:type="notation:Bounds" y="265"/>
+                                    </children>
+
+                                    <children type="4002">
+
+                                    <children type="4017">
+
+                                    <styles
+                                    fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+
+                                    <children type="4017">
+
+                                    <styles
+                                    fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+
+                                    <children type="4017">
+
+                                    <styles
+                                    fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+
+                                    <children type="4017">
+
+                                    <styles
+                                    fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+
+                                    <styles
+                                    fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+
+                                    <styles
+                                    backgroundColor="16777215"
+                                    gradientEndColor="50431"
+                                    gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
+
+                                    <element href="//0/@process/@activity/@activity/@activities.0/@messages.0/@activity/@activity/@activities.8"/>
+
+                                    <layoutConstraint
+                                    x="1"
+                                    xsi:type="notation:Bounds" y="191"/>
                                     </children>
 
                                     <styles xsi:type="notation:DrawerStyle"/>
@@ -1070,8 +1092,8 @@
                                     <element href="//0/@process/@activity/@activity/@activities.0/@messages.0/@activity/@activity"/>
 
                                     <layoutConstraint
-                                    height="503"
-                                    width="1346" xsi:type="notation:Bounds"/>
+                                    height="463"
+                                    width="773" xsi:type="notation:Bounds"/>
                                     </children>
 
                                     <styles xsi:type="notation:SortingStyle"/>
@@ -1226,19 +1248,19 @@
         <styles xsi:type="notation:DiagramStyle"/>
         <element href="//0"/>
         <edges
-            source="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2/@children.0/@children.0/@children.0"
-            target="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2/@children.0/@children.1/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.1" type="4006">
+            source="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2/@children.0/@children.1/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2"
+            target="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2/@children.0/@children.1/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0" type="4006">
             <children type="6002">
                 <layoutConstraint xsi:type="notation:Location" y="40"/>
             </children>
             <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
             <styles fontName="Segoe UI" xsi:type="notation:FontStyle"/>
             <element href="//0/@process/@activity/@activity/@activities.0/@messages.0/@activity/@activity/@links/@children.0"/>
-            <bendpoints points="[12, -1, -109, 2]$[97, -1, -24, 2]" xsi:type="notation:RelativeBendpoints"/>
+            <bendpoints points="[25, 0, -115, 0]$[116, 0, -24, 0]" xsi:type="notation:RelativeBendpoints"/>
         </edges>
         <edges
-            source="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2/@children.0/@children.1/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.1"
-            target="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2/@children.0/@children.1/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2" type="4006">
+            source="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2/@children.0/@children.1/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.4"
+            target="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2/@children.0/@children.1/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.3" type="4006">
             <children type="6002">
                 <layoutConstraint xsi:type="notation:Location" y="40"/>
             </children>
@@ -1248,59 +1270,37 @@
             <bendpoints points="[0, 0, 0, 0]$[0, 0, 0, 0]" xsi:type="notation:RelativeBendpoints"/>
         </edges>
         <edges
-            source="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2/@children.0/@children.1/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.3"
-            target="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2/@children.0/@children.1/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0" type="4006">
+            source="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2/@children.0/@children.1/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.4"
+            target="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2/@children.0/@children.1/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2" type="4006">
             <children type="6002">
                 <layoutConstraint xsi:type="notation:Location" y="40"/>
             </children>
             <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
             <styles fontName="Segoe UI" xsi:type="notation:FontStyle"/>
             <element href="//0/@process/@activity/@activity/@activities.0/@messages.0/@activity/@activity/@links/@children.2"/>
-            <bendpoints points="[25, 0, -115, 0]$[116, 0, -24, 0]" xsi:type="notation:RelativeBendpoints"/>
-        </edges>
-        <edges
-            source="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2/@children.0/@children.1/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.5"
-            target="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2/@children.0/@children.1/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.4" type="4006">
-            <children type="6002">
-                <layoutConstraint xsi:type="notation:Location" y="40"/>
-            </children>
-            <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
-            <styles fontName="Segoe UI" xsi:type="notation:FontStyle"/>
-            <element href="//0/@process/@activity/@activity/@activities.0/@messages.0/@activity/@activity/@links/@children.3"/>
-            <bendpoints points="[0, 0, 0, 0]$[0, 0, 0, 0]" xsi:type="notation:RelativeBendpoints"/>
-        </edges>
-        <edges
-            source="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2/@children.0/@children.1/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.5"
-            target="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2/@children.0/@children.1/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.3" type="4006">
-            <children type="6002">
-                <layoutConstraint xsi:type="notation:Location" y="40"/>
-            </children>
-            <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
-            <styles fontName="Segoe UI" xsi:type="notation:FontStyle"/>
-            <element href="//0/@process/@activity/@activity/@activities.0/@messages.0/@activity/@activity/@links/@children.4"/>
             <bendpoints points="[25, -14, -123, 72]$[124, -72, -24, 14]" xsi:type="notation:RelativeBendpoints"/>
         </edges>
         <edges
-            source="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2/@children.0/@children.1/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.1"
+            source="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2/@children.0/@children.1/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.3"
             target="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2/@children.0/@children.1/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.5" type="4006">
             <children type="6002">
                 <layoutConstraint xsi:type="notation:Location" y="40"/>
             </children>
             <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
             <styles fontName="Segoe UI" xsi:type="notation:FontStyle"/>
-            <element href="//0/@process/@activity/@activity/@activities.0/@messages.0/@activity/@activity/@links/@children.5"/>
-            <bendpoints points="[25, 0, -92, 0]$[93, 0, -24, 0]" xsi:type="notation:RelativeBendpoints"/>
+            <element href="//0/@process/@activity/@activity/@activities.0/@messages.0/@activity/@activity/@links/@children.3"/>
+            <bendpoints points="[25, 1, -149, 0]$[150, 0, -24, -1]" xsi:type="notation:RelativeBendpoints"/>
         </edges>
         <edges
-            source="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2/@children.0/@children.1/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.4"
+            source="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2/@children.0/@children.0/@children.0"
             target="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2/@children.0/@children.1/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.6" type="4006">
             <children type="6002">
                 <layoutConstraint xsi:type="notation:Location" y="40"/>
             </children>
             <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
             <styles fontName="Segoe UI" xsi:type="notation:FontStyle"/>
-            <element href="//0/@process/@activity/@activity/@activities.0/@messages.0/@activity/@activity/@links/@children.6"/>
-            <bendpoints points="[25, 1, -149, 0]$[150, 0, -24, -1]" xsi:type="notation:RelativeBendpoints"/>
+            <element href="//0/@process/@activity/@activity/@activities.0/@messages.0/@activity/@activity/@links/@children.4"/>
+            <bendpoints points="[12, -6, -84, 0]$[72, 0, -24, 6]" xsi:type="notation:RelativeBendpoints"/>
         </edges>
     </notation:Diagram>
     <tibex:NamespaceRegistry enabled="true">
@@ -1324,11 +1324,15 @@
             namespace="http://www.w3.org/2001/XMLSchema-instance" prefix="xsi"/>
         <tibex:namespaceItem
             namespace="http://www.tibco.com/namespaces/tnt/plugins/jdbc+177782bf-988b-40fd-9614-d1eba35a2c17+input" prefix="tns6"/>
+        <tibex:namespaceItem
+            namespace="http://xmlns.example.com/20240529100906PLT" prefix="tns7"/>
+        <tibex:namespaceItem namespace="http://tns.tibco.com/bw/REST" prefix="tns8"/>
     </tibex:NamespaceRegistry>
     <bpws:import importType="http://www.w3.org/2001/XMLSchema" namespace="http://www.example.org/RentCars_FESchema"/>
     <bpws:import importType="http://www.w3.org/2001/XMLSchema" namespace="http://tns.tibco.com/bw/REST"/>
     <bpws:import importType="http://www.w3.org/2001/XMLSchema" namespace="http://xmlns.example.com/Check/parameters"/>
     <bpws:import importType="http://www.w3.org/2001/XMLSchema" namespace="http://xmlns.example.com/Check/headerParameters"/>
+    <bpws:import importType="http://www.w3.org/2001/XMLSchema" namespace="http://xmlns.example.com/Default/parameters"/>
     <bpws:partnerLinks>
         <bpws:partnerLink myRole="use" name="check"
             partnerLinkType="ns0:partnerLinkType"
@@ -1351,7 +1355,8 @@
                                 connector="rentcars_fe.HttpClientResource1"
                                 docBasePath="http://localhost:7777/"
                                 docResourcePath="Default" host=""
-                                name="RestReference" path="/"
+                                name="RestReference"
+                                path="/user/check/{username}"
                                 structuredData="true"
                                 technologyVersion="" xsi:type="rest:RestReferenceBinding">
                                 <operation httpMethod="GET"
@@ -1362,7 +1367,10 @@
                                     <clientFormat>json</clientFormat>
                                     <clientRequestFormat>json</clientRequestFormat>
                                 </operation>
-                                <parameters/>
+                                <parameters>
+                                    <parameterMapping
+                                    parameterName="username" parameterType="Path"/>
+                                </parameters>
                                 <advancedConfig blockingQueueSize="2147483647"/>
                             </scaext:binding>
                         </referenceBinding>
@@ -1378,10 +1386,6 @@
         <bpws:variable messageType="ns0:postResponse"
             name="postOut-input" sca-bpel:internal="true"/>
         <bpws:variable element="ns:ErrorReport" name="_error" sca-bpel:internal="true"/>
-        <bpws:variable element="ns2:CredentialString"
-            name="ControlloCredenziali-input" sca-bpel:internal="true"/>
-        <bpws:variable element="ns2:CredentialCheck"
-            name="ControlloCredenziali" sca-bpel:internal="true"/>
         <bpws:variable name="jdbcProperty" sca-bpel:hotUpdate="false"
             sca-bpel:privateProperty="true" sca-bpel:property="yes"
             sca-bpel:sharedResourceType="{http://xsd.tns.tibco.com/amf/models/sharedresource/jdbc}JdbcDataSource" type="xsd:string">
@@ -1412,6 +1416,10 @@
         <bpws:variable element="ns2:CarSearchInput" name="Mapper-input" sca-bpel:internal="true"/>
         <bpws:variable element="ns2:CarSearchInput" name="Mapper" sca-bpel:internal="true"/>
         <bpws:variable messageType="ns0:postResponse" name="Reply-input" sca-bpel:internal="true"/>
+        <bpws:variable messageType="ns0:getRequest" name="get-input" sca-bpel:internal="true"/>
+        <bpws:variable messageType="ns0:getResponse" name="get" sca-bpel:internal="true"/>
+        <bpws:variable element="ns15:ActivityErrorData"
+            name="_error_get" sca-bpel:internal="true"/>
     </bpws:variables>
     <bpws:extensions>
         <bpws:extension mustUnderstand="no" namespace="http://www.eclipse.org/gmf/runtime/1.0.2/notation"/>
@@ -1431,21 +1439,16 @@
                     <bpws:scope name="scope1">
                         <bpws:flow name="flow1">
                             <bpws:links>
-                                <bpws:link
-                                    name="OnMessageStartToControlloCredenziali" tibex:linkType="SUCCESS"/>
-                                <bpws:link
-                                    name="ControlloCredenzialiToReply" tibex:linkType="SUCCESSWITHCONDITION"/>
                                 <bpws:link name="JDBCQueryTopostOut" tibex:linkType="SUCCESS"/>
                                 <bpws:link name="MapperToJDBCQuery1" tibex:linkType="SUCCESSWITHNOCONDITION"/>
                                 <bpws:link name="MapperToJDBCQuery" tibex:linkType="SUCCESSWITHCONDITION"/>
-                                <bpws:link
-                                    name="ControlloCredenzialiToMapper" tibex:linkType="SUCCESSWITHNOCONDITION"/>
                                 <bpws:link name="JDBCQuery1ToReply" tibex:linkType="SUCCESS"/>
+                                <bpws:link name="OnMessageStartToget" tibex:linkType="SUCCESS"/>
                             </bpws:links>
                             <bpws:empty name="OnMessageStart"
                                 tibex:constructor="onMessageStart" tibex:xpdlId="6e7ba2f8-2f37-4aed-a935-043460e7d062">
                                 <bpws:sources>
-                                    <bpws:source linkName="OnMessageStartToControlloCredenziali"/>
+                                    <bpws:source linkName="OnMessageStartToget"/>
                                 </bpws:sources>
                             </bpws:empty>
                             <bpws:empty name="OnMessageEnd"
@@ -1500,42 +1503,6 @@
                                     <bpws:target linkName="JDBCQueryTopostOut"/>
                                 </bpws:targets>
                             </bpws:reply>
-                            <bpws:extensionActivity>
-                                <tibex:extActivity
-                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:dataformat=&quot;http://ns.tibco.com/bw/palette/dataformat/cec7f723-cd68-41ed-8421-e494ba3b1e3d&quot; xmlns:tns3=&quot;http://www.example.org/RentCars_FESchema&quot; xmlns:tns1=&quot;http://xmlns.example.com/Check/headerParameters&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;post&quot;/>&lt;xsl:template name=&quot;ControlloCredenziali-input&quot; match=&quot;/&quot;>&lt;tns3:CredentialString>&lt;xsl:value-of select=&quot;$post/httpHeaders/tns1:checkPostHeader/Credential&quot;/>&lt;/tns3:CredentialString>&lt;/xsl:template>&lt;/xsl:stylesheet>"
-                                    expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"
-                                    inputVariable="ControlloCredenziali-input"
-                                    name="ControlloCredenziali"
-                                    outputVariable="ControlloCredenziali"
-                                    tibex:xpdlId="036f1560-25ac-49b8-ad54-7d0ad7ca0fa5"
-                                    type="bw.generalactivities.callprocess" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
-                                    <bpws:targets>
-                                    <bpws:target linkName="OnMessageStartToControlloCredenziali"/>
-                                    </bpws:targets>
-                                    <bpws:sources>
-                                    <bpws:source linkName="ControlloCredenzialiToReply">
-                                    <tibex:DesignExpression>
-                                    <tibex:expression
-                                    expression="$ControlloCredenziali=0" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"/>
-                                    </tibex:DesignExpression>
-                                    <bpws:transitionCondition expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"><![CDATA[$ControlloCredenziali=0]]></bpws:transitionCondition>
-                                    </bpws:source>
-                                    <bpws:source linkName="ControlloCredenzialiToMapper">
-                                    <tibex:DesignExpression>
-                                    <tibex:expression
-                                    expression="##otherwise##" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"/>
-                                    </tibex:DesignExpression>
-                                    <bpws:transitionCondition expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"><![CDATA[##otherwise##]]></bpws:transitionCondition>
-                                    </bpws:source>
-                                    </bpws:sources>
-                                    <tibex:inputBindings>
-                                    <tibex:inputBinding coercion=""
-                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:dataformat=&quot;http://ns.tibco.com/bw/palette/dataformat/cec7f723-cd68-41ed-8421-e494ba3b1e3d&quot; xmlns:tns3=&quot;http://www.example.org/RentCars_FESchema&quot; xmlns:tns1=&quot;http://xmlns.example.com/Check/headerParameters&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:param name=&quot;post.httpHeaders&quot;/>&#xa;    &lt;xsl:template name=&quot;ControlloCredenziali-input&quot; match=&quot;/&quot;>&#xa;        &lt;tns3:CredentialString>&#xa;            &lt;xsl:value-of select=&quot;$post.httpHeaders/Credential&quot;/>&#xa;        &lt;/tns3:CredentialString>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
-                                    </tibex:inputBindings>
-                                    <tibex:CallProcess
-                                    subProcessName="rentcars_fe.ControlloCredenziali" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions"/>
-                                </tibex:extActivity>
-                            </bpws:extensionActivity>
                             <bpws:reply name="ReplyNotRegistered"
                                 operation="post" partnerLink="check"
                                 portType="ns0:check"
@@ -1558,9 +1525,6 @@
                                     <tibex:partBinding
                                     expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns7=&quot;http://xmlns.example.com/20240529100906PLT&quot; xmlns:tns3=&quot;http://www.example.org/RentCars_FESchema&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:template name=&quot;ReplyNotRegistered-input&quot; match=&quot;/&quot;>&#xa;        &lt;tns3:CarSearchOutput>&#xa;            &lt;tns3:FailedCarSearch>&#xa;                &lt;xsl:value-of select=&quot;&amp;quot;Utente non Registrato,Registrarsi per favore per accedere&amp;quot;&quot;/>&#xa;            &lt;/tns3:FailedCarSearch>&#xa;        &lt;/tns3:CarSearchOutput>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                                 </tibex:inputBindings>
-                                <bpws:targets>
-                                    <bpws:target linkName="ControlloCredenzialiToReply"/>
-                                </bpws:targets>
                             </bpws:reply>
                             <bpws:extensionActivity>
                                 <tibex:activityExtension
@@ -1639,7 +1603,7 @@
                             </bpws:extensionActivity>
                             <bpws:extensionActivity>
                                 <tibex:activityExtension
-                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns6=&quot;http://www.tibco.com/namespaces/tnt/plugins/jdbc+177782bf-988b-40fd-9614-d1eba35a2c17+input&quot; xmlns:tns3=&quot;http://www.example.org/RentCars_FESchema&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:tns=&quot;http://xmlns.example.com/Check/parameters&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;Mapper&quot;/>&lt;xsl:param name=&quot;post&quot;/>&lt;xsl:template name=&quot;JDBCQuery1-input&quot; match=&quot;/&quot;>&lt;tns6:jdbcQueryActivityInput>&lt;Category>&lt;xsl:value-of select=&quot;$post/parameters/tns:checkPostParameters/tns:CarCategoryOptional&quot;/>&lt;/Category>&lt;Brand>&lt;xsl:value-of select=&quot;$Mapper/tns3:Brand&quot;/>&lt;/Brand>&lt;Model>&lt;xsl:value-of select=&quot;$Mapper/tns3:Model&quot;/>&lt;/Model>&lt;/tns6:jdbcQueryActivityInput>&lt;/xsl:template>&lt;/xsl:stylesheet>"
+                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns6=&quot;http://www.tibco.com/namespaces/tnt/plugins/jdbc+177782bf-988b-40fd-9614-d1eba35a2c17+input&quot; xmlns:tns3=&quot;http://www.example.org/RentCars_FESchema&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:tns9=&quot;http://xmlns.example.com/Check/parameters&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:param name=&quot;Mapper&quot;/>&#xa;    &lt;xsl:param name=&quot;post&quot;/>&#xa;    &lt;xsl:template name=&quot;JDBCQuery1-input&quot; match=&quot;/&quot;>&#xa;        &lt;tns6:jdbcQueryActivityInput>&#xa;            &lt;Category>&#xa;                &lt;xsl:value-of select=&quot;$post/parameters/tns9:checkPostParameters/tns9:CarCategoryOptional&quot;/>&#xa;            &lt;/Category>&#xa;            &lt;Brand>&#xa;                &lt;xsl:value-of select=&quot;$Mapper/tns3:Brand&quot;/>&#xa;            &lt;/Brand>&#xa;            &lt;Model>&#xa;                &lt;xsl:value-of select=&quot;$Mapper/tns3:Model&quot;/>&#xa;            &lt;/Model>&#xa;        &lt;/tns6:jdbcQueryActivityInput>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>"
                                     expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"
                                     inputVariable="JDBCQuery1-input"
                                     name="JDBCQuery1"
@@ -1653,7 +1617,7 @@
                                     </bpws:sources>
                                     <tibex:inputBindings>
                                     <tibex:inputBinding
-                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns6=&quot;http://www.tibco.com/namespaces/tnt/plugins/jdbc+177782bf-988b-40fd-9614-d1eba35a2c17+input&quot; xmlns:tns3=&quot;http://www.example.org/RentCars_FESchema&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:tns=&quot;http://xmlns.example.com/Check/parameters&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:param name=&quot;post.parameters&quot;/>&#xa;    &lt;xsl:param name=&quot;Mapper&quot;/>&#xa;    &lt;xsl:template name=&quot;JDBCQuery1-input&quot; match=&quot;/&quot;>&#xa;        &lt;tns6:jdbcQueryActivityInput>&#xa;            &lt;Category>&#xa;                &lt;xsl:value-of select=&quot;$post.parameters/tns:CarCategoryOptional&quot;/>&#xa;            &lt;/Category>&#xa;            &lt;Brand>&#xa;                &lt;xsl:value-of select=&quot;$Mapper/tns3:Brand&quot;/>&#xa;            &lt;/Brand>&#xa;            &lt;Model>&#xa;                &lt;xsl:value-of select=&quot;$Mapper/tns3:Model&quot;/>&#xa;            &lt;/Model>&#xa;        &lt;/tns6:jdbcQueryActivityInput>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns6=&quot;http://www.tibco.com/namespaces/tnt/plugins/jdbc+177782bf-988b-40fd-9614-d1eba35a2c17+input&quot; xmlns:tns3=&quot;http://www.example.org/RentCars_FESchema&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:tns9=&quot;http://xmlns.example.com/Check/parameters&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:param name=&quot;post.parameters&quot;/>&#xa;    &lt;xsl:param name=&quot;Mapper&quot;/>&#xa;    &lt;xsl:template name=&quot;JDBCQuery1-input&quot; match=&quot;/&quot;>&#xa;        &lt;tns6:jdbcQueryActivityInput>&#xa;            &lt;Category>&#xa;                &lt;xsl:value-of select=&quot;$post.parameters/tns9:CarCategoryOptional&quot;/>&#xa;            &lt;/Category>&#xa;            &lt;Brand>&#xa;                &lt;xsl:value-of select=&quot;$Mapper/tns3:Brand&quot;/>&#xa;            &lt;/Brand>&#xa;            &lt;Model>&#xa;                &lt;xsl:value-of select=&quot;$Mapper/tns3:Model&quot;/>&#xa;            &lt;/Model>&#xa;        &lt;/tns6:jdbcQueryActivityInput>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                                     </tibex:inputBindings>
                                     <tibex:config>
                                     <bwext:BWActivity
@@ -1726,9 +1690,6 @@
                                     name="Mapper"
                                     outputVariable="Mapper"
                                     tibex:xpdlId="abe6049d-90d0-4ddd-ae61-230881c756f3" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
-                                    <bpws:targets>
-                                    <bpws:target linkName="ControlloCredenzialiToMapper"/>
-                                    </bpws:targets>
                                     <bpws:sources>
                                     <bpws:source linkName="MapperToJDBCQuery1">
                                     <tibex:DesignExpression>
@@ -1773,16 +1734,70 @@
                                 partnerLink="check" portType="ns0:check"
                                 tibex:xpdlId="05d8f68a-3836-4577-8c22-fa7182014651" variable="Reply-input">
                                 <tibex:inputBinding expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
-&lt;xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:tns="http://xmlns.example.com/20240529100906PLT" xmlns:tns3="http://www.example.org/RentCars_FESchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema" version="2.0"&gt;&lt;xsl:param name="JDBCQuery1"/&gt;&lt;xsl:template name="Reply-input" match="/"&gt;&lt;tns:postResponse&gt;&lt;CheckResponse&gt;&lt;tns3:CarSearchOutput&gt;&lt;xsl:choose&gt;&lt;xsl:when test="count($JDBCQuery1/Record)&gt;0"&gt;&lt;tns3:SuccessCarSearch&gt;&lt;xsl:for-each select="$JDBCQuery1/Record"&gt;&lt;tns3:Car&gt;&lt;tns3:CarID&gt;&lt;xsl:value-of select="xsd:positiveInteger(id)"/&gt;&lt;/tns3:CarID&gt;&lt;tns3:CarIDCategory&gt;&lt;xsl:value-of select="xsd:positiveInteger(id_category)"/&gt;&lt;/tns3:CarIDCategory&gt;&lt;tns3:CarBrand&gt;&lt;xsl:value-of select="brand"/&gt;&lt;/tns3:CarBrand&gt;&lt;tns3:CarModel&gt;&lt;xsl:value-of select="model"/&gt;&lt;/tns3:CarModel&gt;&lt;/tns3:Car&gt;&lt;/xsl:for-each&gt;&lt;/tns3:SuccessCarSearch&gt;&lt;/xsl:when&gt;&lt;xsl:otherwise&gt;&lt;tns3:FailedCarSearch&gt;&lt;xsl:value-of select="&amp;quot;Nessuna corrispondenza trovata&amp;quot;"/&gt;&lt;/tns3:FailedCarSearch&gt;&lt;/xsl:otherwise&gt;&lt;/xsl:choose&gt;&lt;/tns3:CarSearchOutput&gt;&lt;/CheckResponse&gt;&lt;/tns:postResponse&gt;&lt;/xsl:template&gt;&lt;/xsl:stylesheet&gt;</tibex:inputBinding>
+&lt;xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:tns7="http://xmlns.example.com/20240529100906PLT" xmlns:tns3="http://www.example.org/RentCars_FESchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema" version="2.0"&gt;
+    &lt;xsl:param name="JDBCQuery1"/&gt;
+    &lt;xsl:template name="Reply-input" match="/"&gt;
+        &lt;tns7:postResponse&gt;
+            &lt;CheckResponse&gt;
+                &lt;tns3:CarSearchOutput&gt;
+                    &lt;xsl:choose&gt;
+                        &lt;xsl:when test="count($JDBCQuery1/Record)&gt;0"&gt;
+                            &lt;tns3:SuccessCarSearch&gt;
+                                &lt;xsl:for-each select="$JDBCQuery1/Record"&gt;
+                                    &lt;tns3:Car&gt;
+                                        &lt;tns3:CarID&gt;
+                                            &lt;xsl:value-of select="xsd:positiveInteger(id)"/&gt;
+                                        &lt;/tns3:CarID&gt;
+                                        &lt;tns3:CarIDCategory&gt;
+                                            &lt;xsl:value-of select="xsd:positiveInteger(id_category)"/&gt;
+                                        &lt;/tns3:CarIDCategory&gt;
+                                        &lt;tns3:CarBrand&gt;
+                                            &lt;xsl:value-of select="brand"/&gt;
+                                        &lt;/tns3:CarBrand&gt;
+                                        &lt;tns3:CarModel&gt;
+                                            &lt;xsl:value-of select="model"/&gt;
+                                        &lt;/tns3:CarModel&gt;
+                                    &lt;/tns3:Car&gt;
+                                &lt;/xsl:for-each&gt;
+                            &lt;/tns3:SuccessCarSearch&gt;
+                        &lt;/xsl:when&gt;
+                        &lt;xsl:otherwise&gt;
+                            &lt;tns3:FailedCarSearch&gt;
+                                &lt;xsl:value-of select="&amp;quot;Nessuna corrispondenza trovata&amp;quot;"/&gt;
+                            &lt;/tns3:FailedCarSearch&gt;
+                        &lt;/xsl:otherwise&gt;
+                    &lt;/xsl:choose&gt;
+                &lt;/tns3:CarSearchOutput&gt;
+            &lt;/CheckResponse&gt;
+        &lt;/tns7:postResponse&gt;
+    &lt;/xsl:template&gt;
+&lt;/xsl:stylesheet&gt;</tibex:inputBinding>
                                 <tibex:inputBindings>
                                     <tibex:partBinding
-                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns=&quot;http://xmlns.example.com/20240529100906PLT&quot; xmlns:tns3=&quot;http://www.example.org/RentCars_FESchema&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:param name=&quot;JDBCQuery1&quot;/>&#xa;    &lt;xsl:template name=&quot;Reply-input&quot; match=&quot;/&quot;>&#xa;        &lt;tns3:CarSearchOutput>&#xa;            &lt;xsl:choose>&#xa;                &lt;xsl:when test=&quot;count($JDBCQuery1/Record)>0&quot;>&#xa;                    &lt;tns3:SuccessCarSearch>&#xa;                        &lt;xsl:for-each select=&quot;$JDBCQuery1/Record&quot;>&#xa;                            &lt;tns3:Car>&#xa;                                &lt;tns3:CarID>&#xa;                                    &lt;xsl:value-of select=&quot;xsd:positiveInteger(id)&quot;/>&#xa;                                &lt;/tns3:CarID>&#xa;                                &lt;tns3:CarIDCategory>&#xa;                                    &lt;xsl:value-of select=&quot;xsd:positiveInteger(id_category)&quot;/>&#xa;                                &lt;/tns3:CarIDCategory>&#xa;                                &lt;tns3:CarBrand>&#xa;                                    &lt;xsl:value-of select=&quot;brand&quot;/>&#xa;                                &lt;/tns3:CarBrand>&#xa;                                &lt;tns3:CarModel>&#xa;                                    &lt;xsl:value-of select=&quot;model&quot;/>&#xa;                                &lt;/tns3:CarModel>&#xa;                            &lt;/tns3:Car>&#xa;                        &lt;/xsl:for-each>&#xa;                    &lt;/tns3:SuccessCarSearch>&#xa;                &lt;/xsl:when>&#xa;                &lt;xsl:otherwise>&#xa;                    &lt;tns3:FailedCarSearch>&#xa;                        &lt;xsl:value-of select=&quot;&amp;quot;Nessuna corrispondenza trovata&amp;quot;&quot;/>&#xa;                    &lt;/tns3:FailedCarSearch>&#xa;                &lt;/xsl:otherwise>&#xa;            &lt;/xsl:choose>&#xa;        &lt;/tns3:CarSearchOutput>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns7=&quot;http://xmlns.example.com/20240529100906PLT&quot; xmlns:tns3=&quot;http://www.example.org/RentCars_FESchema&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:param name=&quot;JDBCQuery1&quot;/>&#xa;    &lt;xsl:template name=&quot;Reply-input&quot; match=&quot;/&quot;>&#xa;        &lt;tns3:CarSearchOutput>&#xa;            &lt;xsl:choose>&#xa;                &lt;xsl:when test=&quot;count($JDBCQuery1/Record)>0&quot;>&#xa;                    &lt;tns3:SuccessCarSearch>&#xa;                        &lt;xsl:for-each select=&quot;$JDBCQuery1/Record&quot;>&#xa;                            &lt;tns3:Car>&#xa;                                &lt;tns3:CarID>&#xa;                                    &lt;xsl:value-of select=&quot;xsd:positiveInteger(id)&quot;/>&#xa;                                &lt;/tns3:CarID>&#xa;                                &lt;tns3:CarIDCategory>&#xa;                                    &lt;xsl:value-of select=&quot;xsd:positiveInteger(id_category)&quot;/>&#xa;                                &lt;/tns3:CarIDCategory>&#xa;                                &lt;tns3:CarBrand>&#xa;                                    &lt;xsl:value-of select=&quot;brand&quot;/>&#xa;                                &lt;/tns3:CarBrand>&#xa;                                &lt;tns3:CarModel>&#xa;                                    &lt;xsl:value-of select=&quot;model&quot;/>&#xa;                                &lt;/tns3:CarModel>&#xa;                            &lt;/tns3:Car>&#xa;                        &lt;/xsl:for-each>&#xa;                    &lt;/tns3:SuccessCarSearch>&#xa;                &lt;/xsl:when>&#xa;                &lt;xsl:otherwise>&#xa;                    &lt;tns3:FailedCarSearch>&#xa;                        &lt;xsl:value-of select=&quot;&amp;quot;Nessuna corrispondenza trovata&amp;quot;&quot;/>&#xa;                    &lt;/tns3:FailedCarSearch>&#xa;                &lt;/xsl:otherwise>&#xa;            &lt;/xsl:choose>&#xa;        &lt;/tns3:CarSearchOutput>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                                 </tibex:inputBindings>
                                 <bpws:targets>
                                     <bpws:target linkName="JDBCQuery1ToReply"/>
                                 </bpws:targets>
                                 <bpws:correlations/>
                             </bpws:reply>
+                            <bpws:invoke inputVariable="get-input"
+                                name="get" operation="get"
+                                outputVariable="get"
+                                partnerLink="RestReference"
+                                portType="ns0:RestReference" tibex:xpdlId="d21b2b42-01e4-474a-9ea5-c672b758f554">
+                                <tibex:inputBinding expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:tns7="http://xmlns.example.com/20240529100906PLT" xmlns:tns8="http://tns.tibco.com/bw/REST" xmlns:tns1="http://xmlns.example.com/Check/headerParameters" xmlns:tns="http://xmlns.example.com/Default/parameters" version="2.0"&gt;&lt;xsl:param name="post"/&gt;&lt;xsl:template name="get-input" match="/"&gt;&lt;tns7:getRequest&gt;&lt;httpHeaders&gt;&lt;tns8:httpHeaders/&gt;&lt;/httpHeaders&gt;&lt;parameters&gt;&lt;tns:RestReferenceGetParameters&gt;&lt;xsl:if test="$post/httpHeaders/tns1:checkPostHeader/Credential"&gt;&lt;tns:username&gt;&lt;xsl:value-of select="$post/httpHeaders/tns1:checkPostHeader/Credential"/&gt;&lt;/tns:username&gt;&lt;/xsl:if&gt;&lt;/tns:RestReferenceGetParameters&gt;&lt;/parameters&gt;&lt;/tns7:getRequest&gt;&lt;/xsl:template&gt;&lt;/xsl:stylesheet&gt;</tibex:inputBinding>
+                                <tibex:inputBindings>
+                                    <tibex:partBinding
+                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns7=&quot;http://xmlns.example.com/20240529100906PLT&quot; xmlns:tns8=&quot;http://tns.tibco.com/bw/REST&quot; xmlns:tns1=&quot;http://xmlns.example.com/Check/headerParameters&quot; xmlns:tns=&quot;http://xmlns.example.com/Default/parameters&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:template name=&quot;get-input&quot; match=&quot;/&quot;>&#xa;        &lt;tns8:httpHeaders/>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                                    <tibex:partBinding
+                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns7=&quot;http://xmlns.example.com/20240529100906PLT&quot; xmlns:tns8=&quot;http://tns.tibco.com/bw/REST&quot; xmlns:tns1=&quot;http://xmlns.example.com/Check/headerParameters&quot; xmlns:tns=&quot;http://xmlns.example.com/Default/parameters&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:param name=&quot;post.httpHeaders&quot;/>&#xa;    &lt;xsl:template name=&quot;get-input&quot; match=&quot;/&quot;>&#xa;        &lt;parameters>&#xa;            &lt;tns:RestReferenceGetParameters>&#xa;                &lt;xsl:if test=&quot;$post.httpHeaders/Credential&quot;>&#xa;                    &lt;tns:username>&#xa;                        &lt;xsl:value-of select=&quot;$post.httpHeaders/Credential&quot;/>&#xa;                    &lt;/tns:username>&#xa;                &lt;/xsl:if>&#xa;            &lt;/tns:RestReferenceGetParameters>&#xa;        &lt;/parameters>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                                </tibex:inputBindings>
+                                <bpws:targets>
+                                    <bpws:target linkName="OnMessageStartToget"/>
+                                </bpws:targets>
+                            </bpws:invoke>
                         </bpws:flow>
                     </bpws:scope>
                 </bpws:onMessage>

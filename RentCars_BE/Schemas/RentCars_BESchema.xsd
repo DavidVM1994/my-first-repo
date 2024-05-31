@@ -1,6 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/RentCars_BESchema" xmlns:tns="http://www.example.org/RentCars_BESchema" elementFormDefault="qualified">
+<schema xmlns="http://www.w3.org/2001/XMLSchema" 
+targetNamespace="http://www.example.org/RentCars_BESchema" 
+xmlns:tns="http://www.example.org/RentCars_BESchema" 
+elementFormDefault="qualified">
+
+
+
+<complexType name="CategoryType">
+  <sequence>
+    <element minOccurs="1" maxOccurs="1" name="CategoryName" type="string"/>
+    <element minOccurs="1" maxOccurs="1" name="CategoryPrice" type="decimal"/>
+  </sequence>
+</complexType>
+
+<complexType name="GetCategoryType">
+  <sequence>
+    <element minOccurs="1" maxOccurs="1" name="CategoryID" type="positiveInteger"/>
+    <element minOccurs="1" maxOccurs="1" name="CategoryName" type="string"/>
+    <element minOccurs="1" maxOccurs="1" name="CategoryPrice" type="decimal"/>
+  </sequence>
+</complexType>
+
+<complexType name="GetCategoryResponseType">
+  <sequence>
+    <element minOccurs="0" maxOccurs="unbounded" name="GetCategory" type="tns:GetCategoryType"/>
+  </sequence>
+</complexType>
+
+<element name="GetCategoryResponse" type="tns:GetCategoryResponseType"/>
+
+<element name="Category" type="tns:CategoryType"/>
 
 <element name="username" type="string"/>
+
+<element name="PostCategoryResponse" type="string"/>
+
+<element name="CategoryID" type="positiveInteger"/>
 
 </schema>
