@@ -781,7 +781,9 @@
                                     <element href="//0/@process/@activity/@activity/@activities.0/@messages.0/@activity/@activity/@activities.1"/>
 
                                     <layoutConstraint
-                                    xsi:type="notation:Bounds" y="40"/>
+                                    height="40"
+                                    width="40"
+                                    xsi:type="notation:Bounds" y="76"/>
                                     </children>
                                     <styles xsi:type="notation:SortingStyle"/>
                                     <styles xsi:type="notation:FilteringStyle"/>

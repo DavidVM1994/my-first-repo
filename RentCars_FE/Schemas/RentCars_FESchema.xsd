@@ -3,6 +3,12 @@
     
   
   <!-- Definizione elementi e tipi del primo servizio REST  -->
+  
+  <complexType name="CredentialCheckResponseType">
+    <sequence>
+      <element minOccurs="1" maxOccurs="1" name="CredentialCheckResponse" type="boolean"/>
+    </sequence>
+  </complexType>
     
   
   <complexType name="RegistrationType">
@@ -36,6 +42,8 @@
         
   
   </complexType>
+  
+  <element name="CredentialCheckResponse" type="tns:CredentialCheckResponseType"/>
     
   
   <element name="RegistrationInput" type="tns:RegistrationType"/>
