@@ -8,5 +8,10 @@
         "jsonSchemaLocation": "/RentCars_FE/Service Descriptors/rentcars_fe.Check-Check.json",
         "conversionType": "linked",
         "xsdSchemaTargetNamespace": "http://www.example.org/RentCars_FESchema"
+    },
+    {
+        "jsonSchemaLocation": "/RentCars_FE/Service Descriptors/rentcars_fe.Reservation-Rent.json",
+        "conversionType": "linked",
+        "xsdSchemaTargetNamespace": "http://www.example.org/RentCars_FESchema"
     }
 ]}

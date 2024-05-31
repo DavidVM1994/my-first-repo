@@ -1,115 +1,209 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.example.org/RentCars_FESchema" elementFormDefault="qualified" targetNamespace="http://www.example.org/RentCars_FESchema">
+    
   
   <!-- Definizione elementi e tipi del primo servizio REST  -->
+    
   
   <complexType name="RegistrationType">
-      
-    <sequence>
           
-      <element maxOccurs="1" minOccurs="1" name="Name" type="string"/>
-          
-      <element maxOccurs="1" minOccurs="1" name="Surname" type="string"/>
-          
-      <element maxOccurs="1" minOccurs="1" name="Street" type="string"/>
-          
-      <element maxOccurs="1" minOccurs="1" name="City" type="string"/>
-          
-      <element maxOccurs="1" minOccurs="1" name="ZipCode" type="string"/>
-          
-      <element maxOccurs="1" minOccurs="1" name="UserNAme" type="string"/>
-          
-      <element maxOccurs="1" minOccurs="1" name="Password" type="string"/>
-        
-    </sequence>
     
+    <sequence>
+                
+      
+      <element maxOccurs="1" minOccurs="1" name="Name" type="string"/>
+                
+      
+      <element maxOccurs="1" minOccurs="1" name="Surname" type="string"/>
+                
+      
+      <element maxOccurs="1" minOccurs="1" name="Street" type="string"/>
+                
+      
+      <element maxOccurs="1" minOccurs="1" name="City" type="string"/>
+                
+      
+      <element maxOccurs="1" minOccurs="1" name="ZipCode" type="string"/>
+                
+      
+      <element maxOccurs="1" minOccurs="1" name="UserNAme" type="string"/>
+                
+      
+      <element maxOccurs="1" minOccurs="1" name="Password" type="string"/>
+              
+    
+    </sequence>
+        
+  
   </complexType>
+    
   
   <element name="RegistrationInput" type="tns:RegistrationType"/>
+    
   
   <element name="RegistrationOutput" type="string"/>
+    
   
   <!-- definizione elementi e tipi del secondo servizio REST check -->
+    
   
   <element name="CredentialCheck" type="int"/>
+    
   
   <complexType name="CarSearchInputType">
-      
-    <sequence>
-             
-      <element maxOccurs="1" minOccurs="1" name="Brand" type="string"/>
           
-      <element maxOccurs="1" minOccurs="1" name="Model" type="string"/>
-          
-        
-    </sequence>
     
+    <sequence>
+                   
+      
+      <element maxOccurs="1" minOccurs="1" name="Brand" type="string"/>
+                
+      
+      <element maxOccurs="1" minOccurs="1" name="Model" type="string"/>
+                
+        
+    
+    </sequence>
+        
+  
   </complexType>
+    
   
   <complexType name="CarType">
-      
-    <sequence>
           
-      <element maxOccurs="1" minOccurs="1" name="CarID" type="positiveInteger"/>
-          
-      <element maxOccurs="1" minOccurs="1" name="CarIDCategory" type="positiveInteger"/>
-          
-      <element maxOccurs="1" minOccurs="1" name="CarBrand" type="string"/>
-          
-      <element maxOccurs="1" minOccurs="1" name="CarModel" type="string"/>
-        
-    </sequence>
     
+    <sequence>
+                
+      
+      <element maxOccurs="1" minOccurs="1" name="CarID" type="positiveInteger"/>
+                
+      
+      <element maxOccurs="1" minOccurs="1" name="CarIDCategory" type="positiveInteger"/>
+                
+      
+      <element maxOccurs="1" minOccurs="1" name="CarBrand" type="string"/>
+                
+      
+      <element maxOccurs="1" minOccurs="1" name="CarModel" type="string"/>
+              
+    
+    </sequence>
+        
+  
   </complexType>
+    
   
   <complexType name="SuccessCarSearchType">
-      
-    <sequence>
           
-      <element maxOccurs="unbounded" minOccurs="1" name="Car" type="tns:CarType"/>
-        
-    </sequence>
     
+    <sequence>
+                
+      
+      <element maxOccurs="unbounded" minOccurs="1" name="Car" type="tns:CarType"/>
+              
+    
+    </sequence>
+        
+  
   </complexType>
+    
   
   <complexType name="CarSearchOutputType">
-      
-    <choice>
           
-      <element maxOccurs="1" minOccurs="1" name="SuccessCarSearch" type="tns:SuccessCarSearchType"/>
-          
-      <element maxOccurs="1" minOccurs="1" ref="tns:FailedCarSearch"/>
-        
-    </choice>
     
+    <choice>
+                
+      
+      <element maxOccurs="1" minOccurs="1" name="SuccessCarSearch" type="tns:SuccessCarSearchType"/>
+                
+      
+      <element maxOccurs="1" minOccurs="1" ref="tns:FailedCarSearch"/>
+              
+    
+    </choice>
+        
+  
   </complexType>
+    
   
   <element name="FailedCarSearch" type="string"/>
+    
   
   <element name="SuccessCarSearch" type="tns:SuccessCarSearchType"/>
+    
   
   <element name="CarSearchInput" type="tns:CarSearchInputType"/>
+    
   
   <element name="CarSearchOutputCode" type="integer"/>
+    
   
   <element name="CarSearchOutput" type="tns:CarSearchOutputType"/>
-      
+        
+  
   <complexType name="CarSearchOutputArray">
+        
     <sequence>
+            
       <element maxOccurs="unbounded" minOccurs="0" name="CarSearchOutput" type="tns:CarSearchOutputType"/>
+          
     </sequence>
-  </complexType>
       
+  </complexType>
+        
+  
   <element name="CarSearchOutputArray" type="tns:CarSearchOutputArray"/>
+    
   
   <!-- definizione elemento per Activity Controllo Credenziali -->
+    
   <complexType name="CredentialsType">
+        
     <sequence>
-      <element minOccurs="1" maxOccurs="1" name="UserName" type="string"/>
-      <element minOccurs="1" maxOccurs="1" name="Password" type="string"/>
+            
+      <element maxOccurs="1" minOccurs="1" name="UserName" type="string"/>
+            
+      <element maxOccurs="1" minOccurs="1" name="Password" type="string"/>
+          
     </sequence>
+      
   </complexType>
+    
   
   <element name="Credentials" type="tns:CredentialsType"/>
+  <element name="CredentialString" type="string"/>
+  
+  <!--definizione elementi e tipi del servizio REST di prenotazione Rent -->
+    
+  <complexType name="RentInputType">
+        
+    <sequence>
+            
+            
+      <element maxOccurs="1" minOccurs="1" name="IDUser" type="positiveInteger"/>
+            
+      <element maxOccurs="1" minOccurs="1" name="IDCar" type="positiveInteger"/>
+            
+      <element maxOccurs="1" minOccurs="1" name="From_Date" type="date"/>
+            
+      <element maxOccurs="1" minOccurs="1" name="To_Date" type="date"/>
+          
+    </sequence>
+      
+  </complexType>
+    
+  
+  <element name="RentInput" type="tns:RentInputType"/>
+    
+  <element name="RentOuput" type="string"/>
+    
+    
+  <complexType name="RentInputArray">
+    <sequence>
+      <element maxOccurs="unbounded" minOccurs="0" name="RentInput" type="tns:RentInputType"/>
+    </sequence>
+  </complexType>
+      
+  <element name="RentInputArray" type="tns:RentInputArray"/>
   
 </schema>

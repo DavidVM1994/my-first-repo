@@ -12,6 +12,10 @@
         {
             "location": "Service Descriptors/rentcars_fe.Check-Check.json",
             "type": "generated"
+        },
+        {
+            "location": "Service Descriptors/rentcars_fe.Reservation-Rent.json",
+            "type": "generated"
         }
     ]
 }

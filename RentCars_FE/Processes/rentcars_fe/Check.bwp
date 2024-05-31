@@ -40,7 +40,6 @@
         <task name="ControlloCredenziali">
             <endingVariables>
                 <variable>ControlloCredenziali-input</variable>
-                <variable>ParseData</variable>
             </endingVariables>
         </task>
         <task name="ReplyNotRegistered">
@@ -52,11 +51,6 @@
         <task name="JDBCQuery">
             <endingVariables>
                 <variable>JDBCQuery-input</variable>
-            </endingVariables>
-        </task>
-        <task name="ParseData">
-            <endingVariables>
-                <variable>ParseData-input</variable>
             </endingVariables>
         </task>
         <task name="JDBCQuery1">
@@ -387,74 +381,6 @@
                     <element maxOccurs="1" minOccurs="0" ref="Q1:InvalidSQLTypeException"/>
                     <element maxOccurs="1" minOccurs="0" ref="Q1:DuplicatedFieldNameException"/>
                     <element maxOccurs="1" minOccurs="0" ref="Q2:ActivityTimedOutException"/>
-                </choice>
-            </complexType>
-        </schema>
-        <schema
-            targetNamespace="http://tns.tibco.com/bw/activity/parse/xsd/+dba509ca-c5da-45c6-9f22-6a794e1a01b4+input"
-            xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://tns.tibco.com/bw/activity/parse/xsd/+dba509ca-c5da-45c6-9f22-6a794e1a01b4+input">
-            <complexType name="Input">
-                <sequence>
-                    <element maxOccurs="1" minOccurs="1" name="text" type="string"/>
-                    <element maxOccurs="1" minOccurs="1"
-                        name="noOfRecords" type="integer"/>
-                    <element maxOccurs="1" minOccurs="0"
-                        name="SkipHeaderCharacters" type="integer"/>
-                </sequence>
-            </complexType>
-            <element name="Input" type="tns:Input"/>
-        </schema>
-        <schema attributeFormDefault="unqualified"
-            elementFormDefault="unqualified"
-            targetNamespace="http://tns.tibco.com/bw/activity/parseexceptions/xsd"
-            xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://tns.tibco.com/bw/activity/parseexceptions/xsd">
-            <complexType name="BadDataFormatExceptionType">
-                <sequence>
-                    <element form="unqualified" name="msg" type="string"/>
-                    <element form="unqualified" name="msgCode" type="string"/>
-                </sequence>
-            </complexType>
-            <element name="BadDataFormatException" type="tns:BadDataFormatExceptionType"/>
-            <complexType name="FileNotFoundExceptionType">
-                <complexContent>
-                    <extension base="tns:BadDataFormatExceptionType">
-                        <sequence>
-                            <element name="FileName" type="string"/>
-                        </sequence>
-                    </extension>
-                </complexContent>
-            </complexType>
-            <element name="FileNotFoundException" type="tns:FileNotFoundExceptionType"/>
-        </schema>
-        <schema
-            targetNamespace="http://tns.tibco.com/bw/activity/parse/xsd/+dba509ca-c5da-45c6-9f22-6a794e1a01b4+output"
-            xmlns="http://www.w3.org/2001/XMLSchema"
-            xmlns:Q1="http://ns.tibco.com/bw/palette/dataformat/cec7f723-cd68-41ed-8421-e494ba3b1e3d" xmlns:tns="http://tns.tibco.com/bw/activity/parse/xsd/+dba509ca-c5da-45c6-9f22-6a794e1a01b4+output">
-            <import namespace="http://ns.tibco.com/bw/palette/dataformat/cec7f723-cd68-41ed-8421-e494ba3b1e3d"/>
-            <import namespace="http://ns.tibco.com/bw/palette/dataformat/cec7f723-cd68-41ed-8421-e494ba3b1e3d"/>
-            <complexType name="Output">
-                <sequence>
-                    <element maxOccurs="1" minOccurs="1" name="Rows" type="tns:Rows"/>
-                    <element maxOccurs="1" minOccurs="1" name="done" type="boolean"/>
-                </sequence>
-            </complexType>
-            <element name="Output" type="tns:Output"/>
-            <complexType name="Rows">
-                <sequence>
-                    <element maxOccurs="unbounded" minOccurs="0" ref="Q1:Credentials"/>
-                </sequence>
-            </complexType>
-        </schema>
-        <schema elementFormDefault="unqualified"
-            targetNamespace="http://tns.tibco.com/bw/palette/internal/activityerror+bw.parse.parsedata"
-            xmlns="http://www.w3.org/2001/XMLSchema"
-            xmlns:Q1="http://tns.tibco.com/bw/activity/parseexceptions/xsd" xmlns:tns="http://tns.tibco.com/bw/palette/internal/activityerror+bw.parse.parsedata">
-            <import namespace="http://tns.tibco.com/bw/activity/parseexceptions/xsd"/>
-            <element name="ActivityErrorData" type="tns:ActivityErrorDataType"/>
-            <complexType name="ActivityErrorDataType">
-                <choice>
-                    <element maxOccurs="1" minOccurs="0" ref="Q1:FileNotFoundException"/>
-                    <element maxOccurs="1" minOccurs="0" ref="Q1:BadDataFormatException"/>
                 </choice>
             </complexType>
         </schema>
@@ -923,62 +849,6 @@
                                     xsi:type="notation:Bounds" y="143"/>
                                     </children>
 
-                                    <children type="4002 bw.parse.parsedata">
-
-                                    <children type="4017">
-
-                                    <styles
-                                    fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-
-                                    <layoutConstraint xsi:type="notation:Bounds"/>
-                                    </children>
-
-                                    <children type="4017">
-
-                                    <styles
-                                    fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-
-                                    <layoutConstraint xsi:type="notation:Bounds"/>
-                                    </children>
-
-                                    <children type="4017">
-
-                                    <styles
-                                    fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-
-                                    <layoutConstraint xsi:type="notation:Bounds"/>
-                                    </children>
-
-                                    <children type="4017">
-
-                                    <styles
-                                    fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-
-                                    <layoutConstraint xsi:type="notation:Bounds"/>
-                                    </children>
-
-                                    <styles
-                                    fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-
-                                    <styles
-                                    backgroundColor="16777215"
-                                    gradientEndColor="50431"
-                                    gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
-
-                                    <element href="//0/@process/@activity/@activity/@activities.0/@messages.0/@activity/@activity/@activities.6"/>
-
-                                    <layoutConstraint
-                                    height="40"
-                                    width="40"
-                                    x="23"
-                                    xsi:type="notation:Bounds" y="201"/>
-                                    </children>
-
                                     <children type="4002 bw.jdbc.JDBCQuery">
 
                                     <children type="4017">
@@ -1026,7 +896,7 @@
                                     gradientEndColor="50431"
                                     gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
 
-                                    <element href="//0/@process/@activity/@activity/@activities.0/@messages.0/@activity/@activity/@activities.7"/>
+                                    <element href="//0/@process/@activity/@activity/@activities.0/@messages.0/@activity/@activity/@activities.6"/>
 
                                     <layoutConstraint
                                     height="40"
@@ -1082,7 +952,7 @@
                                     gradientEndColor="50431"
                                     gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
 
-                                    <element href="//0/@process/@activity/@activity/@activities.0/@messages.0/@activity/@activity/@activities.8"/>
+                                    <element href="//0/@process/@activity/@activity/@activities.0/@messages.0/@activity/@activity/@activities.7"/>
 
                                     <layoutConstraint
                                     height="40"
@@ -1138,7 +1008,7 @@
                                     gradientEndColor="50431"
                                     gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
 
-                                    <element href="//0/@process/@activity/@activity/@activities.0/@messages.0/@activity/@activity/@activities.9"/>
+                                    <element href="//0/@process/@activity/@activity/@activities.0/@messages.0/@activity/@activity/@activities.8"/>
 
                                     <layoutConstraint
                                     height="40"
@@ -1325,7 +1195,7 @@
         <element href="//0"/>
         <edges
             source="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2/@children.0/@children.0/@children.0"
-            target="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2/@children.0/@children.1/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.4" type="4006">
+            target="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2/@children.0/@children.1/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.1" type="4006">
             <children type="6002">
                 <layoutConstraint xsi:type="notation:Location" y="40"/>
             </children>
@@ -1357,8 +1227,8 @@
             <bendpoints points="[25, 0, -115, 0]$[116, 0, -24, 0]" xsi:type="notation:RelativeBendpoints"/>
         </edges>
         <edges
-            source="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2/@children.0/@children.1/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.4"
-            target="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2/@children.0/@children.1/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.1" type="4006">
+            source="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2/@children.0/@children.1/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.5"
+            target="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2/@children.0/@children.1/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.4" type="4006">
             <children type="6002">
                 <layoutConstraint xsi:type="notation:Location" y="40"/>
             </children>
@@ -1368,29 +1238,29 @@
             <bendpoints points="[0, 0, 0, 0]$[0, 0, 0, 0]" xsi:type="notation:RelativeBendpoints"/>
         </edges>
         <edges
-            source="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2/@children.0/@children.1/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.6"
-            target="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2/@children.0/@children.1/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.5" type="4006">
-            <children type="6002">
-                <layoutConstraint xsi:type="notation:Location" y="40"/>
-            </children>
-            <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
-            <styles fontName="Segoe UI" xsi:type="notation:FontStyle"/>
-            <element href="//0/@process/@activity/@activity/@activities.0/@messages.0/@activity/@activity/@links/@children.4"/>
-            <bendpoints points="[0, 0, 0, 0]$[0, 0, 0, 0]" xsi:type="notation:RelativeBendpoints"/>
-        </edges>
-        <edges
-            source="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2/@children.0/@children.1/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.6"
+            source="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2/@children.0/@children.1/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.5"
             target="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2/@children.0/@children.1/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.3" type="4006">
             <children type="6002">
                 <layoutConstraint xsi:type="notation:Location" y="40"/>
             </children>
             <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
             <styles fontName="Segoe UI" xsi:type="notation:FontStyle"/>
-            <element href="//0/@process/@activity/@activity/@activities.0/@messages.0/@activity/@activity/@links/@children.5"/>
+            <element href="//0/@process/@activity/@activity/@activities.0/@messages.0/@activity/@activity/@links/@children.4"/>
             <bendpoints points="[25, -14, -123, 72]$[124, -72, -24, 14]" xsi:type="notation:RelativeBendpoints"/>
         </edges>
         <edges
             source="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2/@children.0/@children.1/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.1"
+            target="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2/@children.0/@children.1/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.5" type="4006">
+            <children type="6002">
+                <layoutConstraint xsi:type="notation:Location" y="40"/>
+            </children>
+            <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
+            <styles fontName="Segoe UI" xsi:type="notation:FontStyle"/>
+            <element href="//0/@process/@activity/@activity/@activities.0/@messages.0/@activity/@activity/@links/@children.5"/>
+            <bendpoints points="[25, 0, -92, 0]$[93, 0, -24, 0]" xsi:type="notation:RelativeBendpoints"/>
+        </edges>
+        <edges
+            source="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2/@children.0/@children.1/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.4"
             target="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2/@children.0/@children.1/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.6" type="4006">
             <children type="6002">
                 <layoutConstraint xsi:type="notation:Location" y="40"/>
@@ -1398,17 +1268,6 @@
             <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
             <styles fontName="Segoe UI" xsi:type="notation:FontStyle"/>
             <element href="//0/@process/@activity/@activity/@activities.0/@messages.0/@activity/@activity/@links/@children.6"/>
-            <bendpoints points="[25, 0, -92, 0]$[93, 0, -24, 0]" xsi:type="notation:RelativeBendpoints"/>
-        </edges>
-        <edges
-            source="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2/@children.0/@children.1/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.5"
-            target="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2/@children.0/@children.1/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.7" type="4006">
-            <children type="6002">
-                <layoutConstraint xsi:type="notation:Location" y="40"/>
-            </children>
-            <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
-            <styles fontName="Segoe UI" xsi:type="notation:FontStyle"/>
-            <element href="//0/@process/@activity/@activity/@activities.0/@messages.0/@activity/@activity/@links/@children.7"/>
             <bendpoints points="[25, 1, -149, 0]$[150, 0, -24, -1]" xsi:type="notation:RelativeBendpoints"/>
         </edges>
     </notation:Diagram>
@@ -1450,7 +1309,7 @@
         <bpws:variable messageType="ns0:postResponse"
             name="postOut-input" sca-bpel:internal="true"/>
         <bpws:variable element="ns:ErrorReport" name="_error" sca-bpel:internal="true"/>
-        <bpws:variable element="ns2:Credentials"
+        <bpws:variable element="ns2:CredentialString"
             name="ControlloCredenziali-input" sca-bpel:internal="true"/>
         <bpws:variable element="ns2:CredentialCheck"
             name="ControlloCredenziali" sca-bpel:internal="true"/>
@@ -1476,10 +1335,6 @@
                 <bpws:literal>rentcars_fe.DataFormatResource</bpws:literal>
             </bpws:from>
         </bpws:variable>
-        <bpws:variable element="ns7:Input" name="ParseData-input" sca-bpel:internal="true"/>
-        <bpws:variable element="ns8:Output" name="ParseData" sca-bpel:internal="true"/>
-        <bpws:variable element="ns9:ActivityErrorData"
-            name="_error_ParseData" sca-bpel:internal="true"/>
         <bpws:variable element="ns12:jdbcQueryActivityInput"
             name="JDBCQuery1-input" sca-bpel:internal="true"/>
         <bpws:variable element="ns13:resultSet" name="JDBCQuery1" sca-bpel:internal="true"/>
@@ -1512,8 +1367,6 @@
                                 <bpws:link
                                     name="ControlloCredenzialiToReply" tibex:linkType="SUCCESSWITHCONDITION"/>
                                 <bpws:link name="JDBCQueryTopostOut" tibex:linkType="SUCCESS"/>
-                                <bpws:link
-                                    name="ParseDataToControlloCredenziali" tibex:linkType="SUCCESS"/>
                                 <bpws:link name="MapperToJDBCQuery1" tibex:linkType="SUCCESSWITHNOCONDITION"/>
                                 <bpws:link name="MapperToJDBCQuery" tibex:linkType="SUCCESSWITHCONDITION"/>
                                 <bpws:link
@@ -1580,13 +1433,15 @@
                             </bpws:reply>
                             <bpws:extensionActivity>
                                 <tibex:extActivity
+                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:dataformat=&quot;http://ns.tibco.com/bw/palette/dataformat/cec7f723-cd68-41ed-8421-e494ba3b1e3d&quot; xmlns:tns3=&quot;http://www.example.org/RentCars_FESchema&quot; xmlns:tns1=&quot;http://xmlns.example.com/Check/headerParameters&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;post&quot;/>&lt;xsl:template name=&quot;ControlloCredenziali-input&quot; match=&quot;/&quot;>&lt;tns3:CredentialString>&lt;xsl:value-of select=&quot;$post/httpHeaders/tns1:checkPostHeader/Credential&quot;/>&lt;/tns3:CredentialString>&lt;/xsl:template>&lt;/xsl:stylesheet>"
+                                    expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"
                                     inputVariable="ControlloCredenziali-input"
                                     name="ControlloCredenziali"
                                     outputVariable="ControlloCredenziali"
                                     tibex:xpdlId="036f1560-25ac-49b8-ad54-7d0ad7ca0fa5"
                                     type="bw.generalactivities.callprocess" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
                                     <bpws:targets>
-                                    <bpws:target linkName="ParseDataToControlloCredenziali"/>
+                                    <bpws:target linkName="OnMessageStartToControlloCredenziali"/>
                                     </bpws:targets>
                                     <bpws:sources>
                                     <bpws:source linkName="ControlloCredenzialiToReply">
@@ -1606,7 +1461,7 @@
                                     </bpws:sources>
                                     <tibex:inputBindings>
                                     <tibex:inputBinding coercion=""
-                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:dataformat=&quot;http://ns.tibco.com/bw/palette/dataformat/cec7f723-cd68-41ed-8421-e494ba3b1e3d&quot; xmlns:tns3=&quot;http://www.example.org/RentCars_FESchema&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;ParseData&quot;/>&lt;xsl:template name=&quot;ControlloCredenziali-input&quot; match=&quot;/&quot;>&lt;tns3:Credentials>&lt;tns3:UserName>&lt;xsl:value-of select=&quot;$ParseData/Rows/dataformat:Credentials[1]/UserName&quot;/>&lt;/tns3:UserName>&lt;tns3:Password>&lt;xsl:value-of select=&quot;$ParseData/Rows/dataformat:Credentials[1]/Password&quot;/>&lt;/tns3:Password>&lt;/tns3:Credentials>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:dataformat=&quot;http://ns.tibco.com/bw/palette/dataformat/cec7f723-cd68-41ed-8421-e494ba3b1e3d&quot; xmlns:tns3=&quot;http://www.example.org/RentCars_FESchema&quot; xmlns:tns1=&quot;http://xmlns.example.com/Check/headerParameters&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:param name=&quot;post.httpHeaders&quot;/>&#xa;    &lt;xsl:template name=&quot;ControlloCredenziali-input&quot; match=&quot;/&quot;>&#xa;        &lt;tns3:CredentialString>&#xa;            &lt;xsl:value-of select=&quot;$post.httpHeaders/Credential&quot;/>&#xa;        &lt;/tns3:CredentialString>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                                     </tibex:inputBindings>
                                     <tibex:CallProcess
                                     subProcessName="rentcars_fe.ControlloCredenziali" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions"/>
@@ -1707,44 +1562,6 @@
                                     dataType="12"
                                     status="OptionalElement" typeName="CHARACTER VARYING"/>
                                     </value>
-                                    </properties>
-                                    </activityConfig>
-                                    </bwext:BWActivity>
-                                    </tibex:config>
-                                </tibex:activityExtension>
-                            </bpws:extensionActivity>
-                            <bpws:extensionActivity>
-                                <tibex:activityExtension
-                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns4=&quot;http://tns.tibco.com/bw/activity/parse/xsd/+dba509ca-c5da-45c6-9f22-6a794e1a01b4+input&quot; xmlns:tns1=&quot;http://xmlns.example.com/Check/headerParameters&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;post&quot;/>&lt;xsl:template name=&quot;ParseData-input&quot; match=&quot;/&quot;>&lt;tns4:Input>&lt;text>&lt;xsl:value-of select=&quot;$post/httpHeaders/tns1:checkPostHeader/Credential&quot;/>&lt;/text>&lt;noOfRecords>&lt;xsl:value-of select=&quot;-1&quot;/>&lt;/noOfRecords>&lt;/tns4:Input>&lt;/xsl:template>&lt;/xsl:stylesheet>"
-                                    expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"
-                                    inputVariable="ParseData-input"
-                                    name="ParseData"
-                                    outputVariable="ParseData"
-                                    tibex:xpdlId="dba509ca-c5da-45c6-9f22-6a794e1a01b4" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
-                                    <bpws:targets>
-                                    <bpws:target linkName="OnMessageStartToControlloCredenziali"/>
-                                    </bpws:targets>
-                                    <bpws:sources>
-                                    <bpws:source linkName="ParseDataToControlloCredenziali"/>
-                                    </bpws:sources>
-                                    <tibex:inputBindings>
-                                    <tibex:inputBinding
-                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns4=&quot;http://tns.tibco.com/bw/activity/parse/xsd/+dba509ca-c5da-45c6-9f22-6a794e1a01b4+input&quot; xmlns:tns1=&quot;http://xmlns.example.com/Check/headerParameters&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:param name=&quot;post.httpHeaders&quot;/>&#xa;    &lt;xsl:template name=&quot;ParseData-input&quot; match=&quot;/&quot;>&#xa;        &lt;tns4:Input>&#xa;            &lt;text>&#xa;                &lt;xsl:value-of select=&quot;$post.httpHeaders/Credential&quot;/>&#xa;            &lt;/text>&#xa;            &lt;noOfRecords>&#xa;                &lt;xsl:value-of select=&quot;-1&quot;/>&#xa;            &lt;/noOfRecords>&#xa;        &lt;/tns4:Input>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
-                                    </tibex:inputBindings>
-                                    <tibex:config>
-                                    <bwext:BWActivity
-                                    activityTypeID="bw.parse.parsedata"
-                                    xmlns:activityconfig="http://tns.tibco.com/bw/model/activityconfig"
-                                    xmlns:bwext="http://tns.tibco.com/bw/model/core/bwext"
-                                    xmlns:parse="http://ns.tibco.com/bw/palette/parse" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-                                    <activityConfig>
-                                    <properties
-                                    name="config" xsi:type="activityconfig:EMFProperty">
-                                    <type href="http://ns.tibco.com/bw/palette/parse#//ParseData"/>
-                                    <value
-                                    dataFormat="dataFormatResource"
-                                    encoding="ASCII"
-                                    inputType="String" xsi:type="parse:ParseData"/>
                                     </properties>
                                     </activityConfig>
                                     </bwext:BWActivity>

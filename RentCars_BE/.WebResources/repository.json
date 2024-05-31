@@ -1,0 +1,13 @@
+{
+    "records": [],
+    "resources": [
+        {
+            "location": "Service Descriptors/rentcars_be.Process-Authentication.json",
+            "type": "generated"
+        },
+        {
+            "location": "Service Descriptors/rentcars_be.Process-user-check.json",
+            "type": "generated"
+        }
+    ]
+}

@@ -1,0 +1,77 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "version" : "1.0",
+    "title" : "Rent",
+    "description" : "Rent service"
+  },
+  "host" : "192.168.56.1:8080",
+  "basePath" : "/",
+  "schemes" : [ "http" ],
+  "paths" : {
+    "/rent/{ID}" : {
+      "post" : {
+        "summary" : "postRent",
+        "description" : "postRent",
+        "operationId" : "post-rent",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "body",
+          "in" : "body",
+          "description" : "",
+          "schema" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/definitions/RentInput",
+              "uniqueItems" : false
+            }
+          },
+          "required" : true
+        }, {
+          "name" : "ID",
+          "in" : "path",
+          "description" : "",
+          "type" : "string",
+          "required" : true
+        }, {
+          "name" : "Credentials",
+          "in" : "header",
+          "description" : "",
+          "type" : "string",
+          "required" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "a string to be returned",
+            "schema" : {
+              "type" : "string"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions" : {
+    "RentInput" : {
+      "type" : "object",
+      "required" : [ "To_Date", "From_Date", "IDCar", "IDUser" ],
+      "properties" : {
+        "IDUser" : {
+          "type" : "string"
+        },
+        "IDCar" : {
+          "type" : "string"
+        },
+        "From_Date" : {
+          "type" : "string",
+          "format" : "date"
+        },
+        "To_Date" : {
+          "type" : "string",
+          "format" : "date"
+        }
+      }
+    }
+  }
+}
