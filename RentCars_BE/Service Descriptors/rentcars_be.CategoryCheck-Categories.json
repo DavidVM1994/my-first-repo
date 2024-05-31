@@ -64,6 +64,13 @@
             "$ref" : "#/definitions/Category"
           },
           "required" : true
+        }, {
+          "name" : "ID",
+          "in" : "query",
+          "description" : "",
+          "type" : "integer",
+          "format" : "int32",
+          "required" : true
         } ],
         "responses" : {
           "200" : {
@@ -80,7 +87,14 @@
         "operationId" : "delete-categories",
         "consumes" : [ "application/json" ],
         "produces" : [ "application/json" ],
-        "parameters" : [ ],
+        "parameters" : [ {
+          "name" : "ID",
+          "in" : "query",
+          "description" : "",
+          "type" : "integer",
+          "format" : "int32",
+          "required" : true
+        } ],
         "responses" : {
           "200" : {
             "description" : "a string to be returned",

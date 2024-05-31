@@ -26,10 +26,16 @@
         <clientRequestFormat>json</clientRequestFormat>
       </operation>
       <operation xmi:id="_34xQyx9ZEe-o6f_D7rejDw" operationName="put" nickname="put-categories" httpMethod="PUT" notes="putCategories" responseStyle="element" requestStyle="element" outputPartName="PutResponse">
+        <parameters xmi:id="_NlbNoB9eEe-o6f_D7rejDw">
+          <parameterMapping xmi:id="_NlbNoR9eEe-o6f_D7rejDw" parameterName="ID" parameterType="Query" dataType="integer#int32" required="true"/>
+        </parameters>
         <clientFormat>json</clientFormat>
         <clientRequestFormat>json</clientRequestFormat>
       </operation>
       <operation xmi:id="_34xQzB9ZEe-o6f_D7rejDw" operationName="delete" nickname="delete-categories" httpMethod="DELETE" notes="deleteCategories" responseStyle="element" outputPartName="msg">
+        <parameters xmi:id="_Y_GboB9eEe-o6f_D7rejDw">
+          <parameterMapping xmi:id="_Y_GboR9eEe-o6f_D7rejDw" parameterName="ID" parameterType="Query" dataType="integer#int32" required="true"/>
+        </parameters>
         <clientFormat>json</clientFormat>
         <clientRequestFormat>json</clientRequestFormat>
       </operation>
@@ -50,7 +56,7 @@
   <sca:property xmi:id="_C9rxgB8fEe-o6f_D7rejDw" name="Property" type="httpconnector:HttpConnectorConfiguration" scaext:simpleValue="" publicAccess="true" scalable="true"/>
   <sca:property xmi:id="_FVvOAB8fEe-o6f_D7rejDw" name="Property1" type="httpconnector:HttpConnectorConfiguration" scaext:simpleValue="" publicAccess="true" scalable="true"/>
   <sca:component xmi:id="__jOo0B6aEe-o6f_D7rejDw" name="ComponentProcess" compositeext:version="1.0.0.qualifier">
-    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="__jOo0R6aEe-o6f_D7rejDw" processName="rentcars_be.UserCheck"/>
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="__jOo0R6aEe-o6f_D7rejDw" processName="rentcars_be.UserCheck" autoStart="false"/>
     <sca:service xmi:id="_OVFeIB6cEe-o6f_D7rejDw" name="user-check">
       <sca:interface.wsdl xmi:id="_OVFeIR6cEe-o6f_D7rejDw" interface="http://xmlns.example.com/20240530174050PLT#wsdl.interface(user-check)" scaext:wsdlLocation="../Processes/rentcars_be/Process.bwp"/>
     </sca:service>
@@ -58,7 +64,7 @@
   <sca:component xmi:id="_jrXjUB9ZEe-o6f_D7rejDw" name="ComponentCategoryCheck" compositeext:version="1.0.0.qualifier">
     <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_jrXjUR9ZEe-o6f_D7rejDw" processName="rentcars_be.CategoryCheck"/>
     <sca:service xmi:id="_34xQwB9ZEe-o6f_D7rejDw" name="categories">
-      <sca:interface.wsdl xmi:id="_34xQwR9ZEe-o6f_D7rejDw" interface="http://xmlns.example.com/20240531162457PLT#wsdl.interface(categories)" scaext:wsdlLocation="../Processes/rentcars_be/CategoryCheck.bwp"/>
+      <sca:interface.wsdl xmi:id="_34xQwR9ZEe-o6f_D7rejDw" interface="http://xmlns.example.com/20240531162457PLT#wsdl.interface(categories)"/>
     </sca:service>
   </sca:component>
 </sca:composite>
