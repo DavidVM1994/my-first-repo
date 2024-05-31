@@ -27,8 +27,8 @@
     <tibex:VariableDescriptor type="MemorySaving">
         <task name="flow1">
             <endingVariables>
-                <variable>post</variable>
                 <variable>Mapper</variable>
+                <variable>post</variable>
             </endingVariables>
         </task>
         <task name="postOut">
