@@ -1,19 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <sca:composite xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:BW="http://xsd.tns.tibco.com/amf/models/sca/implementationtype/BW" xmlns:XMLSchema="http://www.w3.org/2001/XMLSchema" xmlns:compositeext="http://schemas.tibco.com/amx/3.0/compositeext" xmlns:httpconnector="http://xsd.tns.tibco.com/bw/models/sharedresource/httpconnector" xmlns:rest="http://xsd.tns.tibco.com/bw/models/binding/rest" xmlns:sca="http://www.osoa.org/xmlns/sca/1.0" xmlns:scact="http://xsd.tns.tibco.com/amf/models/sca/componentType" xmlns:scaext="http://xsd.tns.tibco.com/amf/models/sca/extensions" xmi:id="__di3kB6aEe-o6f_D7rejDw" targetNamespace="http://tns.tibco.com/bw/composite/RentCars_BE" name="RentCars_BE" compositeext:version="1.0.0" compositeext:formatVersion="2">
-  <sca:service xmi:id="_OVFeIh6cEe-o6f_D7rejDw" name="user-check" promote="ComponentProcess/user-check">
-    <sca:interface.wsdl xmi:id="_OVFeJh6cEe-o6f_D7rejDw" interface="http://xmlns.example.com/20240530174050PLT#wsdl.interface(user-check)" scaext:wsdlLocation="../Processes/rentcars_be/Process.bwp"/>
-    <scaext:binding xsi:type="rest:RestServiceBinding" xmi:id="_OVGsQB6cEe-o6f_D7rejDw" name="RestService" path="/user/check/{username}" docBasePath="http://localhost:7777/RentCars_BE" docResourcePath="user/check" basePath="/" connector="rentcars_be.user.check" structuredData="true" technologyVersion="2.0" implementation="Service Descriptors/rentcars_be.Process-user-check.json">
-      <operation xmi:id="_OVHTUB6cEe-o6f_D7rejDw" operationName="get" nickname="get-user-check" httpMethod="GET" notes="getUser/check" responseStyle="element" outputPartName="UserCheckResponse">
-        <clientFormat>json</clientFormat>
-        <clientRequestFormat>json</clientRequestFormat>
-      </operation>
-      <parameters xmi:id="_TrBBAB6cEe-o6f_D7rejDw">
-        <parameterMapping xmi:id="_TrBBAR6cEe-o6f_D7rejDw" parameterName="username" parameterType="Path" required="true"/>
-      </parameters>
-      <advancedConfig xmi:id="_OVGsQR6cEe-o6f_D7rejDw" blockingQueueSize="2147483647"/>
-    </scaext:binding>
-    <scact:bindingAdjunct xmi:id="_OVHTUR6cEe-o6f_D7rejDw" bindingName="RestService"/>
-  </sca:service>
   <sca:service xmi:id="_34xQwh9ZEe-o6f_D7rejDw" name="categories" promote="ComponentCategoryCheck/categories">
     <sca:interface.wsdl xmi:id="_34xQxh9ZEe-o6f_D7rejDw" interface="http://xmlns.example.com/20240531162457PLT#wsdl.interface(categories)" scaext:wsdlLocation="../Processes/rentcars_be/CategoryCheck.bwp"/>
     <scaext:binding xsi:type="rest:RestServiceBinding" xmi:id="_34xQxx9ZEe-o6f_D7rejDw" name="RestService1" path="/categories" docBasePath="http://localhost:7777/RentCars_BE" docResourcePath="Categories" basePath="/" connector="rentcars_be.user.check" structuredData="true" technologyVersion="2.0" implementation="Service Descriptors/rentcars_be.CategoryCheck-Categories.json">
@@ -107,6 +93,20 @@
     </scaext:binding>
     <scact:bindingAdjunct xmi:id="_ARxqNB_2Ee-o6f_D7rejDw" bindingName="RestService3"/>
   </sca:service>
+  <sca:service xmi:id="_d-msEiGOEe-Ze4xZAlitHQ" name="users-check" promote="ComponentUsers/users-check">
+    <sca:interface.wsdl xmi:id="_d-msFiGOEe-Ze4xZAlitHQ" interface="http://xmlns.example.com/20240603114804PLT#wsdl.interface(users-check)" scaext:wsdlLocation="../Processes/rentcars_be/Users.bwp"/>
+    <scaext:binding xsi:type="rest:RestServiceBinding" xmi:id="_d-msFyGOEe-Ze4xZAlitHQ" name="RestService4" path="/users/check/{username}" docBasePath="http://localhost:7777/RentCars_BE" docResourcePath="Users/Check" basePath="/" connector="rentcars_be.user.check" structuredData="true" technologyVersion="2.0" implementation="Service Descriptors/rentcars_be.Users-Users-Check.json">
+      <operation xmi:id="_d-msGSGOEe-Ze4xZAlitHQ" operationName="get" nickname="get-users-check" httpMethod="GET" notes="getUsers/Check" responseStyle="element" outputPartName="UsersCheckResponse">
+        <clientFormat>json</clientFormat>
+        <clientRequestFormat>json</clientRequestFormat>
+      </operation>
+      <parameters xmi:id="_iFXtICGOEe-Ze4xZAlitHQ">
+        <parameterMapping xmi:id="_iFXtISGOEe-Ze4xZAlitHQ" parameterName="username" parameterType="Path" required="true"/>
+      </parameters>
+      <advancedConfig xmi:id="_d-msGCGOEe-Ze4xZAlitHQ" blockingQueueSize="2147483647"/>
+    </scaext:binding>
+    <scact:bindingAdjunct xmi:id="_d-msGiGOEe-Ze4xZAlitHQ" bindingName="RestService4"/>
+  </sca:service>
   <sca:property xmi:id="_AnjzoB6bEe-o6f_D7rejDw" name="BW.DEPLOYMENTUNIT.TYPE" type="XMLSchema:string" scalable="true"/>
   <sca:property xmi:id="_AnjzoR6bEe-o6f_D7rejDw" name="BW.APPNODE.NAME" type="XMLSchema:string" scalable="true"/>
   <sca:property xmi:id="_Ans9kB6bEe-o6f_D7rejDw" name="BW.DEPLOYMENTUNIT.NAME" type="XMLSchema:string" scalable="true"/>
@@ -118,12 +118,6 @@
   <sca:property xmi:id="_AoKQkB6bEe-o6f_D7rejDw" name="BW.MODULE.NAME" type="XMLSchema:string" scalable="true"/>
   <sca:property xmi:id="_C9rxgB8fEe-o6f_D7rejDw" name="Property" type="httpconnector:HttpConnectorConfiguration" scaext:simpleValue="" publicAccess="true" scalable="true"/>
   <sca:property xmi:id="_FVvOAB8fEe-o6f_D7rejDw" name="Property1" type="httpconnector:HttpConnectorConfiguration" scaext:simpleValue="" publicAccess="true" scalable="true"/>
-  <sca:component xmi:id="__jOo0B6aEe-o6f_D7rejDw" name="ComponentProcess" compositeext:version="1.0.0.qualifier">
-    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="__jOo0R6aEe-o6f_D7rejDw" processName="rentcars_be.UserCheck" autoStart="false"/>
-    <sca:service xmi:id="_OVFeIB6cEe-o6f_D7rejDw" name="user-check">
-      <sca:interface.wsdl xmi:id="_OVFeIR6cEe-o6f_D7rejDw" interface="http://xmlns.example.com/20240530174050PLT#wsdl.interface(user-check)" scaext:wsdlLocation="../Processes/rentcars_be/Process.bwp"/>
-    </sca:service>
-  </sca:component>
   <sca:component xmi:id="_jrXjUB9ZEe-o6f_D7rejDw" name="ComponentCategoryCheck" compositeext:version="1.0.0.qualifier">
     <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_jrXjUR9ZEe-o6f_D7rejDw" processName="rentcars_be.CategoryCheck"/>
     <sca:service xmi:id="_34xQwB9ZEe-o6f_D7rejDw" name="categories">
@@ -140,6 +134,12 @@
     <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_cZzBoR_yEe-o6f_D7rejDw" processName="rentcars_be.Cars"/>
     <sca:service xmi:id="_ARogQB_2Ee-o6f_D7rejDw" name="cars">
       <sca:interface.wsdl xmi:id="_ARogQR_2Ee-o6f_D7rejDw" interface="http://xmlns.example.com/20240601103922PLT#wsdl.interface(cars)"/>
+    </sca:service>
+  </sca:component>
+  <sca:component xmi:id="_X2eQMCGOEe-Ze4xZAlitHQ" name="ComponentUsers" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_X2eQMSGOEe-Ze4xZAlitHQ" processName="rentcars_be.Users"/>
+    <sca:service xmi:id="_d-msECGOEe-Ze4xZAlitHQ" name="users-check">
+      <sca:interface.wsdl xmi:id="_d-msESGOEe-Ze4xZAlitHQ" interface="http://xmlns.example.com/20240603114804PLT#wsdl.interface(users-check)"/>
     </sca:service>
   </sca:component>
 </sca:composite>

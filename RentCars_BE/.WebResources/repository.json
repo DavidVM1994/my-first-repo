@@ -1,16 +1,12 @@
 {
-    "records": [],
+    "records": [{
+        "name": "Cloud",
+        "items": [],
+        "url": "https://integration.cloud.tibco.com:443"
+    }],
     "resources": [
         {
             "location": "Service Descriptors/rentcars_be.Process-Authentication.json",
-            "type": "generated"
-        },
-        {
-            "location": "Service Descriptors/rentcars_be.Process-user-check.json",
-            "type": "generated"
-        },
-        {
-            "location": "Service Descriptors/rentcars_be.UserCheck-user-check.json",
             "type": "generated"
         },
         {
@@ -23,6 +19,10 @@
         },
         {
             "location": "Service Descriptors/rentcars_be.Cars-Cars.json",
+            "type": "generated"
+        },
+        {
+            "location": "Service Descriptors/rentcars_be.Users-Users-Check.json",
             "type": "generated"
         }
     ]

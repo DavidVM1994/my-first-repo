@@ -2,18 +2,18 @@
   "swagger" : "2.0",
   "info" : {
     "version" : "1.0",
-    "title" : "user/check",
-    "description" : "user/check service"
+    "title" : "Users/Check",
+    "description" : "Users/Check service"
   },
   "host" : "computer1:8081",
   "basePath" : "/",
   "schemes" : [ "http" ],
   "paths" : {
-    "/user/check/{username}" : {
+    "/users/check/{username}" : {
       "get" : {
-        "summary" : "getUser/check",
-        "description" : "getUser/check",
-        "operationId" : "get-user-check",
+        "summary" : "getUsers/Check",
+        "description" : "getUsers/Check",
+        "operationId" : "get-users-check",
         "consumes" : [ "application/json" ],
         "produces" : [ "application/json" ],
         "parameters" : [ {
