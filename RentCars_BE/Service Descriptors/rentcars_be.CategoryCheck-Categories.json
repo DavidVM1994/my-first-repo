@@ -5,7 +5,7 @@
     "title" : "Categories",
     "description" : "Categories service"
   },
-  "host" : "192.168.56.1:8081",
+  "host" : "computer1:8081",
   "basePath" : "/",
   "schemes" : [ "http" ],
   "paths" : {
