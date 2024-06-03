@@ -44,6 +44,69 @@
     </scaext:binding>
     <scact:bindingAdjunct xmi:id="_34xQzR9ZEe-o6f_D7rejDw" bindingName="RestService1"/>
   </sca:service>
+  <sca:service xmi:id="_KaEFEh-DEe-o6f_D7rejDw" name="reservation" promote="ComponentReservation/reservation">
+    <sca:interface.wsdl xmi:id="_KaN2Eh-DEe-o6f_D7rejDw" interface="http://xmlns.example.com/20240531205221PLT#wsdl.interface(reservation)" scaext:wsdlLocation="../Processes/rentcars_be/Reservation.bwp"/>
+    <scaext:binding xsi:type="rest:RestServiceBinding" xmi:id="_KaN2Ex-DEe-o6f_D7rejDw" name="RestService2" path="/reservation" docBasePath="http://localhost:7777/RentCars_BE" docResourcePath="Reservation" basePath="/" connector="rentcars_be.user.check" structuredData="true" technologyVersion="2.0" implementation="Service Descriptors/rentcars_be.Reservation-Reservation.json">
+      <operation xmi:id="_KaN2FR-DEe-o6f_D7rejDw" operationName="post" nickname="post-reservation" httpMethod="POST" notes="postReservation" responseStyle="element" requestStyle="element" outputPartName="ReservationPostResponse">
+        <clientFormat>json</clientFormat>
+        <clientRequestFormat>json</clientRequestFormat>
+      </operation>
+      <operation xmi:id="_KaN2Fh-DEe-o6f_D7rejDw" operationName="get" nickname="get-reservation" httpMethod="GET" notes="getReservation" responseStyle="element" outputPartName="GetReservationResponse">
+        <clientFormat>json</clientFormat>
+        <clientRequestFormat>json</clientRequestFormat>
+      </operation>
+      <operation xmi:id="_KaN2Fx-DEe-o6f_D7rejDw" operationName="put" nickname="put-reservation" httpMethod="PUT" notes="putReservation" responseStyle="element" requestStyle="element" outputPartName="PutReservationResponse">
+        <parameters xmi:id="_YePH0B_uEe-o6f_D7rejDw">
+          <parameterMapping xmi:id="_YePH0R_uEe-o6f_D7rejDw" parameterName="ID" parameterType="Query" dataType="integer#int32" required="true"/>
+        </parameters>
+        <clientFormat>json</clientFormat>
+        <clientRequestFormat>json</clientRequestFormat>
+      </operation>
+      <operation xmi:id="_KaN2GB-DEe-o6f_D7rejDw" operationName="delete" nickname="delete-reservation" httpMethod="DELETE" notes="deleteReservation" responseStyle="element" outputPartName="msg">
+        <parameters xmi:id="_bUduEB_uEe-o6f_D7rejDw">
+          <parameterMapping xmi:id="_bUduER_uEe-o6f_D7rejDw" parameterName="ID" parameterType="Query" dataType="integer#int32" required="true"/>
+        </parameters>
+        <clientFormat>json</clientFormat>
+        <clientRequestFormat>json</clientRequestFormat>
+      </operation>
+      <parameters xmi:id="_KbGm4B-DEe-o6f_D7rejDw"/>
+      <advancedConfig xmi:id="_KaN2FB-DEe-o6f_D7rejDw" blockingQueueSize="2147483647"/>
+    </scaext:binding>
+    <scact:bindingAdjunct xmi:id="_KaN2GR-DEe-o6f_D7rejDw" bindingName="RestService2"/>
+  </sca:service>
+  <sca:service xmi:id="_ARogQh_2Ee-o6f_D7rejDw" name="cars" promote="ComponentCars/cars">
+    <sca:interface.wsdl xmi:id="_ARogRh_2Ee-o6f_D7rejDw" interface="http://xmlns.example.com/20240601103922PLT#wsdl.interface(cars)" scaext:wsdlLocation="../Processes/rentcars_be/Cars.bwp"/>
+    <scaext:binding xsi:type="rest:RestServiceBinding" xmi:id="_ARogRx_2Ee-o6f_D7rejDw" name="RestService3" path="/cars" docBasePath="http://localhost:7777/RentCars_BE" docResourcePath="Cars" basePath="/" connector="rentcars_be.user.check" structuredData="true" technologyVersion="2.0" implementation="Service Descriptors/rentcars_be.Cars-Cars.json">
+      <operation xmi:id="_ARxqMB_2Ee-o6f_D7rejDw" operationName="post" nickname="post-cars" httpMethod="POST" notes="postCars" responseStyle="element" requestStyle="element" outputPartName="PostCarsResponse">
+        <clientFormat>json</clientFormat>
+        <clientRequestFormat>json</clientRequestFormat>
+      </operation>
+      <operation xmi:id="_ARxqMR_2Ee-o6f_D7rejDw" operationName="get" nickname="get-cars" httpMethod="GET" notes="getCars" responseStyle="element" outputPartName="GetCarResponse">
+        <parameters xmi:id="_Pbs5ECAqEe-o6f_D7rejDw">
+          <parameterMapping xmi:id="_Pbs5ESAqEe-o6f_D7rejDw" parameterName="Category" parameterType="Query" dataType="string"/>
+        </parameters>
+        <clientFormat>json</clientFormat>
+        <clientRequestFormat>json</clientRequestFormat>
+      </operation>
+      <operation xmi:id="_ARxqMh_2Ee-o6f_D7rejDw" operationName="put" nickname="put-cars" httpMethod="PUT" notes="putCars" responseStyle="element" requestStyle="element" outputPartName="PutCarResponse">
+        <parameters xmi:id="_PYtNEB_2Ee-o6f_D7rejDw">
+          <parameterMapping xmi:id="_PYtNER_2Ee-o6f_D7rejDw" parameterName="ID" parameterType="Query" dataType="integer#int32" required="true"/>
+        </parameters>
+        <clientFormat>json</clientFormat>
+        <clientRequestFormat>json</clientRequestFormat>
+      </operation>
+      <operation xmi:id="_ARxqMx_2Ee-o6f_D7rejDw" operationName="delete" nickname="delete-cars" httpMethod="DELETE" notes="deleteCars" responseStyle="element" outputPartName="msg">
+        <parameters xmi:id="_NAsz4B_2Ee-o6f_D7rejDw">
+          <parameterMapping xmi:id="_NAsz4R_2Ee-o6f_D7rejDw" parameterName="ID" parameterType="Query" dataType="integer#int32" required="true"/>
+        </parameters>
+        <clientFormat>json</clientFormat>
+        <clientRequestFormat>json</clientRequestFormat>
+      </operation>
+      <parameters xmi:id="_ATb3EB_2Ee-o6f_D7rejDw"/>
+      <advancedConfig xmi:id="_ARogSB_2Ee-o6f_D7rejDw" blockingQueueSize="2147483647"/>
+    </scaext:binding>
+    <scact:bindingAdjunct xmi:id="_ARxqNB_2Ee-o6f_D7rejDw" bindingName="RestService3"/>
+  </sca:service>
   <sca:property xmi:id="_AnjzoB6bEe-o6f_D7rejDw" name="BW.DEPLOYMENTUNIT.TYPE" type="XMLSchema:string" scalable="true"/>
   <sca:property xmi:id="_AnjzoR6bEe-o6f_D7rejDw" name="BW.APPNODE.NAME" type="XMLSchema:string" scalable="true"/>
   <sca:property xmi:id="_Ans9kB6bEe-o6f_D7rejDw" name="BW.DEPLOYMENTUNIT.NAME" type="XMLSchema:string" scalable="true"/>
@@ -65,6 +128,18 @@
     <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_jrXjUR9ZEe-o6f_D7rejDw" processName="rentcars_be.CategoryCheck"/>
     <sca:service xmi:id="_34xQwB9ZEe-o6f_D7rejDw" name="categories">
       <sca:interface.wsdl xmi:id="_34xQwR9ZEe-o6f_D7rejDw" interface="http://xmlns.example.com/20240531162457PLT#wsdl.interface(categories)"/>
+    </sca:service>
+  </sca:component>
+  <sca:component xmi:id="_6UcCIB9-Ee-o6f_D7rejDw" name="ComponentReservation" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_6UcCIR9-Ee-o6f_D7rejDw" processName="rentcars_be.Reservation"/>
+    <sca:service xmi:id="_KaEFEB-DEe-o6f_D7rejDw" name="reservation">
+      <sca:interface.wsdl xmi:id="_KaEFER-DEe-o6f_D7rejDw" interface="http://xmlns.example.com/20240531205221PLT#wsdl.interface(reservation)"/>
+    </sca:service>
+  </sca:component>
+  <sca:component xmi:id="_cZzBoB_yEe-o6f_D7rejDw" name="ComponentCars" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_cZzBoR_yEe-o6f_D7rejDw" processName="rentcars_be.Cars"/>
+    <sca:service xmi:id="_ARogQB_2Ee-o6f_D7rejDw" name="cars">
+      <sca:interface.wsdl xmi:id="_ARogQR_2Ee-o6f_D7rejDw" interface="http://xmlns.example.com/20240601103922PLT#wsdl.interface(cars)"/>
     </sca:service>
   </sca:component>
 </sca:composite>

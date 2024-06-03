@@ -16,6 +16,14 @@
         {
             "location": "Service Descriptors/rentcars_be.CategoryCheck-Categories.json",
             "type": "generated"
+        },
+        {
+            "location": "Service Descriptors/rentcars_be.Reservation-Reservation.json",
+            "type": "generated"
+        },
+        {
+            "location": "Service Descriptors/rentcars_be.Cars-Cars.json",
+            "type": "generated"
         }
     ]
 }

@@ -1,0 +1,186 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "version" : "1.0",
+    "title" : "Reservation",
+    "description" : "Reservation service"
+  },
+  "host" : "192.168.56.1:8081",
+  "basePath" : "/",
+  "schemes" : [ "http" ],
+  "paths" : {
+    "/reservation" : {
+      "post" : {
+        "summary" : "postReservation",
+        "description" : "postReservation",
+        "operationId" : "post-reservation",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "body",
+          "in" : "body",
+          "description" : "",
+          "schema" : {
+            "$ref" : "#/definitions/Reservation"
+          },
+          "required" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "a string to be returned",
+            "schema" : {
+              "type" : "string"
+            }
+          }
+        }
+      },
+      "get" : {
+        "summary" : "getReservation",
+        "description" : "getReservation",
+        "operationId" : "get-reservation",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ ],
+        "responses" : {
+          "200" : {
+            "description" : "a ReservationGetOutput to be returned",
+            "schema" : {
+              "$ref" : "#/definitions/ReservationGetOutput"
+            }
+          }
+        }
+      },
+      "put" : {
+        "summary" : "putReservation",
+        "description" : "putReservation",
+        "operationId" : "put-reservation",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "body",
+          "in" : "body",
+          "description" : "",
+          "schema" : {
+            "$ref" : "#/definitions/ReservationPutDelete"
+          },
+          "required" : true
+        }, {
+          "name" : "ID",
+          "in" : "query",
+          "description" : "",
+          "type" : "integer",
+          "format" : "int32",
+          "required" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "a string to be returned",
+            "schema" : {
+              "type" : "string"
+            }
+          }
+        }
+      },
+      "delete" : {
+        "summary" : "deleteReservation",
+        "description" : "deleteReservation",
+        "operationId" : "delete-reservation",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "ID",
+          "in" : "query",
+          "description" : "",
+          "type" : "integer",
+          "format" : "int32",
+          "required" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "a string to be returned",
+            "schema" : {
+              "type" : "string"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions" : {
+    "ReservationGetOutput" : {
+      "type" : "object",
+      "properties" : {
+        "ReservationGet" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/ReservationGet",
+            "uniqueItems" : false
+          }
+        }
+      }
+    },
+    "Reservation" : {
+      "type" : "object",
+      "required" : [ "IdCar", "FromDate", "ToDate", "IdUser" ],
+      "properties" : {
+        "IdUser" : {
+          "type" : "string"
+        },
+        "IdCar" : {
+          "type" : "string"
+        },
+        "FromDate" : {
+          "type" : "string",
+          "format" : "date"
+        },
+        "ToDate" : {
+          "type" : "string",
+          "format" : "date"
+        }
+      }
+    },
+    "ReservationPutDelete" : {
+      "type" : "object",
+      "required" : [ "IdCar", "FromDate", "ToDate", "IdUser" ],
+      "properties" : {
+        "IdUser" : {
+          "type" : "string"
+        },
+        "IdCar" : {
+          "type" : "string"
+        },
+        "FromDate" : {
+          "type" : "string",
+          "format" : "date"
+        },
+        "ToDate" : {
+          "type" : "string",
+          "format" : "date"
+        }
+      }
+    },
+    "ReservationGet" : {
+      "type" : "object",
+      "required" : [ "IdCar", "FromDate", "ToDate", "Id", "IdUser" ],
+      "properties" : {
+        "Id" : {
+          "type" : "string"
+        },
+        "IdUser" : {
+          "type" : "string"
+        },
+        "IdCar" : {
+          "type" : "string"
+        },
+        "FromDate" : {
+          "type" : "string",
+          "format" : "date"
+        },
+        "ToDate" : {
+          "type" : "string",
+          "format" : "date"
+        }
+      }
+    }
+  }
+}

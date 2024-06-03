@@ -27,6 +27,87 @@ elementFormDefault="qualified">
   </sequence>
 </complexType>
 
+<!-- elementi e tipi dell'API REST cars -->
+
+<complexType name="CarType">
+  <sequence>
+    <element minOccurs="1" maxOccurs="1" name="IdCategory" type="positiveInteger"/>
+    <element minOccurs="1" maxOccurs="1" name="Brand" type="string"/>
+    <element minOccurs="1" maxOccurs="1" name="Model" type="string"/>
+    <element minOccurs="1" maxOccurs="1" name="Optional" type="boolean"/>
+    <element minOccurs="1" maxOccurs="1" name="Surcharge" type="string"/>
+  </sequence>
+</complexType>
+
+<element name="Car" type="tns:CarType"/>
+
+<complexType name="CarTabType">
+  <sequence>
+    <element minOccurs="1" maxOccurs="1" name="ID" type="positiveInteger"/> 
+    <element minOccurs="1" maxOccurs="1" name="IdCategory" type="positiveInteger"/>
+    <element minOccurs="1" maxOccurs="1" name="Brand" type="string"/>
+    <element minOccurs="1" maxOccurs="1" name="Model" type="string"/>
+    <element minOccurs="1" maxOccurs="1" name="Optional" type="boolean"/>
+    <element minOccurs="1" maxOccurs="1" name="Surcharge" type="string"/>
+  </sequence>
+</complexType>
+
+<element name="CarTab" type="tns:CarTabType"/>
+
+<complexType name="CarTabsType">
+  <sequence>
+    <element minOccurs="0" maxOccurs="unbounded" ref="tns:CarTab"/>
+  </sequence>
+</complexType>
+
+<element name="CarTabs" type="tns:CarTabsType"/>
+
+<!-- tipi ed elementi del API REST Reservation -->
+
+<complexType name="ReservationType">
+  <sequence>
+    <element minOccurs="1" maxOccurs="1" name="IdUser" type="positiveInteger"/>
+    <element minOccurs="1" maxOccurs="1" name="IdCar" type="positiveInteger"/>
+    <element minOccurs="1" maxOccurs="1" name="FromDate" type="date"/>
+    <element minOccurs="1" maxOccurs="1" name="ToDate" type="date"/>
+  </sequence>
+</complexType>
+
+<element name="Reservation" type="tns:ReservationType"/>
+
+<!-- elementi per la GET output -->
+
+<complexType name="GetReservationType">
+  <sequence>
+    <element minOccurs="1" maxOccurs="1" name="Id" type="positiveInteger"/>
+    <element minOccurs="1" maxOccurs="1" name="IdUser" type="positiveInteger"/>
+    <element minOccurs="1" maxOccurs="1" name="IdCar" type="positiveInteger"/>
+    <element minOccurs="1" maxOccurs="1" name="FromDate" type="date"/>
+    <element minOccurs="1" maxOccurs="1" name="ToDate" type="date"/>
+  </sequence>
+</complexType>
+
+<complexType name="ReservationGetOutputType">
+  <sequence>
+    <element minOccurs="0" maxOccurs="unbounded" name="ReservationGet" type="tns:GetReservationType"/>
+  </sequence>
+</complexType>
+
+<element name="ReservationGetOutput" type="tns:ReservationGetOutputType"/>
+
+<complexType name="ReservationPutDeleteType">
+  <sequence>
+    <element minOccurs="1" maxOccurs="1" name="IdUser" type="positiveInteger"/>
+    <element minOccurs="1" maxOccurs="1" name="IdCar" type="positiveInteger"/>
+    <element minOccurs="1" maxOccurs="1" name="FromDate" type="date"/>
+    <element minOccurs="1" maxOccurs="1" name="ToDate" type="date"/>
+  </sequence>
+</complexType>
+
+<element name="ReservationPutDelete" type="tns:ReservationPutDeleteType"/>
+
+
+
 <element name="GetCategoryResponse" type="tns:GetCategoryResponseType"/>
 
 <element name="Category" type="tns:CategoryType"/>
@@ -36,5 +117,7 @@ elementFormDefault="qualified">
 <element name="PostCategoryResponse" type="string"/>
 
 <element name="CategoryID" type="positiveInteger"/>
+
+
 
 </schema>

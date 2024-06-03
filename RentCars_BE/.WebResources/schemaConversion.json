@@ -8,5 +8,15 @@
         "jsonSchemaLocation": "/RentCars_BE/Service Descriptors/rentcars_be.CategoryCheck-Categories.json",
         "conversionType": "linked",
         "xsdSchemaTargetNamespace": "http://www.example.org/RentCars_BESchema"
+    },
+    {
+        "jsonSchemaLocation": "/RentCars_BE/Service Descriptors/rentcars_be.Reservation-Reservation.json",
+        "conversionType": "linked",
+        "xsdSchemaTargetNamespace": "http://www.example.org/RentCars_BESchema"
+    },
+    {
+        "jsonSchemaLocation": "/RentCars_BE/Service Descriptors/rentcars_be.Cars-Cars.json",
+        "conversionType": "linked",
+        "xsdSchemaTargetNamespace": "http://www.example.org/RentCars_BESchema"
     }
 ]}

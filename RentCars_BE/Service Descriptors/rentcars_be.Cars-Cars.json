@@ -1,0 +1,174 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "version" : "1.0",
+    "title" : "Cars",
+    "description" : "Cars service"
+  },
+  "host" : "192.168.56.1:8081",
+  "basePath" : "/",
+  "schemes" : [ "http" ],
+  "paths" : {
+    "/cars" : {
+      "post" : {
+        "summary" : "postCars",
+        "description" : "postCars",
+        "operationId" : "post-cars",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "body",
+          "in" : "body",
+          "description" : "",
+          "schema" : {
+            "$ref" : "#/definitions/Car"
+          },
+          "required" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "a string to be returned",
+            "schema" : {
+              "type" : "string"
+            }
+          }
+        }
+      },
+      "get" : {
+        "summary" : "getCars",
+        "description" : "getCars",
+        "operationId" : "get-cars",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "Category",
+          "in" : "query",
+          "description" : "",
+          "type" : "string",
+          "required" : false
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "a CarTabs to be returned",
+            "schema" : {
+              "$ref" : "#/definitions/CarTabs"
+            }
+          }
+        }
+      },
+      "put" : {
+        "summary" : "putCars",
+        "description" : "putCars",
+        "operationId" : "put-cars",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "body",
+          "in" : "body",
+          "description" : "",
+          "schema" : {
+            "$ref" : "#/definitions/Car"
+          },
+          "required" : true
+        }, {
+          "name" : "ID",
+          "in" : "query",
+          "description" : "",
+          "type" : "integer",
+          "format" : "int32",
+          "required" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "a string to be returned",
+            "schema" : {
+              "type" : "string"
+            }
+          }
+        }
+      },
+      "delete" : {
+        "summary" : "deleteCars",
+        "description" : "deleteCars",
+        "operationId" : "delete-cars",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "ID",
+          "in" : "query",
+          "description" : "",
+          "type" : "integer",
+          "format" : "int32",
+          "required" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "a string to be returned",
+            "schema" : {
+              "type" : "string"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions" : {
+    "CarTab" : {
+      "type" : "object",
+      "required" : [ "IdCategory", "Brand", "Surcharge", "Optional", "Model", "ID" ],
+      "properties" : {
+        "ID" : {
+          "type" : "string"
+        },
+        "IdCategory" : {
+          "type" : "string"
+        },
+        "Brand" : {
+          "type" : "string"
+        },
+        "Model" : {
+          "type" : "string"
+        },
+        "Optional" : {
+          "type" : "boolean"
+        },
+        "Surcharge" : {
+          "type" : "string"
+        }
+      }
+    },
+    "Car" : {
+      "type" : "object",
+      "required" : [ "IdCategory", "Brand", "Surcharge", "Optional", "Model" ],
+      "properties" : {
+        "IdCategory" : {
+          "type" : "string"
+        },
+        "Brand" : {
+          "type" : "string"
+        },
+        "Model" : {
+          "type" : "string"
+        },
+        "Optional" : {
+          "type" : "boolean"
+        },
+        "Surcharge" : {
+          "type" : "string"
+        }
+      }
+    },
+    "CarTabs" : {
+      "type" : "object",
+      "properties" : {
+        "CarTab" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/CarTab",
+            "uniqueItems" : false
+          }
+        }
+      }
+    }
+  }
+}
