@@ -119,6 +119,20 @@
     </scaext:binding>
     <scact:bindingAdjunct xmi:id="_vi-7ASS-Ee-yKrisOh4OcQ" bindingName="RestService"/>
   </sca:service>
+  <sca:service xmi:id="_xgeZEiTXEe-yKrisOh4OcQ" name="credentialsrecovery" promote="ComponentCredentialsRecovery/credentialsrecovery">
+    <sca:interface.wsdl xmi:id="_xgeZFiTXEe-yKrisOh4OcQ" interface="http://xmlns.example.com/20240607160317PLT#wsdl.interface(credentialsrecovery)" scaext:wsdlLocation="../Processes/rentcars_be/CredentialsRecovery.bwp"/>
+    <scaext:binding xsi:type="rest:RestServiceBinding" xmi:id="_xgeZFyTXEe-yKrisOh4OcQ" name="RestService5" path="/credentialsrecovery/{username}" docBasePath="http://localhost:7777/RentCars_BE" docResourcePath="CredentialsRecovery" basePath="/" connector="rentcars_be.user.check" structuredData="true" technologyVersion="2.0" implementation="Service Descriptors/rentcars_be.CredentialsRecovery-CredentialsRecovery.json">
+      <operation xmi:id="_xgnjACTXEe-yKrisOh4OcQ" operationName="get" nickname="get-credentialsrecovery" httpMethod="GET" notes="getCredentialsRecovery" responseStyle="element" outputPartName="Response">
+        <clientFormat>json</clientFormat>
+        <clientRequestFormat>json</clientRequestFormat>
+      </operation>
+      <parameters xmi:id="_xhg64CTXEe-yKrisOh4OcQ">
+        <parameterMapping xmi:id="_xhg64STXEe-yKrisOh4OcQ" parameterName="username" parameterType="Path" required="true"/>
+      </parameters>
+      <advancedConfig xmi:id="_xgeZGCTXEe-yKrisOh4OcQ" blockingQueueSize="2147483647"/>
+    </scaext:binding>
+    <scact:bindingAdjunct xmi:id="_xgnjASTXEe-yKrisOh4OcQ" bindingName="RestService5"/>
+  </sca:service>
   <sca:property xmi:id="_AnjzoB6bEe-o6f_D7rejDw" name="BW.DEPLOYMENTUNIT.TYPE" type="XMLSchema:string" scalable="true"/>
   <sca:property xmi:id="_AnjzoR6bEe-o6f_D7rejDw" name="BW.APPNODE.NAME" type="XMLSchema:string" scalable="true"/>
   <sca:property xmi:id="_Ans9kB6bEe-o6f_D7rejDw" name="BW.DEPLOYMENTUNIT.NAME" type="XMLSchema:string" scalable="true"/>
@@ -158,6 +172,12 @@
     <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_w3ED8SS8Ee-yKrisOh4OcQ" processName="rentcars_be.Prices"/>
     <sca:service xmi:id="_viPUICS-Ee-yKrisOh4OcQ" name="prices">
       <sca:interface.wsdl xmi:id="_viYeECS-Ee-yKrisOh4OcQ" interface="http://xmlns.example.com/20240607125742PLT#wsdl.interface(prices)" scaext:wsdlLocation="../Processes/rentcars_be/Prices.bwp"/>
+    </sca:service>
+  </sca:component>
+  <sca:component xmi:id="_sGMXICTWEe-yKrisOh4OcQ" name="ComponentCredentialsRecovery" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_sGMXISTWEe-yKrisOh4OcQ" processName="rentcars_be.CredentialsRecovery"/>
+    <sca:service xmi:id="_xgeZECTXEe-yKrisOh4OcQ" name="credentialsrecovery">
+      <sca:interface.wsdl xmi:id="_xgeZESTXEe-yKrisOh4OcQ" interface="http://xmlns.example.com/20240607160317PLT#wsdl.interface(credentialsrecovery)" scaext:wsdlLocation="../Processes/rentcars_be/CredentialsRecovery.bwp"/>
     </sca:service>
   </sca:component>
 </sca:composite>

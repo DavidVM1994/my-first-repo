@@ -131,6 +131,22 @@ elementFormDefault="qualified">
     </sequence>
   </complexType>
 </element>
+<!-- elementi e tipi dell'API REST CredentialsRecovery  -->
+
+<element name="Credentials">
+  <complexType>
+    <sequence>
+      <element name="Id" type="positiveInteger" minOccurs="1" maxOccurs="1"/>
+      <element name="Name" type="string" minOccurs="1" maxOccurs="1"/>
+      <element name="Surname" type="string" minOccurs="1" maxOccurs="1"/>
+      <element name="Street" type="string" minOccurs="1" maxOccurs="1"/>
+      <element name="City" type="string" minOccurs="1" maxOccurs="1"/>
+      <element name="Zipcode" type="string" minOccurs="1" maxOccurs="1"/>
+      <element name="UserName" type="string" minOccurs="1" maxOccurs="1"/>
+      <element name="Password" type="string" minOccurs="1" maxOccurs="1"/>
+    </sequence>
+  </complexType>
+</element>
 
 
 </schema>
