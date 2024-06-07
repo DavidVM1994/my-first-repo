@@ -148,5 +148,13 @@ elementFormDefault="qualified">
   </complexType>
 </element>
 
+<element name="CredentialsResponse">
+  <complexType>
+    <sequence>
+      <element minOccurs="0" maxOccurs="unbounded" ref="tns:Credentials"/>
+    </sequence>
+  </complexType>
+</element>
+
 
 </schema>

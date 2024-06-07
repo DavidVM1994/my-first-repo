@@ -28,10 +28,6 @@
         {
             "location": "Service Descriptors/rentcars_be.Prices-Prices.json",
             "type": "generated"
-        },
-        {
-            "location": "Service Descriptors/rentcars_be.CredentialsRecovery-CredentialsRecovery.json",
-            "type": "generated"
         }
     ]
 }
