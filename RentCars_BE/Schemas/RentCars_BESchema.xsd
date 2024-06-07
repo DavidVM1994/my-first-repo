@@ -119,5 +119,18 @@ elementFormDefault="qualified">
 <element name="CategoryID" type="positiveInteger"/>
 
 
+<!-- elementi e tipi dell'API REST Prices -->
+
+<element name="PricesInput">
+  <complexType>
+    <sequence>
+      <element name="IdCar" type="positiveInteger" minOccurs="1" maxOccurs="1"/>
+      <element name="StartDate" type="date" minOccurs="1" maxOccurs="1"/>
+      <element name="EndDate" type="date" minOccurs="1" maxOccurs="1"/>
+      <element name="Optional" type="boolean" minOccurs="1" maxOccurs="1"/>
+    </sequence>
+  </complexType>
+</element>
+
 
 </schema>

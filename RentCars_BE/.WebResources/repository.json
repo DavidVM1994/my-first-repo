@@ -24,6 +24,10 @@
         {
             "location": "Service Descriptors/rentcars_be.Users-Users-Check.json",
             "type": "generated"
+        },
+        {
+            "location": "Service Descriptors/rentcars_be.Prices-Prices.json",
+            "type": "generated"
         }
     ]
 }
