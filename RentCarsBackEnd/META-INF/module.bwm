@@ -22,6 +22,9 @@
         <clientRequestFormat>json</clientRequestFormat>
       </operation>
       <operation xmi:id="_3uhyUSV9Ee-olP7vqxwgnA" operationName="get" nickname="get-category" httpMethod="GET" notes="getCategory" responseStyle="element" outputPartName="GetCategoryResponse">
+        <parameters xmi:id="_90l8MCV-Ee-olP7vqxwgnA">
+          <parameterMapping xmi:id="_90l8MSV-Ee-olP7vqxwgnA" parameterName="Category" parameterType="Query" dataType="string"/>
+        </parameters>
         <clientFormat>json</clientFormat>
         <clientRequestFormat>json</clientRequestFormat>
       </operation>
@@ -57,7 +60,7 @@
   <sca:component xmi:id="_f909QCV9Ee-olP7vqxwgnA" name="ComponentCategory" compositeext:version="1.0.0.qualifier">
     <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_f909QSV9Ee-olP7vqxwgnA" processName="rentcarsbackend.Category"/>
     <sca:service xmi:id="_3uFGYCV9Ee-olP7vqxwgnA" name="category">
-      <sca:interface.wsdl xmi:id="_3uFGYSV9Ee-olP7vqxwgnA" interface="http://xmlns.example.com/20240608115721PLT#wsdl.interface(category)" scaext:wsdlLocation="../Processes/rentcarsbackend/Category.bwp"/>
+      <sca:interface.wsdl xmi:id="_3uFGYSV9Ee-olP7vqxwgnA" interface="http://xmlns.example.com/20240608115721PLT#wsdl.interface(category)"/>
     </sca:service>
   </sca:component>
 </sca:composite>

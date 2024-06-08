@@ -40,7 +40,13 @@
         "operationId" : "get-category",
         "consumes" : [ "application/json" ],
         "produces" : [ "application/json" ],
-        "parameters" : [ ],
+        "parameters" : [ {
+          "name" : "Category",
+          "in" : "query",
+          "description" : "",
+          "type" : "string",
+          "required" : false
+        } ],
         "responses" : {
           "200" : {
             "description" : "a CategoryResponses to be returned",
