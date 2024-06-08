@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/BackEnd_Cars" xmlns:tns="http://www.example.org/BackEnd_Cars" elementFormDefault="qualified">
+
+<element name="PostPutCar">
+  <complexType>
+    <sequence>
+      <element minOccurs="1" maxOccurs="1" name="IdCategory" type="positiveInteger"/>
+      <element minOccurs="1" maxOccurs="1" name="Brand" type="string"/>
+      <element minOccurs="1" maxOccurs="1" name="Model" type="string"/>
+      <element minOccurs="1" maxOccurs="1" name="Optional" type="boolean"/>
+      <element minOccurs="1" maxOccurs="1" name="Surcharge" type="string"/>
+    </sequence>
+  </complexType>
+</element>
+
+<element name="GetCar">
+  <complexType>
+    <sequence>
+      <element minOccurs="1" maxOccurs="1" name="Id" type="positiveInteger"/>
+      <element minOccurs="1" maxOccurs="1" name="IdCategory" type="positiveInteger"/>
+      <element minOccurs="1" maxOccurs="1" name="Brand" type="string"/>
+      <element minOccurs="1" maxOccurs="1" name="Model" type="string"/>
+      <element minOccurs="1" maxOccurs="1" name="Optional" type="boolean"/>
+      <element minOccurs="1" maxOccurs="1" name="Surcharge" type="string"/>
+    </sequence>
+  </complexType>
+</element>
+
+<element name="GetCars">
+  <complexType>
+    <sequence>
+      <element minOccurs="0" maxOccurs="unbounded" ref="tns:GetCar"/>
+    </sequence>
+  </complexType>
+</element>
+
+</schema>

@@ -2,18 +2,18 @@
   "swagger" : "2.0",
   "info" : {
     "version" : "1.0",
-    "title" : "Category",
-    "description" : "Category service"
+    "title" : "Cars",
+    "description" : "Cars service"
   },
   "host" : "192.168.56.1:8080",
   "basePath" : "/",
   "schemes" : [ "http" ],
   "paths" : {
-    "/category" : {
+    "/cars" : {
       "post" : {
-        "summary" : "postCategory",
-        "description" : "postCategory",
-        "operationId" : "post-category",
+        "summary" : "postCars",
+        "description" : "postCars",
+        "operationId" : "post-cars",
         "consumes" : [ "application/json" ],
         "produces" : [ "application/json" ],
         "parameters" : [ {
@@ -21,7 +21,7 @@
           "in" : "body",
           "description" : "",
           "schema" : {
-            "$ref" : "#/definitions/CategoryRequest"
+            "$ref" : "#/definitions/PostPutCar"
           },
           "required" : true
         } ],
@@ -35,9 +35,9 @@
         }
       },
       "get" : {
-        "summary" : "getCategory",
-        "description" : "getCategory",
-        "operationId" : "get-category",
+        "summary" : "getCars",
+        "description" : "getCars",
+        "operationId" : "get-cars",
         "consumes" : [ "application/json" ],
         "produces" : [ "application/json" ],
         "parameters" : [ {
@@ -46,20 +46,27 @@
           "description" : "",
           "type" : "string",
           "required" : false
+        }, {
+          "name" : "Id",
+          "in" : "query",
+          "description" : "",
+          "type" : "integer",
+          "format" : "int32",
+          "required" : false
         } ],
         "responses" : {
           "200" : {
-            "description" : "a CategoryResponses to be returned",
+            "description" : "a GetCars to be returned",
             "schema" : {
-              "$ref" : "#/definitions/CategoryResponses"
+              "$ref" : "#/definitions/GetCars"
             }
           }
         }
       },
       "put" : {
-        "summary" : "putCategory",
-        "description" : "putCategory",
-        "operationId" : "put-category",
+        "summary" : "putCars",
+        "description" : "putCars",
+        "operationId" : "put-cars",
         "consumes" : [ "application/json" ],
         "produces" : [ "application/json" ],
         "parameters" : [ {
@@ -67,7 +74,7 @@
           "in" : "body",
           "description" : "",
           "schema" : {
-            "$ref" : "#/definitions/CategoryRequest"
+            "$ref" : "#/definitions/PostPutCar"
           },
           "required" : true
         }, {
@@ -88,9 +95,9 @@
         }
       },
       "delete" : {
-        "summary" : "deleteCategory",
-        "description" : "deleteCategory",
-        "operationId" : "delete-category",
+        "summary" : "deleteCars",
+        "description" : "deleteCars",
+        "operationId" : "delete-cars",
         "consumes" : [ "application/json" ],
         "produces" : [ "application/json" ],
         "parameters" : [ {
@@ -113,42 +120,60 @@
     }
   },
   "definitions" : {
-    "CategoryResponses" : {
+    "GetCars" : {
       "type" : "object",
       "properties" : {
-        "CategoryResponse" : {
+        "GetCar" : {
           "type" : "array",
           "items" : {
-            "$ref" : "#/definitions/CategoryResponse",
+            "$ref" : "#/definitions/GetCar",
             "uniqueItems" : false
           }
         }
       }
     },
-    "CategoryRequest" : {
+    "GetCar" : {
       "type" : "object",
-      "required" : [ "Category", "Price" ],
-      "properties" : {
-        "Category" : {
-          "type" : "string"
-        },
-        "Price" : {
-          "type" : "integer"
-        }
-      }
-    },
-    "CategoryResponse" : {
-      "type" : "object",
-      "required" : [ "Category", "Price", "Id" ],
+      "required" : [ "IdCategory", "Brand", "Surcharge", "Optional", "Model", "Id" ],
       "properties" : {
         "Id" : {
           "type" : "string"
         },
-        "Category" : {
+        "IdCategory" : {
           "type" : "string"
         },
-        "Price" : {
-          "type" : "integer"
+        "Brand" : {
+          "type" : "string"
+        },
+        "Model" : {
+          "type" : "string"
+        },
+        "Optional" : {
+          "type" : "boolean"
+        },
+        "Surcharge" : {
+          "type" : "string"
+        }
+      }
+    },
+    "PostPutCar" : {
+      "type" : "object",
+      "required" : [ "IdCategory", "Brand", "Surcharge", "Optional", "Model" ],
+      "properties" : {
+        "IdCategory" : {
+          "type" : "string"
+        },
+        "Brand" : {
+          "type" : "string"
+        },
+        "Model" : {
+          "type" : "string"
+        },
+        "Optional" : {
+          "type" : "boolean"
+        },
+        "Surcharge" : {
+          "type" : "string"
         }
       }
     }

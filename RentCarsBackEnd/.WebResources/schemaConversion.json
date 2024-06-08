@@ -1,5 +1,12 @@
-{"records": [{
-    "jsonSchemaLocation": "/RentCarsBackEnd/Service Descriptors/rentcarsbackend.Category-Category.json",
-    "conversionType": "linked",
-    "xsdSchemaTargetNamespace": "http://www.example.org/BackEnd_Category"
-}]}
+{"records": [
+    {
+        "jsonSchemaLocation": "/RentCarsBackEnd/Service Descriptors/rentcarsbackend.Category-Category.json",
+        "conversionType": "linked",
+        "xsdSchemaTargetNamespace": "http://www.example.org/BackEnd_Category"
+    },
+    {
+        "jsonSchemaLocation": "/RentCarsBackEnd/Service Descriptors/rentcarsbackend.Cars-Cars.json",
+        "conversionType": "linked",
+        "xsdSchemaTargetNamespace": "http://www.example.org/BackEnd_Cars"
+    }
+]}
