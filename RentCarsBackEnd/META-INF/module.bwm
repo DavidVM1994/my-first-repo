@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sca:composite xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:BW="http://xsd.tns.tibco.com/amf/models/sca/implementationtype/BW" xmlns:XMLSchema="http://www.w3.org/2001/XMLSchema" xmlns:compositeext="http://schemas.tibco.com/amx/3.0/compositeext" xmlns:httpconnector="http://xsd.tns.tibco.com/bw/models/sharedresource/httpconnector" xmlns:rest="http://xsd.tns.tibco.com/bw/models/binding/rest" xmlns:sca="http://www.osoa.org/xmlns/sca/1.0" xmlns:scact="http://xsd.tns.tibco.com/amf/models/sca/componentType" xmlns:scaext="http://xsd.tns.tibco.com/amf/models/sca/extensions" xmi:id="_cI4KICVrEe-At8cv9Uf9aQ" targetNamespace="http://tns.tibco.com/bw/composite/RentCarsBackEnd" name="RentCarsBackEnd" compositeext:version="1.0.0" compositeext:formatVersion="2">
+  <sca:service xmi:id="_8fKU8SVrEe-At8cv9Uf9aQ" name="users-check" promote="ComponentCredentialsCheck/users-check">
+    <sca:interface.wsdl xmi:id="_8fd28CVrEe-At8cv9Uf9aQ" interface="http://xmlns.example.com/20240608094806PLT#wsdl.interface(users-check)" scaext:wsdlLocation="../Processes/rentcarsbackend/CredentialsCheck.bwp"/>
+    <scaext:binding xsi:type="rest:RestServiceBinding" xmi:id="_8fnA4CVrEe-At8cv9Uf9aQ" name="RestService" path="/users/check/{username}" docBasePath="http://localhost:7777/RentCarsBackEnd" docResourcePath="Users/Check" basePath="/" connector="rentcarsbackend.Users.Check" structuredData="true" technologyVersion="2.0" implementation="Service Descriptors/rentcarsbackend.CredentialsCheck-Users-Check.json">
+      <operation xmi:id="_8fnA4iVrEe-At8cv9Uf9aQ" operationName="get" nickname="get-users-check" httpMethod="GET" notes="getUsers/Check" responseStyle="element" outputPartName="UserCheckResponse">
+        <clientFormat>json</clientFormat>
+        <clientRequestFormat>json</clientRequestFormat>
+      </operation>
+      <parameters xmi:id="_8gNd0CVrEe-At8cv9Uf9aQ">
+        <parameterMapping xmi:id="_8gNd0SVrEe-At8cv9Uf9aQ" parameterName="username" parameterType="Path" required="true"/>
+      </parameters>
+      <advancedConfig xmi:id="_8fnA4SVrEe-At8cv9Uf9aQ" blockingQueueSize="2147483647"/>
+    </scaext:binding>
+    <scact:bindingAdjunct xmi:id="_8fnA4yVrEe-At8cv9Uf9aQ" bindingName="RestService"/>
+  </sca:service>
+  <sca:property xmi:id="_eevOQCVrEe-At8cv9Uf9aQ" name="BW.DEPLOYMENTUNIT.TYPE" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_ee3KECVrEe-At8cv9Uf9aQ" name="BW.APPNODE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_ee3KESVrEe-At8cv9Uf9aQ" name="BW.DEPLOYMENTUNIT.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_efA7ECVrEe-At8cv9Uf9aQ" name="BW.HOST.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_efA7ESVrEe-At8cv9Uf9aQ" name="BW.DOMAIN.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_efA7EiVrEe-At8cv9Uf9aQ" name="BW.DEPLOYMENTUNIT.VERSION" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_efKsECVrEe-At8cv9Uf9aQ" name="BW.APPSPACE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_efKsESVrEe-At8cv9Uf9aQ" name="BW.MODULE.VERSION" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_efKsEiVrEe-At8cv9Uf9aQ" name="BW.MODULE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_Oi-DMCVtEe-At8cv9Uf9aQ" name="Property" type="httpconnector:HttpConnectorConfiguration" scaext:simpleValue="" publicAccess="true" scalable="true"/>
+  <sca:component xmi:id="_cTrE4CVrEe-At8cv9Uf9aQ" name="ComponentCredentialsCheck" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_cTrE4SVrEe-At8cv9Uf9aQ" processName="rentcarsbackend.CredentialsCheck"/>
+    <sca:service xmi:id="_8fBLACVrEe-At8cv9Uf9aQ" name="users-check">
+      <sca:interface.wsdl xmi:id="_8fKU8CVrEe-At8cv9Uf9aQ" interface="http://xmlns.example.com/20240608094806PLT#wsdl.interface(users-check)"/>
+    </sca:service>
+  </sca:component>
+</sca:composite>
