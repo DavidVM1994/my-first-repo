@@ -14,6 +14,30 @@
     </scaext:binding>
     <scact:bindingAdjunct xmi:id="_8fnA4yVrEe-At8cv9Uf9aQ" bindingName="RestService"/>
   </sca:service>
+  <sca:service xmi:id="_3uFGYiV9Ee-olP7vqxwgnA" name="category" promote="ComponentCategory/category">
+    <sca:interface.wsdl xmi:id="_3uYBUCV9Ee-olP7vqxwgnA" interface="http://xmlns.example.com/20240608115721PLT#wsdl.interface(category)" scaext:wsdlLocation="../Processes/rentcarsbackend/Category.bwp"/>
+    <scaext:binding xsi:type="rest:RestServiceBinding" xmi:id="_3uYBUSV9Ee-olP7vqxwgnA" name="RestService1" path="/category" docBasePath="http://localhost:7777/RentCarsBackEnd" docResourcePath="Category" basePath="/" connector="rentcarsbackend.Users.Check" structuredData="true" technologyVersion="2.0" implementation="Service Descriptors/rentcarsbackend.Category-Category.json">
+      <operation xmi:id="_3uhyUCV9Ee-olP7vqxwgnA" operationName="post" nickname="post-category" httpMethod="POST" notes="postCategory" responseStyle="element" requestStyle="element" outputPartName="PostCategoryResponse">
+        <clientFormat>json</clientFormat>
+        <clientRequestFormat>json</clientRequestFormat>
+      </operation>
+      <operation xmi:id="_3uhyUSV9Ee-olP7vqxwgnA" operationName="get" nickname="get-category" httpMethod="GET" notes="getCategory" responseStyle="element" outputPartName="GetCategoryResponse">
+        <clientFormat>json</clientFormat>
+        <clientRequestFormat>json</clientRequestFormat>
+      </operation>
+      <operation xmi:id="_3uhyUiV9Ee-olP7vqxwgnA" operationName="put" nickname="put-category" httpMethod="PUT" notes="putCategory" responseStyle="element" requestStyle="element" outputPartName="PutCategoryResponse">
+        <clientFormat>json</clientFormat>
+        <clientRequestFormat>json</clientRequestFormat>
+      </operation>
+      <operation xmi:id="_3uhyUyV9Ee-olP7vqxwgnA" operationName="delete" nickname="delete-category" httpMethod="DELETE" notes="deleteCategory" responseStyle="element" outputPartName="DeleteCategoryResponse">
+        <clientFormat>json</clientFormat>
+        <clientRequestFormat>json</clientRequestFormat>
+      </operation>
+      <parameters xmi:id="_3u1UUCV9Ee-olP7vqxwgnA"/>
+      <advancedConfig xmi:id="_3uYBUiV9Ee-olP7vqxwgnA" blockingQueueSize="2147483647"/>
+    </scaext:binding>
+    <scact:bindingAdjunct xmi:id="_3uhyVCV9Ee-olP7vqxwgnA" bindingName="RestService1"/>
+  </sca:service>
   <sca:property xmi:id="_eevOQCVrEe-At8cv9Uf9aQ" name="BW.DEPLOYMENTUNIT.TYPE" type="XMLSchema:string" scalable="true"/>
   <sca:property xmi:id="_ee3KECVrEe-At8cv9Uf9aQ" name="BW.APPNODE.NAME" type="XMLSchema:string" scalable="true"/>
   <sca:property xmi:id="_ee3KESVrEe-At8cv9Uf9aQ" name="BW.DEPLOYMENTUNIT.NAME" type="XMLSchema:string" scalable="true"/>
@@ -28,6 +52,12 @@
     <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_cTrE4SVrEe-At8cv9Uf9aQ" processName="rentcarsbackend.CredentialsCheck"/>
     <sca:service xmi:id="_8fBLACVrEe-At8cv9Uf9aQ" name="users-check">
       <sca:interface.wsdl xmi:id="_8fKU8CVrEe-At8cv9Uf9aQ" interface="http://xmlns.example.com/20240608094806PLT#wsdl.interface(users-check)"/>
+    </sca:service>
+  </sca:component>
+  <sca:component xmi:id="_f909QCV9Ee-olP7vqxwgnA" name="ComponentCategory" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_f909QSV9Ee-olP7vqxwgnA" processName="rentcarsbackend.Category"/>
+    <sca:service xmi:id="_3uFGYCV9Ee-olP7vqxwgnA" name="category">
+      <sca:interface.wsdl xmi:id="_3uFGYSV9Ee-olP7vqxwgnA" interface="http://xmlns.example.com/20240608115721PLT#wsdl.interface(category)" scaext:wsdlLocation="../Processes/rentcarsbackend/Category.bwp"/>
     </sca:service>
   </sca:component>
 </sca:composite>

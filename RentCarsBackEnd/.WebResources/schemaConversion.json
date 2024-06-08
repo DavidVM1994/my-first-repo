@@ -1,0 +1,5 @@
+{"records": [{
+    "jsonSchemaLocation": "/RentCarsBackEnd/Service Descriptors/rentcarsbackend.Category-Category.json",
+    "conversionType": "linked",
+    "xsdSchemaTargetNamespace": "http://www.example.org/BackEnd_Category"
+}]}
