@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/BackEnd_Reservation" xmlns:tns="http://www.example.org/BackEnd_Reservation" elementFormDefault="qualified">
+
+<element name="PriceInput">
+  <complexType>
+    <sequence>
+      <element minOccurs="1" maxOccurs="1" name="IdCar" type="positiveInteger"/>
+      <element minOccurs="1" maxOccurs="1" name="FromDate" type="date"/>
+      <element minOccurs="1" maxOccurs="1" name="ToDate" type="date"/>
+      <element minOccurs="1" maxOccurs="1" name="Optional" type="boolean"/>
+    </sequence>
+  </complexType>
+</element>
+
+<element name="PriceOutput" type="decimal"/>
+
+
+</schema>

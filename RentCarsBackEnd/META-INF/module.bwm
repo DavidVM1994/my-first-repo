@@ -81,6 +81,18 @@
     </scaext:binding>
     <scact:bindingAdjunct xmi:id="_fuffzSWIEe-olP7vqxwgnA" bindingName="RestService2"/>
   </sca:service>
+  <sca:service xmi:id="_zuvkECcfEe-olP7vqxwgnA" name="prices" promote="ComponentPrices/prices">
+    <sca:interface.wsdl xmi:id="_zuvkFCcfEe-olP7vqxwgnA" interface="http://xmlns.example.com/20240610092050PLT#wsdl.interface(prices)" scaext:wsdlLocation="../Processes/rentcarsbackend/Prices.bwp"/>
+    <scaext:binding xsi:type="rest:RestServiceBinding" xmi:id="_zuvkFScfEe-olP7vqxwgnA" name="RestService3" path="/prices" docBasePath="http://localhost:7777/RentCarsBackEnd" docResourcePath="Prices" basePath="/" connector="rentcarsbackend.Users.Check" structuredData="true" technologyVersion="2.0" implementation="Service Descriptors/rentcarsbackend.Prices-Prices.json">
+      <operation xmi:id="_zuvkFycfEe-olP7vqxwgnA" operationName="post" nickname="post-prices" httpMethod="POST" notes="postPrices" responseStyle="element" requestStyle="element" outputPartName="PostPricesResponse">
+        <clientFormat>json</clientFormat>
+        <clientRequestFormat>json</clientRequestFormat>
+      </operation>
+      <parameters xmi:id="_zvM3ECcfEe-olP7vqxwgnA"/>
+      <advancedConfig xmi:id="_zuvkFicfEe-olP7vqxwgnA" blockingQueueSize="2147483647"/>
+    </scaext:binding>
+    <scact:bindingAdjunct xmi:id="_zuvkGCcfEe-olP7vqxwgnA" bindingName="RestService3"/>
+  </sca:service>
   <sca:property xmi:id="_eevOQCVrEe-At8cv9Uf9aQ" name="BW.DEPLOYMENTUNIT.TYPE" type="XMLSchema:string" scalable="true"/>
   <sca:property xmi:id="_ee3KECVrEe-At8cv9Uf9aQ" name="BW.APPNODE.NAME" type="XMLSchema:string" scalable="true"/>
   <sca:property xmi:id="_ee3KESVrEe-At8cv9Uf9aQ" name="BW.DEPLOYMENTUNIT.NAME" type="XMLSchema:string" scalable="true"/>
@@ -108,5 +120,14 @@
     <sca:service xmi:id="_fuffwCWIEe-olP7vqxwgnA" name="cars">
       <sca:interface.wsdl xmi:id="_fuffwSWIEe-olP7vqxwgnA" interface="http://xmlns.example.com/20240608130601PLT#wsdl.interface(cars)"/>
     </sca:service>
+  </sca:component>
+  <sca:component xmi:id="_9yumwCb5Ee-olP7vqxwgnA" name="ComponentPrices" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_9yumwSb5Ee-olP7vqxwgnA" processName="rentcarsbackend.Prices"/>
+    <sca:service xmi:id="_zupdcCcfEe-olP7vqxwgnA" name="prices">
+      <sca:interface.wsdl xmi:id="_zupdcScfEe-olP7vqxwgnA" interface="http://xmlns.example.com/20240610092050PLT#wsdl.interface(prices)" scaext:wsdlLocation="../Processes/rentcarsbackend/Prices.bwp"/>
+    </sca:service>
+  </sca:component>
+  <sca:component xmi:id="_iapy0CcvEe-olP7vqxwgnA" name="ComponentReservations" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_iapy0ScvEe-olP7vqxwgnA" processName="rentcarsbackend.Reservations"/>
   </sca:component>
 </sca:composite>

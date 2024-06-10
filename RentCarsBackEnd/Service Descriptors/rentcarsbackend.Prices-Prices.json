@@ -1,0 +1,61 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "version" : "1.0",
+    "title" : "Prices",
+    "description" : "Prices service"
+  },
+  "host" : "192.168.56.1:8080",
+  "basePath" : "/",
+  "schemes" : [ "http" ],
+  "paths" : {
+    "/prices" : {
+      "post" : {
+        "summary" : "postPrices",
+        "description" : "postPrices",
+        "operationId" : "post-prices",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "body",
+          "in" : "body",
+          "description" : "",
+          "schema" : {
+            "$ref" : "#/definitions/PriceInput"
+          },
+          "required" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "a integer to be returned",
+            "schema" : {
+              "type" : "integer"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions" : {
+    "PriceInput" : {
+      "type" : "object",
+      "required" : [ "Optional", "IdCar", "FromDate", "ToDate" ],
+      "properties" : {
+        "IdCar" : {
+          "type" : "string"
+        },
+        "FromDate" : {
+          "type" : "string",
+          "format" : "date"
+        },
+        "ToDate" : {
+          "type" : "string",
+          "format" : "date"
+        },
+        "Optional" : {
+          "type" : "boolean"
+        }
+      }
+    }
+  }
+}
