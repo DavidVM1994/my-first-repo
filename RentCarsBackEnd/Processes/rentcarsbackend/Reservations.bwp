@@ -67,18 +67,19 @@
         <task name="JDBCQuery2">
             <endingVariables>
                 <variable>JDBCQuery2-input</variable>
-                <variable>JDBCQuery2</variable>
             </endingVariables>
         </task>
         <task name="JDBCUpdate2">
             <endingVariables>
                 <variable>JDBCUpdate2-input</variable>
                 <variable>JDBCUpdate2</variable>
+                <variable>put</variable>
             </endingVariables>
         </task>
         <task name="Reply2">
             <endingVariables>
                 <variable>Reply2-input</variable>
+                <variable>JDBCQuery2</variable>
             </endingVariables>
         </task>
         <task name="deleteOut">
@@ -89,18 +90,19 @@
         <task name="JDBCQuery1">
             <endingVariables>
                 <variable>JDBCQuery1-input</variable>
-                <variable>JDBCQuery1</variable>
             </endingVariables>
         </task>
         <task name="Reply1">
             <endingVariables>
                 <variable>Reply1-input</variable>
+                <variable>JDBCQuery1</variable>
             </endingVariables>
         </task>
         <task name="JDBCUpdate1">
             <endingVariables>
                 <variable>JDBCUpdate1-input</variable>
                 <variable>JDBCUpdate1</variable>
+                <variable>delete</variable>
             </endingVariables>
         </task>
     </tibex:VariableDescriptor>
@@ -561,7 +563,19 @@
                     <sequence>
                         <element maxOccurs="unbounded" minOccurs="0" name="Record">
                             <complexType>
-                                <sequence/>
+                                <sequence>
+                                    <element maxOccurs="1" minOccurs="0"
+                                    name="id" nillable="false" type="int"/>
+                                    <element maxOccurs="1" minOccurs="0"
+                                    name="id_user" nillable="false" type="int"/>
+                                    <element maxOccurs="1" minOccurs="0"
+                                    name="id_car" nillable="false" type="int"/>
+                                    <element maxOccurs="1" minOccurs="0"
+                                    name="from_date"
+                                    nillable="false" type="date"/>
+                                    <element maxOccurs="1" minOccurs="0"
+                                    name="to_date" nillable="false" type="date"/>
+                                </sequence>
                             </complexType>
                         </element>
                     </sequence>
@@ -574,6 +588,8 @@
             <element name="jdbcUpdateActivityInput">
                 <complexType>
                     <sequence>
+                        <element maxOccurs="1" minOccurs="1" name="Id"
+                            nillable="true" type="int"/>
                         <element maxOccurs="1" minOccurs="0"
                             name="ServerTimeZone" type="string"/>
                         <element maxOccurs="1" minOccurs="0"
@@ -588,6 +604,8 @@
             <element name="jdbcQueryActivityInput">
                 <complexType>
                     <sequence>
+                        <element maxOccurs="1" minOccurs="1" name="Id"
+                            nillable="true" type="int"/>
                         <element maxOccurs="1" minOccurs="0"
                             name="ServerTimeZone" type="string"/>
                         <element maxOccurs="1" minOccurs="0"
@@ -606,7 +624,19 @@
                     <sequence>
                         <element maxOccurs="unbounded" minOccurs="0" name="Record">
                             <complexType>
-                                <sequence/>
+                                <sequence>
+                                    <element maxOccurs="1" minOccurs="0"
+                                    name="id" nillable="false" type="int"/>
+                                    <element maxOccurs="1" minOccurs="0"
+                                    name="id_user" nillable="false" type="int"/>
+                                    <element maxOccurs="1" minOccurs="0"
+                                    name="id_car" nillable="false" type="int"/>
+                                    <element maxOccurs="1" minOccurs="0"
+                                    name="from_date"
+                                    nillable="false" type="date"/>
+                                    <element maxOccurs="1" minOccurs="0"
+                                    name="to_date" nillable="false" type="date"/>
+                                </sequence>
                             </complexType>
                         </element>
                     </sequence>
@@ -619,6 +649,16 @@
             <element name="jdbcUpdateActivityInput">
                 <complexType>
                     <sequence>
+                        <element maxOccurs="1" minOccurs="1"
+                            name="IdUser" nillable="true" type="int"/>
+                        <element maxOccurs="1" minOccurs="1"
+                            name="IdCar" nillable="true" type="int"/>
+                        <element maxOccurs="1" minOccurs="1"
+                            name="FromDate" nillable="true" type="date"/>
+                        <element maxOccurs="1" minOccurs="1"
+                            name="ToDate" nillable="true" type="date"/>
+                        <element maxOccurs="1" minOccurs="1" name="Id"
+                            nillable="true" type="int"/>
                         <element maxOccurs="1" minOccurs="0"
                             name="ServerTimeZone" type="string"/>
                         <element maxOccurs="1" minOccurs="0"
@@ -662,6 +702,7 @@
             targetNamespace="http://xmlns.example.com/20240610154419PLT"
             xmlns:extns="http://www.example.org/BackEnd_Reservations"
             xmlns:extns1="http://tns.tibco.com/bw/REST"
+            xmlns:extns2="http://xmlns.example.com/Reservation/parameters"
             xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype"
             xmlns:tibex="http://www.tibco.com/bpel/2007/extensions"
             xmlns:tns="http://xmlns.example.com/20240610154419PLT"
@@ -672,6 +713,7 @@
             </plnk:partnerLinkType>
             <wsdl:import namespace="http://www.example.org/BackEnd_Reservations"/>
             <wsdl:import namespace="http://tns.tibco.com/bw/REST"/>
+            <wsdl:import namespace="http://xmlns.example.com/Reservation/parameters"/>
             <wsdl:message name="postRequest">
                 <wsdl:part element="extns:PostPutReservation"
                     name="PostReservationRequest" tibex:hasMultipleNamespaces="false"/>
@@ -707,6 +749,8 @@
                     name="PutReservationRequest" tibex:hasMultipleNamespaces="false"/>
                 <wsdl:part element="extns1:httpHeaders"
                     name="httpHeaders" tibex:source="bw.rest"/>
+                <wsdl:part element="extns2:reservationPutParameters"
+                    name="parameters" tibex:source="bw.rest"/>
             </wsdl:message>
             <wsdl:message name="putResponse">
                 <wsdl:part name="PutReservationResponse"
@@ -721,6 +765,8 @@
             <wsdl:message name="deleteRequest">
                 <wsdl:part element="extns1:httpHeaders"
                     name="httpHeaders" tibex:source="bw.rest"/>
+                <wsdl:part element="extns2:reservationDeleteParameters"
+                    name="parameters" tibex:source="bw.rest"/>
             </wsdl:message>
             <wsdl:message name="deleteResponse">
                 <wsdl:part name="msg"
@@ -1409,6 +1455,62 @@
                                     height="40"
                                     width="40"
                                     x="142"
+                                    xsi:type="notation:Bounds" y="10"/>
+                                    </children>
+
+                                    <children type="4002 com.tibco.bw.core.design.process.editor.Activity_4002_Empty">
+
+                                    <children type="4017">
+
+                                    <styles
+                                    fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+
+                                    <children type="4017">
+
+                                    <styles
+                                    fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+
+                                    <children type="4017">
+
+                                    <styles
+                                    fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+
+                                    <children type="4017">
+
+                                    <styles
+                                    fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+
+                                    <styles
+                                    fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+
+                                    <styles
+                                    backgroundColor="16777215"
+                                    gradientEndColor="50431"
+                                    gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
+
+                                    <element href="//0/@process/@activity/@activity/@activities.0/@messages.1/@activity/@activity/@activities.4"/>
+
+                                    <layoutConstraint
+                                    height="40"
+                                    width="40"
+                                    x="22"
                                     xsi:type="notation:Bounds" y="10"/>
                                     </children>
 
@@ -2492,6 +2594,17 @@
             <element href="//0/@process/@activity/@activity/@activities.0/@messages.1/@activity/@activity/@links/@children.0"/>
             <bendpoints points="[25, -5, -61, 0]$[62, 0, -24, 5]" xsi:type="notation:RelativeBendpoints"/>
         </edges>
+        <edges
+            source="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2/@children.1/@children.1/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2"
+            target="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2/@children.1/@children.1/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.1" type="4006">
+            <children type="6002">
+                <layoutConstraint xsi:type="notation:Location" y="40"/>
+            </children>
+            <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
+            <styles fontName="Segoe UI" xsi:type="notation:FontStyle"/>
+            <element href="//0/@process/@activity/@activity/@activities.0/@messages.1/@activity/@activity/@links/@children.1"/>
+            <bendpoints points="[25, -1, -80, 0]$[81, 0, -24, 1]" xsi:type="notation:RelativeBendpoints"/>
+        </edges>
     </notation:Diagram>
     <tibex:NamespaceRegistry enabled="true">
         <tibex:namespaceItem
@@ -2506,9 +2619,18 @@
             namespace="http://xmlns.example.com/20240610154419PLT" prefix="tns3"/>
         <tibex:namespaceItem
             namespace="http://www.tibco.com/namespaces/tnt/plugins/jdbc+1b8217d0-5350-4c0d-b957-c6ae79cf4d1f+input" prefix="tns4"/>
+        <tibex:namespaceItem
+            namespace="http://www.tibco.com/namespaces/tnt/plugins/jdbc+1072eafc-0afc-4bbc-9565-c52163486035+input" prefix="tns5"/>
+        <tibex:namespaceItem
+            namespace="http://www.tibco.com/namespaces/tnt/plugins/jdbc+bcd8a578-886d-4ba9-b202-4831f7a24f92+input" prefix="tns6"/>
+        <tibex:namespaceItem
+            namespace="http://www.tibco.com/namespaces/tnt/plugins/jdbc+23d71026-6554-4931-9b92-18a9f0d3d220+input" prefix="tns7"/>
+        <tibex:namespaceItem
+            namespace="http://www.tibco.com/namespaces/tnt/plugins/jdbc+3ea48c69-5819-420c-acaf-0c49559d31cd+input" prefix="tns8"/>
     </tibex:NamespaceRegistry>
     <bpws:import importType="http://www.w3.org/2001/XMLSchema" namespace="http://www.example.org/BackEnd_Reservations"/>
     <bpws:import importType="http://www.w3.org/2001/XMLSchema" namespace="http://tns.tibco.com/bw/REST"/>
+    <bpws:import importType="http://www.w3.org/2001/XMLSchema" namespace="http://xmlns.example.com/Reservation/parameters"/>
     <bpws:partnerLinks>
         <bpws:partnerLink myRole="use" name="reservation"
             partnerLinkType="ns0:partnerLinkType"
@@ -2791,6 +2913,7 @@
                         <bpws:flow name="flow2">
                             <bpws:links>
                                 <bpws:link name="JDBCQuery3TogetOut" tibex:linkType="SUCCESS"/>
+                                <bpws:link name="EmptyToJDBCQuery3" tibex:linkType="SUCCESS"/>
                             </bpws:links>
                             <bpws:empty name="OnMessageStart1"
                                 tibex:constructor="onMessageStart" tibex:xpdlId="cce9804d-e4d1-404e-9572-c8f4f536b02e"/>
@@ -2814,6 +2937,9 @@
                                     name="JDBCQuery3"
                                     outputVariable="JDBCQuery3"
                                     tibex:xpdlId="1b8217d0-5350-4c0d-b957-c6ae79cf4d1f" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
+                                    <bpws:targets>
+                                    <bpws:target linkName="EmptyToJDBCQuery3"/>
+                                    </bpws:targets>
                                     <bpws:sources>
                                     <bpws:source linkName="JDBCQuery3TogetOut"/>
                                     </bpws:sources>
@@ -2840,6 +2966,11 @@
                                     </tibex:config>
                                 </tibex:activityExtension>
                             </bpws:extensionActivity>
+                            <bpws:empty name="Empty" tibex:xpdlId="d4430de9-3081-4693-89f3-d4a0cd70cb34">
+                                <bpws:sources>
+                                    <bpws:source linkName="EmptyToJDBCQuery3"/>
+                                </bpws:sources>
+                            </bpws:empty>
                         </bpws:flow>
                     </bpws:scope>
                 </bpws:onMessage>
@@ -2850,9 +2981,9 @@
                         <bpws:flow name="flow3">
                             <bpws:links>
                                 <bpws:link
-                                    name="JDBCQuery2ToJDBCUpdate2" tibex:linkType="SUCCESS"/>
+                                    name="JDBCQuery2ToJDBCUpdate2" tibex:linkType="SUCCESSWITHNOCONDITION"/>
                                 <bpws:link name="JDBCUpdate2ToputOut" tibex:linkType="SUCCESS"/>
-                                <bpws:link name="JDBCQuery2ToReply2" tibex:linkType="SUCCESS"/>
+                                <bpws:link name="JDBCQuery2ToReply2" tibex:linkType="SUCCESSWITHCONDITION"/>
                             </bpws:links>
                             <bpws:empty name="OnMessageStart2"
                                 tibex:constructor="onMessageStart" tibex:xpdlId="7a73984e-529f-420a-908a-c94080ac50a8"/>
@@ -2864,25 +2995,41 @@
                                 tibex:xpdlId="6acc6178-1216-48cc-93be-48cf76419cec" variable="putOut-input">
                                 <tibex:inputBindings>
                                     <tibex:partBinding
-                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns3=&quot;http://xmlns.example.com/20240610154419PLT&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:template name=&quot;putOut-input&quot; match=&quot;/&quot;>&#xa;        &lt;tns3:putResponse/>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns3=&quot;http://xmlns.example.com/20240610154419PLT&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:template name=&quot;putOut-input&quot; match=&quot;/&quot;>&#xa;        &lt;PutReservationResponse>&#xa;            &lt;xsl:value-of select=&quot;true()&quot;/>&#xa;        &lt;/PutReservationResponse>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                                 </tibex:inputBindings>
+                                <tibex:inputBinding expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:tns3="http://xmlns.example.com/20240610154419PLT" version="2.0"&gt;&lt;xsl:template name="putOut-input" match="/"&gt;&lt;tns3:putResponse&gt;&lt;PutReservationResponse&gt;&lt;xsl:value-of select="true()"/&gt;&lt;/PutReservationResponse&gt;&lt;/tns3:putResponse&gt;&lt;/xsl:template&gt;&lt;/xsl:stylesheet&gt;</tibex:inputBinding>
                                 <bpws:targets>
                                     <bpws:target linkName="JDBCUpdate2ToputOut"/>
                                 </bpws:targets>
                             </bpws:reply>
                             <bpws:extensionActivity>
                                 <tibex:activityExtension
+                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns6=&quot;http://www.tibco.com/namespaces/tnt/plugins/jdbc+bcd8a578-886d-4ba9-b202-4831f7a24f92+input&quot; xmlns:tns9=&quot;http://xmlns.example.com/Reservation/parameters&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:param name=&quot;put&quot;/>&#xa;    &lt;xsl:template name=&quot;JDBCQuery2-input&quot; match=&quot;/&quot;>&#xa;        &lt;tns6:jdbcQueryActivityInput>&#xa;            &lt;Id>&#xa;                &lt;xsl:value-of select=&quot;xsd:int($put/parameters/tns9:reservationPutParameters/tns9:Id)&quot;/>&#xa;            &lt;/Id>&#xa;        &lt;/tns6:jdbcQueryActivityInput>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>"
+                                    expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"
                                     inputVariable="JDBCQuery2-input"
                                     name="JDBCQuery2"
                                     outputVariable="JDBCQuery2"
                                     tibex:xpdlId="bcd8a578-886d-4ba9-b202-4831f7a24f92" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
                                     <bpws:sources>
-                                    <bpws:source linkName="JDBCQuery2ToJDBCUpdate2"/>
-                                    <bpws:source linkName="JDBCQuery2ToReply2"/>
+                                    <bpws:source linkName="JDBCQuery2ToJDBCUpdate2">
+                                    <tibex:DesignExpression>
+                                    <tibex:expression
+                                    expression="##otherwise##" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"/>
+                                    </tibex:DesignExpression>
+                                    <bpws:transitionCondition expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"><![CDATA[##otherwise##]]></bpws:transitionCondition>
+                                    </bpws:source>
+                                    <bpws:source linkName="JDBCQuery2ToReply2">
+                                    <tibex:DesignExpression>
+                                    <tibex:expression
+                                    expression="count($JDBCQuery2/Record)=0" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"/>
+                                    </tibex:DesignExpression>
+                                    <bpws:transitionCondition expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"><![CDATA[count($JDBCQuery2/Record)=0]]></bpws:transitionCondition>
+                                    </bpws:source>
                                     </bpws:sources>
                                     <tibex:inputBindings>
                                     <tibex:inputBinding
-                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns5=&quot;http://www.tibco.com/namespaces/tnt/plugins/jdbc+bcd8a578-886d-4ba9-b202-4831f7a24f92+input&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:template name=&quot;JDBCQuery2-input&quot; match=&quot;/&quot;>&#xa;        &lt;tns5:jdbcQueryActivityInput/>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns6=&quot;http://www.tibco.com/namespaces/tnt/plugins/jdbc+bcd8a578-886d-4ba9-b202-4831f7a24f92+input&quot; xmlns:tns9=&quot;http://xmlns.example.com/Reservation/parameters&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:param name=&quot;put.parameters&quot;/>&#xa;    &lt;xsl:template name=&quot;JDBCQuery2-input&quot; match=&quot;/&quot;>&#xa;        &lt;tns6:jdbcQueryActivityInput>&#xa;            &lt;Id>&#xa;                &lt;xsl:value-of select=&quot;xsd:int($put.parameters/tns9:Id)&quot;/>&#xa;            &lt;/Id>&#xa;        &lt;/tns6:jdbcQueryActivityInput>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                                     </tibex:inputBindings>
                                     <tibex:config>
                                     <bwext:BWActivity
@@ -2896,7 +3043,38 @@
                                     <type href="http://ns.tibco.com/bw/palette/jdbc#//JDBCQueryActivity"/>
                                     <value maxRows="100"
                                     sharedResourceProperty="jdbcProperty"
-                                    timeout="10" xsi:type="jdbcPalette:JDBCQueryActivity"/>
+                                    sqlStatement="SELECT *&#xa;  FROM RESERVATION&#xa;  WHERE ID=?&#xa;"
+                                    timeout="10" xsi:type="jdbcPalette:JDBCQueryActivity">
+
+                                    <PreparedParameters
+                                    DataType="4"
+                                    DataTypeDisplayValue="INTEGER" ParameterName="Id"/>
+                                    <columnMetadata
+                                    columnIndex="1"
+                                    columnName="id"
+                                    dataType="4"
+                                    status="OptionalElement" typeName="INTEGER"/>
+                                    <columnMetadata
+                                    columnIndex="2"
+                                    columnName="id_user"
+                                    dataType="4"
+                                    status="OptionalElement" typeName="INTEGER"/>
+                                    <columnMetadata
+                                    columnIndex="3"
+                                    columnName="id_car"
+                                    dataType="4"
+                                    status="OptionalElement" typeName="INTEGER"/>
+                                    <columnMetadata
+                                    columnIndex="4"
+                                    columnName="from_date"
+                                    dataType="91"
+                                    status="OptionalElement" typeName="DATE"/>
+                                    <columnMetadata
+                                    columnIndex="5"
+                                    columnName="to_date"
+                                    dataType="91"
+                                    status="OptionalElement" typeName="DATE"/>
+                                    </value>
                                     </properties>
                                     </activityConfig>
                                     </bwext:BWActivity>
@@ -2905,6 +3083,8 @@
                             </bpws:extensionActivity>
                             <bpws:extensionActivity>
                                 <tibex:activityExtension
+                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns8=&quot;http://www.tibco.com/namespaces/tnt/plugins/jdbc+3ea48c69-5819-420c-acaf-0c49559d31cd+input&quot; xmlns:tns1=&quot;http://www.example.org/BackEnd_Reservations&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:tns=&quot;http://xmlns.example.com/Reservation/parameters&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;put&quot;/>&lt;xsl:template name=&quot;JDBCUpdate2-input&quot; match=&quot;/&quot;>&lt;tns8:jdbcUpdateActivityInput>&lt;IdUser>&lt;xsl:value-of select=&quot;xsd:int($put/PutReservationRequest/tns1:PostPutReservation/tns1:IdUser)&quot;/>&lt;/IdUser>&lt;IdCar>&lt;xsl:value-of select=&quot;xsd:int($put/PutReservationRequest/tns1:PostPutReservation/tns1:IdCar)&quot;/>&lt;/IdCar>&lt;FromDate>&lt;xsl:value-of select=&quot;$put/PutReservationRequest/tns1:PostPutReservation/tns1:FromDate&quot;/>&lt;/FromDate>&lt;ToDate>&lt;xsl:value-of select=&quot;$put/PutReservationRequest/tns1:PostPutReservation/tns1:ToDate&quot;/>&lt;/ToDate>&lt;Id>&lt;xsl:value-of select=&quot;xsd:int($put/parameters/tns:reservationPutParameters/tns:Id)&quot;/>&lt;/Id>&lt;/tns8:jdbcUpdateActivityInput>&lt;/xsl:template>&lt;/xsl:stylesheet>"
+                                    expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"
                                     inputVariable="JDBCUpdate2-input"
                                     name="JDBCUpdate2"
                                     outputVariable="JDBCUpdate2"
@@ -2917,7 +3097,7 @@
                                     </bpws:sources>
                                     <tibex:inputBindings>
                                     <tibex:inputBinding
-                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns5=&quot;http://www.tibco.com/namespaces/tnt/plugins/jdbc+3ea48c69-5819-420c-acaf-0c49559d31cd+input&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:template name=&quot;JDBCUpdate2-input&quot; match=&quot;/&quot;>&#xa;        &lt;tns5:jdbcUpdateActivityInput/>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns8=&quot;http://www.tibco.com/namespaces/tnt/plugins/jdbc+3ea48c69-5819-420c-acaf-0c49559d31cd+input&quot; xmlns:tns1=&quot;http://www.example.org/BackEnd_Reservations&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:tns=&quot;http://xmlns.example.com/Reservation/parameters&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:param name=&quot;put.PutReservationRequest&quot;/>&#xa;    &lt;xsl:param name=&quot;put.parameters&quot;/>&#xa;    &lt;xsl:template name=&quot;JDBCUpdate2-input&quot; match=&quot;/&quot;>&#xa;        &lt;tns8:jdbcUpdateActivityInput>&#xa;            &lt;IdUser>&#xa;                &lt;xsl:value-of select=&quot;xsd:int($put.PutReservationRequest/tns1:IdUser)&quot;/>&#xa;            &lt;/IdUser>&#xa;            &lt;IdCar>&#xa;                &lt;xsl:value-of select=&quot;xsd:int($put.PutReservationRequest/tns1:IdCar)&quot;/>&#xa;            &lt;/IdCar>&#xa;            &lt;FromDate>&#xa;                &lt;xsl:value-of select=&quot;$put.PutReservationRequest/tns1:FromDate&quot;/>&#xa;            &lt;/FromDate>&#xa;            &lt;ToDate>&#xa;                &lt;xsl:value-of select=&quot;$put.PutReservationRequest/tns1:ToDate&quot;/>&#xa;            &lt;/ToDate>&#xa;            &lt;Id>&#xa;                &lt;xsl:value-of select=&quot;xsd:int($put.parameters/tns:Id)&quot;/>&#xa;            &lt;/Id>&#xa;        &lt;/tns8:jdbcUpdateActivityInput>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                                     </tibex:inputBindings>
                                     <tibex:config>
                                     <bwext:BWActivity
@@ -2931,7 +3111,29 @@
                                     <type href="http://ns.tibco.com/bw/palette/jdbc#//JDBCUpdateActivity"/>
                                     <value
                                     sharedResourceProperty="jdbcProperty"
-                                    timeout="10" xsi:type="jdbcPalette:JDBCUpdateActivity"/>
+                                    sqlStatement="UPDATE RESERVATION&#xa;  SET Id_USER=?, ID_CAR=?,FROM_DATE=?,TO_DATE=?&#xa;  WHERE ID=?"
+                                    timeout="10" xsi:type="jdbcPalette:JDBCUpdateActivity">
+
+                                    <PreparedParameters
+                                    DataType="4"
+                                    DataTypeDisplayValue="INTEGER" ParameterName="IdUser"/>
+
+                                    <PreparedParameters
+                                    DataType="4"
+                                    DataTypeDisplayValue="INTEGER" ParameterName="IdCar"/>
+
+                                    <PreparedParameters
+                                    DataType="91"
+                                    DataTypeDisplayValue="DATE" ParameterName="FromDate"/>
+
+                                    <PreparedParameters
+                                    DataType="91"
+                                    DataTypeDisplayValue="DATE" ParameterName="ToDate"/>
+
+                                    <PreparedParameters
+                                    DataType="4"
+                                    DataTypeDisplayValue="INTEGER" ParameterName="Id"/>
+                                    </value>
                                     </properties>
                                     </activityConfig>
                                     </bwext:BWActivity>
@@ -2961,9 +3163,9 @@
                     <bpws:scope name="scope4">
                         <bpws:flow name="flow4">
                             <bpws:links>
-                                <bpws:link name="JDBCQuery1ToReply1" tibex:linkType="SUCCESS"/>
+                                <bpws:link name="JDBCQuery1ToReply1" tibex:linkType="SUCCESSWITHCONDITION"/>
                                 <bpws:link
-                                    name="JDBCQuery1ToJDBCUpdate1" tibex:linkType="SUCCESS"/>
+                                    name="JDBCQuery1ToJDBCUpdate1" tibex:linkType="SUCCESSWITHNOCONDITION"/>
                                 <bpws:link name="JDBCUpdate1TodeleteOut" tibex:linkType="SUCCESS"/>
                             </bpws:links>
                             <bpws:empty name="OnMessageStart3"
@@ -2977,25 +3179,41 @@
                                 tibex:xpdlId="92a72be1-95f1-40a6-9929-7eae1a543ca2" variable="deleteOut-input">
                                 <tibex:inputBindings>
                                     <tibex:partBinding
-                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns3=&quot;http://xmlns.example.com/20240610154419PLT&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:template name=&quot;deleteOut-input&quot; match=&quot;/&quot;>&#xa;        &lt;tns3:deleteResponse/>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns3=&quot;http://xmlns.example.com/20240610154419PLT&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:template name=&quot;deleteOut-input&quot; match=&quot;/&quot;>&#xa;        &lt;msg>&#xa;            &lt;xsl:value-of select=&quot;true()&quot;/>&#xa;        &lt;/msg>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                                 </tibex:inputBindings>
+                                <tibex:inputBinding expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:tns3="http://xmlns.example.com/20240610154419PLT" version="2.0"&gt;&lt;xsl:template name="deleteOut-input" match="/"&gt;&lt;tns3:deleteResponse&gt;&lt;msg&gt;&lt;xsl:value-of select="true()"/&gt;&lt;/msg&gt;&lt;/tns3:deleteResponse&gt;&lt;/xsl:template&gt;&lt;/xsl:stylesheet&gt;</tibex:inputBinding>
                                 <bpws:targets>
                                     <bpws:target linkName="JDBCUpdate1TodeleteOut"/>
                                 </bpws:targets>
                             </bpws:reply>
                             <bpws:extensionActivity>
                                 <tibex:activityExtension
+                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns5=&quot;http://www.tibco.com/namespaces/tnt/plugins/jdbc+1072eafc-0afc-4bbc-9565-c52163486035+input&quot; xmlns:tns9=&quot;http://xmlns.example.com/Reservation/parameters&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:param name=&quot;delete&quot;/>&#xa;    &lt;xsl:template name=&quot;JDBCQuery1-input&quot; match=&quot;/&quot;>&#xa;        &lt;tns5:jdbcQueryActivityInput>&#xa;            &lt;Id>&#xa;                &lt;xsl:value-of select=&quot;xsd:int($delete/parameters/tns9:reservationDeleteParameters/tns9:Id)&quot;/>&#xa;            &lt;/Id>&#xa;        &lt;/tns5:jdbcQueryActivityInput>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>"
+                                    expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"
                                     inputVariable="JDBCQuery1-input"
                                     name="JDBCQuery1"
                                     outputVariable="JDBCQuery1"
                                     tibex:xpdlId="1072eafc-0afc-4bbc-9565-c52163486035" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
                                     <bpws:sources>
-                                    <bpws:source linkName="JDBCQuery1ToReply1"/>
-                                    <bpws:source linkName="JDBCQuery1ToJDBCUpdate1"/>
+                                    <bpws:source linkName="JDBCQuery1ToReply1">
+                                    <tibex:DesignExpression>
+                                    <tibex:expression
+                                    expression="count($JDBCQuery1/Record)=0" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"/>
+                                    </tibex:DesignExpression>
+                                    <bpws:transitionCondition expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"><![CDATA[count($JDBCQuery1/Record)=0]]></bpws:transitionCondition>
+                                    </bpws:source>
+                                    <bpws:source linkName="JDBCQuery1ToJDBCUpdate1">
+                                    <tibex:DesignExpression>
+                                    <tibex:expression
+                                    expression="##otherwise##" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"/>
+                                    </tibex:DesignExpression>
+                                    <bpws:transitionCondition expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"><![CDATA[##otherwise##]]></bpws:transitionCondition>
+                                    </bpws:source>
                                     </bpws:sources>
                                     <tibex:inputBindings>
                                     <tibex:inputBinding
-                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns5=&quot;http://www.tibco.com/namespaces/tnt/plugins/jdbc+1072eafc-0afc-4bbc-9565-c52163486035+input&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:template name=&quot;JDBCQuery1-input&quot; match=&quot;/&quot;>&#xa;        &lt;tns5:jdbcQueryActivityInput/>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns5=&quot;http://www.tibco.com/namespaces/tnt/plugins/jdbc+1072eafc-0afc-4bbc-9565-c52163486035+input&quot; xmlns:tns9=&quot;http://xmlns.example.com/Reservation/parameters&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:param name=&quot;delete.parameters&quot;/>&#xa;    &lt;xsl:template name=&quot;JDBCQuery1-input&quot; match=&quot;/&quot;>&#xa;        &lt;tns5:jdbcQueryActivityInput>&#xa;            &lt;Id>&#xa;                &lt;xsl:value-of select=&quot;xsd:int($delete.parameters/tns9:Id)&quot;/>&#xa;            &lt;/Id>&#xa;        &lt;/tns5:jdbcQueryActivityInput>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                                     </tibex:inputBindings>
                                     <tibex:config>
                                     <bwext:BWActivity
@@ -3015,6 +3233,31 @@
                                     <PreparedParameters
                                     DataType="4"
                                     DataTypeDisplayValue="INTEGER" ParameterName="Id"/>
+                                    <columnMetadata
+                                    columnIndex="1"
+                                    columnName="id"
+                                    dataType="4"
+                                    status="OptionalElement" typeName="INTEGER"/>
+                                    <columnMetadata
+                                    columnIndex="2"
+                                    columnName="id_user"
+                                    dataType="4"
+                                    status="OptionalElement" typeName="INTEGER"/>
+                                    <columnMetadata
+                                    columnIndex="3"
+                                    columnName="id_car"
+                                    dataType="4"
+                                    status="OptionalElement" typeName="INTEGER"/>
+                                    <columnMetadata
+                                    columnIndex="4"
+                                    columnName="from_date"
+                                    dataType="91"
+                                    status="OptionalElement" typeName="DATE"/>
+                                    <columnMetadata
+                                    columnIndex="5"
+                                    columnName="to_date"
+                                    dataType="91"
+                                    status="OptionalElement" typeName="DATE"/>
                                     </value>
                                     </properties>
                                     </activityConfig>
@@ -3038,6 +3281,8 @@
                             </bpws:reply>
                             <bpws:extensionActivity>
                                 <tibex:activityExtension
+                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns7=&quot;http://www.tibco.com/namespaces/tnt/plugins/jdbc+23d71026-6554-4931-9b92-18a9f0d3d220+input&quot; xmlns:tns9=&quot;http://xmlns.example.com/Reservation/parameters&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:param name=&quot;delete&quot;/>&#xa;    &lt;xsl:template name=&quot;JDBCUpdate1-input&quot; match=&quot;/&quot;>&#xa;        &lt;tns7:jdbcUpdateActivityInput>&#xa;            &lt;Id>&#xa;                &lt;xsl:value-of select=&quot;xsd:int($delete/parameters/tns9:reservationDeleteParameters/tns9:Id)&quot;/>&#xa;            &lt;/Id>&#xa;        &lt;/tns7:jdbcUpdateActivityInput>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>"
+                                    expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"
                                     inputVariable="JDBCUpdate1-input"
                                     name="JDBCUpdate1"
                                     outputVariable="JDBCUpdate1"
@@ -3050,7 +3295,7 @@
                                     </bpws:sources>
                                     <tibex:inputBindings>
                                     <tibex:inputBinding
-                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns5=&quot;http://www.tibco.com/namespaces/tnt/plugins/jdbc+23d71026-6554-4931-9b92-18a9f0d3d220+input&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:template name=&quot;JDBCUpdate1-input&quot; match=&quot;/&quot;>&#xa;        &lt;tns5:jdbcUpdateActivityInput/>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns7=&quot;http://www.tibco.com/namespaces/tnt/plugins/jdbc+23d71026-6554-4931-9b92-18a9f0d3d220+input&quot; xmlns:tns9=&quot;http://xmlns.example.com/Reservation/parameters&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:param name=&quot;delete.parameters&quot;/>&#xa;    &lt;xsl:template name=&quot;JDBCUpdate1-input&quot; match=&quot;/&quot;>&#xa;        &lt;tns7:jdbcUpdateActivityInput>&#xa;            &lt;Id>&#xa;                &lt;xsl:value-of select=&quot;xsd:int($delete.parameters/tns9:Id)&quot;/>&#xa;            &lt;/Id>&#xa;        &lt;/tns7:jdbcUpdateActivityInput>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                                     </tibex:inputBindings>
                                     <tibex:config>
                                     <bwext:BWActivity
@@ -3064,7 +3309,13 @@
                                     <type href="http://ns.tibco.com/bw/palette/jdbc#//JDBCUpdateActivity"/>
                                     <value
                                     sharedResourceProperty="jdbcProperty"
-                                    timeout="10" xsi:type="jdbcPalette:JDBCUpdateActivity"/>
+                                    sqlStatement="DELETE FROM RESERVATION &#xd;&#xa;WHERE ID=?"
+                                    timeout="10" xsi:type="jdbcPalette:JDBCUpdateActivity">
+
+                                    <PreparedParameters
+                                    DataType="4"
+                                    DataTypeDisplayValue="INTEGER" ParameterName="Id"/>
+                                    </value>
                                     </properties>
                                     </activityConfig>
                                     </bwext:BWActivity>
