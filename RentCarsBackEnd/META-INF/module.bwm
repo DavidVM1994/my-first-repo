@@ -101,6 +101,13 @@
         <clientRequestFormat>json</clientRequestFormat>
       </operation>
       <operation xmi:id="_Bj5Jcyc1Ee-olP7vqxwgnA" operationName="get" nickname="get-reservation" httpMethod="GET" notes="getReservation" responseStyle="element" outputPartName="GetReservationResponse">
+        <parameters xmi:id="_ta1HACfEEe-p35kmZhW1kA">
+          <parameterMapping xmi:id="_ta1HASfEEe-p35kmZhW1kA" parameterName="Id" parameterType="Query" dataType="integer#int32"/>
+          <parameterMapping xmi:id="_vxk78CfEEe-p35kmZhW1kA" parameterName="IdUser" parameterType="Query" dataType="integer#int32"/>
+          <parameterMapping xmi:id="_xt0mMCfEEe-p35kmZhW1kA" parameterName="IdCar" parameterType="Query" dataType="integer#int32"/>
+          <parameterMapping xmi:id="_z_zP4CfEEe-p35kmZhW1kA" parameterName="FromDate" parameterType="Query" dataType="string#date"/>
+          <parameterMapping xmi:id="_3Kvh4CfEEe-p35kmZhW1kA" parameterName="ToDate" parameterType="Query" dataType="string#date"/>
+        </parameters>
         <clientFormat>json</clientFormat>
         <clientRequestFormat>json</clientRequestFormat>
       </operation>

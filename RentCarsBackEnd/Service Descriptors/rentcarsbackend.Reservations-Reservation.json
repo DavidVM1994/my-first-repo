@@ -40,7 +40,42 @@
         "operationId" : "get-reservation",
         "consumes" : [ "application/json" ],
         "produces" : [ "application/json" ],
-        "parameters" : [ ],
+        "parameters" : [ {
+          "name" : "IdCar",
+          "in" : "query",
+          "description" : "",
+          "type" : "integer",
+          "format" : "int32",
+          "required" : false
+        }, {
+          "name" : "FromDate",
+          "in" : "query",
+          "description" : "",
+          "type" : "string",
+          "format" : "date",
+          "required" : false
+        }, {
+          "name" : "ToDate",
+          "in" : "query",
+          "description" : "",
+          "type" : "string",
+          "format" : "date",
+          "required" : false
+        }, {
+          "name" : "Id",
+          "in" : "query",
+          "description" : "",
+          "type" : "integer",
+          "format" : "int32",
+          "required" : false
+        }, {
+          "name" : "IdUser",
+          "in" : "query",
+          "description" : "",
+          "type" : "integer",
+          "format" : "int32",
+          "required" : false
+        } ],
         "responses" : {
           "200" : {
             "description" : "a GetReservations to be returned",
