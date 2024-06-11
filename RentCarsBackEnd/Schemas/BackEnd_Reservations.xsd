@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/BackEnd_Reservations" xmlns:tns="http://www.example.org/BackEnd_Reservations" elementFormDefault="qualified">
+
+<element name="PostPutReservation">
+  <complexType>
+    <sequence>
+      <element minOccurs="1" maxOccurs="1" name="IdUser" type="positiveInteger"/>
+      <element minOccurs="1" maxOccurs="1" name="IdCar" type="positiveInteger"/>
+      <element minOccurs="1" maxOccurs="1" name="FromDate" type="date"/>
+      <element minOccurs="1" maxOccurs="1" name="ToDate" type="date"/>
+    </sequence>
+  </complexType>
+</element>
+
+<element name="GetReservation">
+  <complexType>
+    <sequence>
+      <element minOccurs="1" maxOccurs="1" name="Id" type="positiveInteger"/>
+      <element minOccurs="1" maxOccurs="1" name="IdUser" type="positiveInteger"/>
+      <element minOccurs="1" maxOccurs="1" name="IdCar" type="positiveInteger"/>
+      <element minOccurs="1" maxOccurs="1" name="FromDate" type="date"/>
+      <element minOccurs="1" maxOccurs="1" name="ToDate" type="date"/>
+    </sequence>
+  </complexType>
+</element>
+
+<element name="GetReservations">
+  <complexType>
+    <sequence>
+      <element minOccurs="0" maxOccurs="unbounded" ref="tns:GetReservation"/>
+    </sequence>
+  </complexType>
+</element>
+
+</schema>

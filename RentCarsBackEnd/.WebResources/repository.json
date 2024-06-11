@@ -20,6 +20,10 @@
         {
             "location": "Service Descriptors/rentcarsbackend.Prices-Prices.json",
             "type": "generated"
+        },
+        {
+            "location": "Service Descriptors/rentcarsbackend.Reservations-Reservation.json",
+            "type": "generated"
         }
     ]
 }

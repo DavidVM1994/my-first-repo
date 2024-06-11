@@ -1,0 +1,166 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "version" : "1.0",
+    "title" : "Reservation",
+    "description" : "Reservation service"
+  },
+  "host" : "192.168.56.1:8080",
+  "basePath" : "/",
+  "schemes" : [ "http" ],
+  "paths" : {
+    "/reservation" : {
+      "post" : {
+        "summary" : "postReservation",
+        "description" : "postReservation",
+        "operationId" : "post-reservation",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "body",
+          "in" : "body",
+          "description" : "",
+          "schema" : {
+            "$ref" : "#/definitions/PostPutReservation"
+          },
+          "required" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "post response",
+            "schema" : {
+              "type" : "boolean"
+            }
+          }
+        }
+      },
+      "get" : {
+        "summary" : "getReservation",
+        "description" : "getReservation",
+        "operationId" : "get-reservation",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ ],
+        "responses" : {
+          "200" : {
+            "description" : "a GetReservations to be returned",
+            "schema" : {
+              "$ref" : "#/definitions/GetReservations"
+            }
+          }
+        }
+      },
+      "put" : {
+        "summary" : "putReservation",
+        "description" : "putReservation",
+        "operationId" : "put-reservation",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "body",
+          "in" : "body",
+          "description" : "",
+          "schema" : {
+            "$ref" : "#/definitions/PostPutReservation"
+          },
+          "required" : true
+        }, {
+          "name" : "Id",
+          "in" : "query",
+          "description" : "",
+          "type" : "integer",
+          "format" : "int32",
+          "required" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "put response",
+            "schema" : {
+              "type" : "boolean"
+            }
+          }
+        }
+      },
+      "delete" : {
+        "summary" : "deleteReservation",
+        "description" : "deleteReservation",
+        "operationId" : "delete-reservation",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "Id",
+          "in" : "query",
+          "description" : "",
+          "type" : "integer",
+          "format" : "int32",
+          "required" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "delete response",
+            "schema" : {
+              "type" : "boolean"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions" : {
+    "PostPutReservation" : {
+      "type" : "object",
+      "required" : [ "IdCar", "FromDate", "ToDate", "IdUser" ],
+      "properties" : {
+        "IdUser" : {
+          "type" : "string"
+        },
+        "IdCar" : {
+          "type" : "string"
+        },
+        "FromDate" : {
+          "type" : "string",
+          "format" : "date"
+        },
+        "ToDate" : {
+          "type" : "string",
+          "format" : "date"
+        }
+      }
+    },
+    "GetReservation" : {
+      "type" : "object",
+      "required" : [ "IdCar", "FromDate", "ToDate", "Id", "IdUser" ],
+      "properties" : {
+        "Id" : {
+          "type" : "string"
+        },
+        "IdUser" : {
+          "type" : "string"
+        },
+        "IdCar" : {
+          "type" : "string"
+        },
+        "FromDate" : {
+          "type" : "string",
+          "format" : "date"
+        },
+        "ToDate" : {
+          "type" : "string",
+          "format" : "date"
+        }
+      }
+    },
+    "GetReservations" : {
+      "type" : "object",
+      "properties" : {
+        "GetReservation" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/GetReservation",
+            "uniqueItems" : false
+          }
+        }
+      }
+    }
+  }
+}
