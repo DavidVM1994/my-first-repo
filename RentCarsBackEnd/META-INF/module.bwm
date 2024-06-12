@@ -7,8 +7,8 @@
         <clientFormat>json</clientFormat>
         <clientRequestFormat>json</clientRequestFormat>
       </operation>
-      <parameters xmi:id="_8gNd0CVrEe-At8cv9Uf9aQ">
-        <parameterMapping xmi:id="_8gNd0SVrEe-At8cv9Uf9aQ" parameterName="username" parameterType="Path" required="true"/>
+      <parameters xmi:id="_Ps_DoCf8Ee-p35kmZhW1kA">
+        <parameterMapping xmi:id="_Ps_DoSf8Ee-p35kmZhW1kA" parameterName="username" parameterType="Path" dataType="string" required="true"/>
       </parameters>
       <advancedConfig xmi:id="_8fnA4SVrEe-At8cv9Uf9aQ" blockingQueueSize="2147483647"/>
     </scaext:binding>
@@ -58,6 +58,8 @@
         <parameters xmi:id="_2O-DECWIEe-olP7vqxwgnA">
           <parameterMapping xmi:id="_2O-DESWIEe-olP7vqxwgnA" parameterName="Id" parameterType="Query" dataType="integer#int32"/>
           <parameterMapping xmi:id="_38WK4CWIEe-olP7vqxwgnA" parameterName="Category" parameterType="Query" dataType="string"/>
+          <parameterMapping xmi:id="_6a91ECiLEe-p35kmZhW1kA" parameterName="Brand" parameterType="Query" dataType="string"/>
+          <parameterMapping xmi:id="_75tD8CiLEe-p35kmZhW1kA" parameterName="Model" parameterType="Query" dataType="string"/>
         </parameters>
         <clientFormat>json</clientFormat>
         <clientRequestFormat>json</clientRequestFormat>

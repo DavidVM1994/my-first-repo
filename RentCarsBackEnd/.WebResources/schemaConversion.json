@@ -18,5 +18,10 @@
         "jsonSchemaLocation": "/RentCarsBackEnd/Service Descriptors/rentcarsbackend.Reservations-Reservation.json",
         "conversionType": "linked",
         "xsdSchemaTargetNamespace": "http://www.example.org/BackEnd_Reservations"
+    },
+    {
+        "jsonSchemaLocation": "/RentCarsBackEnd/Service Descriptors/rentcarsbackend.CredentialsCheck-Users-Check.json",
+        "conversionType": "linked",
+        "xsdSchemaTargetNamespace": "http://www.example.org/BackEnd_Users"
     }
 ]}
