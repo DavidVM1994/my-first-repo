@@ -407,6 +407,18 @@
                             name="FromDate" nillable="true" type="date"/>
                         <element maxOccurs="1" minOccurs="1"
                             name="ToDate" nillable="true" type="date"/>
+                        <element maxOccurs="1" minOccurs="1"
+                            name="FromDate" nillable="true" type="date"/>
+                        <element maxOccurs="1" minOccurs="1"
+                            name="FromDate" nillable="true" type="date"/>
+                        <element maxOccurs="1" minOccurs="1"
+                            name="FromDate" nillable="true" type="date"/>
+                        <element maxOccurs="1" minOccurs="1"
+                            name="ToDate" nillable="true" type="date"/>
+                        <element maxOccurs="1" minOccurs="1"
+                            name="FromDate" nillable="true" type="date"/>
+                        <element maxOccurs="1" minOccurs="1"
+                            name="ToDate" nillable="true" type="date"/>
                         <element maxOccurs="1" minOccurs="0"
                             name="ServerTimeZone" type="string"/>
                         <element maxOccurs="1" minOccurs="0"
@@ -5190,7 +5202,7 @@
                             </bpws:reply>
                             <bpws:extensionActivity>
                                 <tibex:activityExtension
-                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns=&quot;http://www.tibco.com/namespaces/tnt/plugins/jdbc+9bcb2105-7f54-422c-ba81-2a66e9f23955+input&quot; xmlns:tns1=&quot;http://www.example.org/BackEnd_Reservations&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;post&quot;/>&lt;xsl:template name=&quot;JDBCQuery-input&quot; match=&quot;/&quot;>&lt;tns:jdbcQueryActivityInput>&lt;IdCar>&lt;xsl:value-of select=&quot;xsd:int($post/PostReservationRequest/tns1:PostPutReservation/tns1:IdCar)&quot;/>&lt;/IdCar>&lt;FromDate>&lt;xsl:value-of select=&quot;$post/PostReservationRequest/tns1:PostPutReservation/tns1:FromDate&quot;/>&lt;/FromDate>&lt;ToDate>&lt;xsl:value-of select=&quot;$post/PostReservationRequest/tns1:PostPutReservation/tns1:ToDate&quot;/>&lt;/ToDate>&lt;/tns:jdbcQueryActivityInput>&lt;/xsl:template>&lt;/xsl:stylesheet>"
+                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns=&quot;http://www.tibco.com/namespaces/tnt/plugins/jdbc+9bcb2105-7f54-422c-ba81-2a66e9f23955+input&quot; xmlns:tns1=&quot;http://www.example.org/BackEnd_Reservations&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;post&quot;/>&lt;xsl:template name=&quot;JDBCQuery-input&quot; match=&quot;/&quot;>&lt;tns:jdbcQueryActivityInput>&lt;IdCar>&lt;xsl:value-of select=&quot;xsd:int($post/PostReservationRequest/tns1:PostPutReservation/tns1:IdCar)&quot;/>&lt;/IdCar>&lt;FromDate>&lt;xsl:value-of select=&quot;$post/PostReservationRequest/tns1:PostPutReservation/tns1:FromDate&quot;/>&lt;/FromDate>&lt;ToDate>&lt;xsl:value-of select=&quot;$post/PostReservationRequest/tns1:PostPutReservation/tns1:ToDate&quot;/>&lt;/ToDate>&lt;FromDate>&lt;xsl:value-of select=&quot;$post/PostReservationRequest/tns1:PostPutReservation/tns1:FromDate&quot;/>&lt;/FromDate>&lt;FromDate>&lt;xsl:value-of select=&quot;$post/PostReservationRequest/tns1:PostPutReservation/tns1:FromDate&quot;/>&lt;/FromDate>&lt;FromDate>&lt;xsl:value-of select=&quot;$post/PostReservationRequest/tns1:PostPutReservation/tns1:FromDate&quot;/>&lt;/FromDate>&lt;ToDate>&lt;xsl:value-of select=&quot;$post/PostReservationRequest/tns1:PostPutReservation/tns1:ToDate&quot;/>&lt;/ToDate>&lt;FromDate>&lt;xsl:value-of select=&quot;$post/PostReservationRequest/tns1:PostPutReservation/tns1:FromDate&quot;/>&lt;/FromDate>&lt;ToDate>&lt;xsl:value-of select=&quot;$post/PostReservationRequest/tns1:PostPutReservation/tns1:ToDate&quot;/>&lt;/ToDate>&lt;/tns:jdbcQueryActivityInput>&lt;/xsl:template>&lt;/xsl:stylesheet>"
                                     expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"
                                     inputVariable="JDBCQuery-input"
                                     name="JDBCQuery"
@@ -5214,7 +5226,7 @@
                                     </bpws:sources>
                                     <tibex:inputBindings>
                                     <tibex:inputBinding
-                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns=&quot;http://www.tibco.com/namespaces/tnt/plugins/jdbc+9bcb2105-7f54-422c-ba81-2a66e9f23955+input&quot; xmlns:tns1=&quot;http://www.example.org/BackEnd_Reservations&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:param name=&quot;post.PostReservationRequest&quot;/>&#xa;    &lt;xsl:template name=&quot;JDBCQuery-input&quot; match=&quot;/&quot;>&#xa;        &lt;tns:jdbcQueryActivityInput>&#xa;            &lt;IdCar>&#xa;                &lt;xsl:value-of select=&quot;xsd:int($post.PostReservationRequest/tns1:IdCar)&quot;/>&#xa;            &lt;/IdCar>&#xa;            &lt;FromDate>&#xa;                &lt;xsl:value-of select=&quot;$post.PostReservationRequest/tns1:FromDate&quot;/>&#xa;            &lt;/FromDate>&#xa;            &lt;ToDate>&#xa;                &lt;xsl:value-of select=&quot;$post.PostReservationRequest/tns1:ToDate&quot;/>&#xa;            &lt;/ToDate>&#xa;        &lt;/tns:jdbcQueryActivityInput>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns=&quot;http://www.tibco.com/namespaces/tnt/plugins/jdbc+9bcb2105-7f54-422c-ba81-2a66e9f23955+input&quot; xmlns:tns1=&quot;http://www.example.org/BackEnd_Reservations&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:param name=&quot;post.PostReservationRequest&quot;/>&#xa;    &lt;xsl:template name=&quot;JDBCQuery-input&quot; match=&quot;/&quot;>&#xa;        &lt;tns:jdbcQueryActivityInput>&#xa;            &lt;IdCar>&#xa;                &lt;xsl:value-of select=&quot;xsd:int($post.PostReservationRequest/tns1:IdCar)&quot;/>&#xa;            &lt;/IdCar>&#xa;            &lt;FromDate>&#xa;                &lt;xsl:value-of select=&quot;$post.PostReservationRequest/tns1:FromDate&quot;/>&#xa;            &lt;/FromDate>&#xa;            &lt;ToDate>&#xa;                &lt;xsl:value-of select=&quot;$post.PostReservationRequest/tns1:ToDate&quot;/>&#xa;            &lt;/ToDate>&#xa;            &lt;FromDate>&#xa;                &lt;xsl:value-of select=&quot;$post.PostReservationRequest/tns1:FromDate&quot;/>&#xa;            &lt;/FromDate>&#xa;            &lt;FromDate>&#xa;                &lt;xsl:value-of select=&quot;$post.PostReservationRequest/tns1:FromDate&quot;/>&#xa;            &lt;/FromDate>&#xa;            &lt;FromDate>&#xa;                &lt;xsl:value-of select=&quot;$post.PostReservationRequest/tns1:FromDate&quot;/>&#xa;            &lt;/FromDate>&#xa;            &lt;ToDate>&#xa;                &lt;xsl:value-of select=&quot;$post.PostReservationRequest/tns1:ToDate&quot;/>&#xa;            &lt;/ToDate>&#xa;            &lt;FromDate>&#xa;                &lt;xsl:value-of select=&quot;$post.PostReservationRequest/tns1:FromDate&quot;/>&#xa;            &lt;/FromDate>&#xa;            &lt;ToDate>&#xa;                &lt;xsl:value-of select=&quot;$post.PostReservationRequest/tns1:ToDate&quot;/>&#xa;            &lt;/ToDate>&#xa;        &lt;/tns:jdbcQueryActivityInput>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                                     </tibex:inputBindings>
                                     <tibex:config>
                                     <bwext:BWActivity
@@ -5228,12 +5240,36 @@
                                     <type href="http://ns.tibco.com/bw/palette/jdbc#//JDBCQueryActivity"/>
                                     <value maxRows="100"
                                     sharedResourceProperty="jdbcProperty"
-                                    sqlStatement="SELECT *&#xa;  FROM RESERVATION&#xa;  WHERE ID_CAR=? AND FROM_DATE=? AND TO_DATE=?&#xa;"
+                                    sqlStatement="SELECT *&#xa;  FROM RESERVATION&#xa;  WHERE ID_CAR=?&#xa;  AND ((FROM_DATE>=? AND TO_DATE>=?) OR (FROM_DATE&lt;=? AND TO_DATE>=?) OR (FROM_DATE&lt;=? AND TO_DATE>=?) OR (FROM_DATE>=? AND TO_DATE&lt;=?))"
                                     timeout="10" xsi:type="jdbcPalette:JDBCQueryActivity">
 
                                     <PreparedParameters
                                     DataType="4"
                                     DataTypeDisplayValue="INTEGER" ParameterName="IdCar"/>
+
+                                    <PreparedParameters
+                                    DataType="91"
+                                    DataTypeDisplayValue="DATE" ParameterName="FromDate"/>
+
+                                    <PreparedParameters
+                                    DataType="91"
+                                    DataTypeDisplayValue="DATE" ParameterName="ToDate"/>
+
+                                    <PreparedParameters
+                                    DataType="91"
+                                    DataTypeDisplayValue="DATE" ParameterName="FromDate"/>
+
+                                    <PreparedParameters
+                                    DataType="91"
+                                    DataTypeDisplayValue="DATE" ParameterName="FromDate"/>
+
+                                    <PreparedParameters
+                                    DataType="91"
+                                    DataTypeDisplayValue="DATE" ParameterName="FromDate"/>
+
+                                    <PreparedParameters
+                                    DataType="91"
+                                    DataTypeDisplayValue="DATE" ParameterName="ToDate"/>
 
                                     <PreparedParameters
                                     DataType="91"
