@@ -25,7 +25,19 @@
     xmlns:ns24="http://www.tibco.com/namespaces/tnt/plugins/jdbc+59f39d48-6e40-4b53-818e-22509fc438aa+output"
     xmlns:ns25="http://www.tibco.com/namespaces/tnt/plugins/jdbc+d4623d31-3d3a-491f-a4db-c788f592e026+input"
     xmlns:ns26="http://www.tibco.com/namespaces/tnt/plugins/jdbc+d4623d31-3d3a-491f-a4db-c788f592e026+output"
+    xmlns:ns27="http://www.tibco.com/namespaces/tnt/plugins/jdbc+b24a88b9-5a9c-4584-bde6-1cf749538a2b+input"
+    xmlns:ns28="http://www.tibco.com/namespaces/tnt/plugins/jdbc+b24a88b9-5a9c-4584-bde6-1cf749538a2b+output"
+    xmlns:ns29="http://www.tibco.com/namespaces/tnt/plugins/jdbc+49368f8b-ae50-4820-a865-89a67d96d069+input"
     xmlns:ns3="http://tns.tibco.com/bw/palette/internal/activityerror+bw.jdbc.JDBCQuery"
+    xmlns:ns30="http://www.tibco.com/namespaces/tnt/plugins/jdbc+49368f8b-ae50-4820-a865-89a67d96d069+output"
+    xmlns:ns31="http://www.tibco.com/namespaces/tnt/plugins/jdbc+a4c7fc96-ec81-4db0-a1ca-b8cb7146a0f2+input"
+    xmlns:ns32="http://www.tibco.com/namespaces/tnt/plugins/jdbc+a4c7fc96-ec81-4db0-a1ca-b8cb7146a0f2+output"
+    xmlns:ns33="http://www.tibco.com/namespaces/tnt/plugins/jdbc+2a97d55c-bcf2-44fe-8148-c4990d328a86+input"
+    xmlns:ns34="http://www.tibco.com/namespaces/tnt/plugins/jdbc+2a97d55c-bcf2-44fe-8148-c4990d328a86+output"
+    xmlns:ns35="http://www.tibco.com/namespaces/tnt/plugins/jdbc+be11d163-2b76-4408-950e-cb7efea7c6fe+input"
+    xmlns:ns36="http://www.tibco.com/namespaces/tnt/plugins/jdbc+be11d163-2b76-4408-950e-cb7efea7c6fe+output"
+    xmlns:ns37="http://www.tibco.com/namespaces/tnt/plugins/jdbc+6b8d5d40-ab45-4d77-a30d-2ea59664df22+input"
+    xmlns:ns38="http://www.tibco.com/namespaces/tnt/plugins/jdbc+6b8d5d40-ab45-4d77-a30d-2ea59664df22+output"
     xmlns:ns4="http://www.tibco.com/namespaces/tnt/plugins/jdbc+f5a60933-e265-4e0d-94ff-491d857e45d9+input"
     xmlns:ns5="http://www.tibco.com/namespaces/tnt/plugins/jdbc"
     xmlns:ns6="http://tns.tibco.com/bw/palette/internal/activityerror+bw.jdbc.update"
@@ -71,15 +83,15 @@
                 <variable>OnlyId-input</variable>
             </endingVariables>
         </task>
-        <task name="OnlyCategory">
+        <task name="CtgOnly">
             <endingVariables>
-                <variable>OnlyCategory-input</variable>
+                <variable>CtgOnly-input</variable>
             </endingVariables>
         </task>
         <task name="Reply3">
             <endingVariables>
                 <variable>Reply3-input</variable>
-                <variable>OnlyCategory</variable>
+                <variable>CtgOnly</variable>
             </endingVariables>
         </task>
         <task name="Reply4">
@@ -88,9 +100,9 @@
                 <variable>OnlyId</variable>
             </endingVariables>
         </task>
-        <task name="RicercaModelloBrand">
+        <task name="BrandModel">
             <endingVariables>
-                <variable>RicercaModelloBrand-input</variable>
+                <variable>BrandModel-input</variable>
             </endingVariables>
         </task>
         <task name="RicercaModello">
@@ -101,24 +113,68 @@
         <task name="Reply5">
             <endingVariables>
                 <variable>Reply5-input</variable>
-                <variable>RicercaModelloBrand</variable>
+                <variable>BrandModel</variable>
             </endingVariables>
         </task>
-        <task name="RicercaBrand">
+        <task name="CategoryBrandSearch">
             <endingVariables>
-                <variable>RicercaBrand-input</variable>
+                <variable>CategoryBrandSearch-input</variable>
             </endingVariables>
         </task>
         <task name="Reply6">
             <endingVariables>
                 <variable>Reply6-input</variable>
-                <variable>RicercaBrand</variable>
+                <variable>CategoryBrandSearch</variable>
             </endingVariables>
         </task>
         <task name="Reply7">
             <endingVariables>
                 <variable>Reply7-input</variable>
                 <variable>RicercaModello</variable>
+            </endingVariables>
+        </task>
+        <task name="BrandSearch">
+            <endingVariables>
+                <variable>BrandSearch-input</variable>
+            </endingVariables>
+        </task>
+        <task name="RicercaModelloBrand1">
+            <endingVariables>
+                <variable>RicercaModelloBrand1-input</variable>
+            </endingVariables>
+        </task>
+        <task name="JDBCQuery4">
+            <endingVariables>
+                <variable>JDBCQuery4-input</variable>
+            </endingVariables>
+        </task>
+        <task name="JDBCQuery3">
+            <endingVariables>
+                <variable>JDBCQuery3-input</variable>
+            </endingVariables>
+        </task>
+        <task name="Reply8">
+            <endingVariables>
+                <variable>Reply8-input</variable>
+                <variable>RicercaModelloBrand1</variable>
+            </endingVariables>
+        </task>
+        <task name="Reply9">
+            <endingVariables>
+                <variable>Reply9-input</variable>
+                <variable>BrandSearch</variable>
+            </endingVariables>
+        </task>
+        <task name="Reply10">
+            <endingVariables>
+                <variable>Reply10-input</variable>
+                <variable>JDBCQuery4</variable>
+            </endingVariables>
+        </task>
+        <task name="Reply11">
+            <endingVariables>
+                <variable>Reply11-input</variable>
+                <variable>JDBCQuery3</variable>
             </endingVariables>
         </task>
         <task name="putOut">
@@ -967,6 +1023,198 @@
         <schema
             targetNamespace="http://www.tibco.com/namespaces/tnt/plugins/jdbc+d4623d31-3d3a-491f-a4db-c788f592e026+output"
             xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.tibco.com/namespaces/tnt/plugins/jdbc+d4623d31-3d3a-491f-a4db-c788f592e026+output">
+            <element name="resultSet">
+                <complexType>
+                    <sequence>
+                        <element maxOccurs="unbounded" minOccurs="0" name="Record">
+                            <complexType>
+                                <sequence>
+                                    <element maxOccurs="1" minOccurs="0"
+                                    name="id" nillable="false" type="int"/>
+                                    <element maxOccurs="1" minOccurs="0"
+                                    name="id_category"
+                                    nillable="false" type="int"/>
+                                    <element maxOccurs="1" minOccurs="0"
+                                    name="brand" nillable="false" type="string"/>
+                                    <element maxOccurs="1" minOccurs="0"
+                                    name="model" nillable="false" type="string"/>
+                                    <element maxOccurs="1" minOccurs="0"
+                                    name="optional" nillable="false" type="boolean"/>
+                                    <element maxOccurs="1" minOccurs="0"
+                                    name="surcharge"
+                                    nillable="false" type="string"/>
+                                </sequence>
+                            </complexType>
+                        </element>
+                    </sequence>
+                </complexType>
+            </element>
+        </schema>
+        <schema
+            targetNamespace="http://www.tibco.com/namespaces/tnt/plugins/jdbc+b24a88b9-5a9c-4584-bde6-1cf749538a2b+input"
+            xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.tibco.com/namespaces/tnt/plugins/jdbc+b24a88b9-5a9c-4584-bde6-1cf749538a2b+input">
+            <element name="jdbcQueryActivityInput">
+                <complexType>
+                    <sequence>
+                        <element maxOccurs="1" minOccurs="1"
+                            name="Brand" nillable="true" type="string"/>
+                        <element maxOccurs="1" minOccurs="0"
+                            name="ServerTimeZone" type="string"/>
+                        <element maxOccurs="1" minOccurs="0"
+                            name="timeout" type="long"/>
+                        <element maxOccurs="1" minOccurs="0"
+                            name="maxRows" type="long"/>
+                    </sequence>
+                </complexType>
+            </element>
+        </schema>
+        <schema
+            targetNamespace="http://www.tibco.com/namespaces/tnt/plugins/jdbc+b24a88b9-5a9c-4584-bde6-1cf749538a2b+output"
+            xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.tibco.com/namespaces/tnt/plugins/jdbc+b24a88b9-5a9c-4584-bde6-1cf749538a2b+output">
+            <element name="resultSet">
+                <complexType>
+                    <sequence>
+                        <element maxOccurs="unbounded" minOccurs="0" name="Record">
+                            <complexType>
+                                <sequence>
+                                    <element maxOccurs="1" minOccurs="0"
+                                    name="id" nillable="false" type="int"/>
+                                    <element maxOccurs="1" minOccurs="0"
+                                    name="id_category"
+                                    nillable="false" type="int"/>
+                                    <element maxOccurs="1" minOccurs="0"
+                                    name="brand" nillable="false" type="string"/>
+                                    <element maxOccurs="1" minOccurs="0"
+                                    name="model" nillable="false" type="string"/>
+                                    <element maxOccurs="1" minOccurs="0"
+                                    name="optional" nillable="false" type="boolean"/>
+                                    <element maxOccurs="1" minOccurs="0"
+                                    name="surcharge"
+                                    nillable="false" type="string"/>
+                                </sequence>
+                            </complexType>
+                        </element>
+                    </sequence>
+                </complexType>
+            </element>
+        </schema>
+        <schema
+            targetNamespace="http://www.tibco.com/namespaces/tnt/plugins/jdbc+49368f8b-ae50-4820-a865-89a67d96d069+input"
+            xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.tibco.com/namespaces/tnt/plugins/jdbc+49368f8b-ae50-4820-a865-89a67d96d069+input">
+            <element name="jdbcQueryActivityInput">
+                <complexType>
+                    <sequence>
+                        <element maxOccurs="1" minOccurs="1"
+                            name="Brand" nillable="true" type="string"/>
+                        <element maxOccurs="1" minOccurs="1"
+                            name="Model" nillable="true" type="string"/>
+                        <element maxOccurs="1" minOccurs="0"
+                            name="ServerTimeZone" type="string"/>
+                        <element maxOccurs="1" minOccurs="0"
+                            name="timeout" type="long"/>
+                        <element maxOccurs="1" minOccurs="0"
+                            name="maxRows" type="long"/>
+                    </sequence>
+                </complexType>
+            </element>
+        </schema>
+        <schema
+            targetNamespace="http://www.tibco.com/namespaces/tnt/plugins/jdbc+49368f8b-ae50-4820-a865-89a67d96d069+output"
+            xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.tibco.com/namespaces/tnt/plugins/jdbc+49368f8b-ae50-4820-a865-89a67d96d069+output">
+            <element name="resultSet">
+                <complexType>
+                    <sequence>
+                        <element maxOccurs="unbounded" minOccurs="0" name="Record">
+                            <complexType>
+                                <sequence>
+                                    <element maxOccurs="1" minOccurs="0"
+                                    name="id" nillable="false" type="int"/>
+                                    <element maxOccurs="1" minOccurs="0"
+                                    name="id_category"
+                                    nillable="false" type="int"/>
+                                    <element maxOccurs="1" minOccurs="0"
+                                    name="brand" nillable="false" type="string"/>
+                                    <element maxOccurs="1" minOccurs="0"
+                                    name="model" nillable="false" type="string"/>
+                                    <element maxOccurs="1" minOccurs="0"
+                                    name="optional" nillable="false" type="boolean"/>
+                                    <element maxOccurs="1" minOccurs="0"
+                                    name="surcharge"
+                                    nillable="false" type="string"/>
+                                </sequence>
+                            </complexType>
+                        </element>
+                    </sequence>
+                </complexType>
+            </element>
+        </schema>
+        <schema
+            targetNamespace="http://www.tibco.com/namespaces/tnt/plugins/jdbc+be11d163-2b76-4408-950e-cb7efea7c6fe+input"
+            xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.tibco.com/namespaces/tnt/plugins/jdbc+be11d163-2b76-4408-950e-cb7efea7c6fe+input">
+            <element name="jdbcQueryActivityInput">
+                <complexType>
+                    <sequence>
+                        <element maxOccurs="1" minOccurs="1"
+                            name="Model" nillable="true" type="string"/>
+                        <element maxOccurs="1" minOccurs="0"
+                            name="ServerTimeZone" type="string"/>
+                        <element maxOccurs="1" minOccurs="0"
+                            name="timeout" type="long"/>
+                        <element maxOccurs="1" minOccurs="0"
+                            name="maxRows" type="long"/>
+                    </sequence>
+                </complexType>
+            </element>
+        </schema>
+        <schema
+            targetNamespace="http://www.tibco.com/namespaces/tnt/plugins/jdbc+be11d163-2b76-4408-950e-cb7efea7c6fe+output"
+            xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.tibco.com/namespaces/tnt/plugins/jdbc+be11d163-2b76-4408-950e-cb7efea7c6fe+output">
+            <element name="resultSet">
+                <complexType>
+                    <sequence>
+                        <element maxOccurs="unbounded" minOccurs="0" name="Record">
+                            <complexType>
+                                <sequence>
+                                    <element maxOccurs="1" minOccurs="0"
+                                    name="id" nillable="false" type="int"/>
+                                    <element maxOccurs="1" minOccurs="0"
+                                    name="id_category"
+                                    nillable="false" type="int"/>
+                                    <element maxOccurs="1" minOccurs="0"
+                                    name="brand" nillable="false" type="string"/>
+                                    <element maxOccurs="1" minOccurs="0"
+                                    name="model" nillable="false" type="string"/>
+                                    <element maxOccurs="1" minOccurs="0"
+                                    name="optional" nillable="false" type="boolean"/>
+                                    <element maxOccurs="1" minOccurs="0"
+                                    name="surcharge"
+                                    nillable="false" type="string"/>
+                                </sequence>
+                            </complexType>
+                        </element>
+                    </sequence>
+                </complexType>
+            </element>
+        </schema>
+        <schema
+            targetNamespace="http://www.tibco.com/namespaces/tnt/plugins/jdbc+6b8d5d40-ab45-4d77-a30d-2ea59664df22+input"
+            xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.tibco.com/namespaces/tnt/plugins/jdbc+6b8d5d40-ab45-4d77-a30d-2ea59664df22+input">
+            <element name="jdbcQueryActivityInput">
+                <complexType>
+                    <sequence>
+                        <element maxOccurs="1" minOccurs="0"
+                            name="ServerTimeZone" type="string"/>
+                        <element maxOccurs="1" minOccurs="0"
+                            name="timeout" type="long"/>
+                        <element maxOccurs="1" minOccurs="0"
+                            name="maxRows" type="long"/>
+                    </sequence>
+                </complexType>
+            </element>
+        </schema>
+        <schema
+            targetNamespace="http://www.tibco.com/namespaces/tnt/plugins/jdbc+6b8d5d40-ab45-4d77-a30d-2ea59664df22+output"
+            xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.tibco.com/namespaces/tnt/plugins/jdbc+6b8d5d40-ab45-4d77-a30d-2ea59664df22+output">
             <element name="resultSet">
                 <complexType>
                     <sequence>
@@ -2033,7 +2281,7 @@
                                     <layoutConstraint
                                     height="40"
                                     width="40"
-                                    x="444"
+                                    x="446"
                                     xsi:type="notation:Bounds" y="73"/>
                                     </children>
 
@@ -2089,8 +2337,8 @@
                                     <layoutConstraint
                                     height="40"
                                     width="40"
-                                    x="249"
-                                    xsi:type="notation:Bounds" y="153"/>
+                                    x="446"
+                                    xsi:type="notation:Bounds" y="238"/>
                                     </children>
 
                                     <children type="4002 com.tibco.bw.core.design.process.editor.Activity_4002_Reply">
@@ -2145,7 +2393,7 @@
                                     <layoutConstraint
                                     height="40"
                                     width="40"
-                                    x="539"
+                                    x="535"
                                     xsi:type="notation:Bounds" y="73"/>
                                     </children>
 
@@ -2200,9 +2448,9 @@
 
                                     <layoutConstraint
                                     height="83"
-                                    width="40"
-                                    x="425"
-                                    xsi:type="notation:Bounds" y="159"/>
+                                    width="107"
+                                    x="446"
+                                    xsi:type="notation:Bounds" y="149"/>
                                     </children>
 
                                     <children type="4002 com.tibco.bw.core.design.process.editor.Activity_4002_Reply">
@@ -2257,8 +2505,8 @@
                                     <layoutConstraint
                                     height="40"
                                     width="40"
-                                    x="518"
-                                    xsi:type="notation:Bounds" y="163"/>
+                                    x="535"
+                                    xsi:type="notation:Bounds" y="153"/>
                                     </children>
 
                                     <children type="4002 com.tibco.bw.core.design.process.editor.Activity_4002_Reply">
@@ -2313,7 +2561,7 @@
                                     <layoutConstraint
                                     height="40"
                                     width="40"
-                                    x="249"
+                                    x="535"
                                     xsi:type="notation:Bounds" y="238"/>
                                     </children>
 
@@ -2425,11 +2673,11 @@
                                     <layoutConstraint
                                     height="40"
                                     width="40"
-                                    x="249"
-                                    xsi:type="notation:Bounds" y="73"/>
+                                    x="58"
+                                    xsi:type="notation:Bounds" y="314"/>
                                     </children>
 
-                                    <children type="4002 com.tibco.bw.core.design.process.editor.Activity_4002_Empty">
+                                    <children type="4002 bw.jdbc.JDBCQuery">
 
                                     <children type="4017">
 
@@ -2482,10 +2730,10 @@
                                     height="40"
                                     width="40"
                                     x="339"
-                                    xsi:type="notation:Bounds" y="73"/>
+                                    xsi:type="notation:Bounds" y="399"/>
                                     </children>
 
-                                    <children type="4002 com.tibco.bw.core.design.process.editor.Activity_4002_Empty">
+                                    <children type="4002 bw.jdbc.JDBCQuery">
 
                                     <children type="4017">
 
@@ -2538,7 +2786,343 @@
                                     height="40"
                                     width="40"
                                     x="339"
-                                    xsi:type="notation:Bounds" y="163"/>
+                                    xsi:type="notation:Bounds" y="314"/>
+                                    </children>
+
+                                    <children type="4002 bw.jdbc.JDBCQuery">
+
+                                    <children type="4017">
+
+                                    <styles
+                                    fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+
+                                    <children type="4017">
+
+                                    <styles
+                                    fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+
+                                    <children type="4017">
+
+                                    <styles
+                                    fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+
+                                    <children type="4017">
+
+                                    <styles
+                                    fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+
+                                    <styles
+                                    fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+
+                                    <styles
+                                    backgroundColor="16777215"
+                                    gradientEndColor="50431"
+                                    gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
+
+                                    <element href="//0/@process/@activity/@activity/@activities.0/@messages.1/@activity/@activity/@activities.18"/>
+
+                                    <layoutConstraint
+                                    height="40"
+                                    width="40"
+                                    x="339"
+                                    xsi:type="notation:Bounds" y="479"/>
+                                    </children>
+
+                                    <children type="4002 bw.jdbc.JDBCQuery">
+
+                                    <children type="4017">
+
+                                    <styles
+                                    fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+
+                                    <children type="4017">
+
+                                    <styles
+                                    fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+
+                                    <children type="4017">
+
+                                    <styles
+                                    fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+
+                                    <children type="4017">
+
+                                    <styles
+                                    fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+
+                                    <styles
+                                    fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+
+                                    <styles
+                                    backgroundColor="16777215"
+                                    gradientEndColor="50431"
+                                    gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
+
+                                    <element href="//0/@process/@activity/@activity/@activities.0/@messages.1/@activity/@activity/@activities.19"/>
+
+                                    <layoutConstraint
+                                    height="40"
+                                    width="40"
+                                    x="339"
+                                    xsi:type="notation:Bounds" y="559"/>
+                                    </children>
+
+                                    <children type="4002 com.tibco.bw.core.design.process.editor.Activity_4002_Reply">
+
+                                    <children type="4017">
+
+                                    <styles
+                                    fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+
+                                    <children type="4017">
+
+                                    <styles
+                                    fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+
+                                    <children type="4017">
+
+                                    <styles
+                                    fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+
+                                    <children type="4017">
+
+                                    <styles
+                                    fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+
+                                    <styles
+                                    fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+
+                                    <styles
+                                    backgroundColor="16777215"
+                                    gradientEndColor="50431"
+                                    gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
+
+                                    <element href="//0/@process/@activity/@activity/@activities.0/@messages.1/@activity/@activity/@activities.20"/>
+
+                                    <layoutConstraint
+                                    height="40"
+                                    width="40"
+                                    x="429"
+                                    xsi:type="notation:Bounds" y="314"/>
+                                    </children>
+
+                                    <children type="4002 com.tibco.bw.core.design.process.editor.Activity_4002_Reply">
+
+                                    <children type="4017">
+
+                                    <styles
+                                    fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+
+                                    <children type="4017">
+
+                                    <styles
+                                    fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+
+                                    <children type="4017">
+
+                                    <styles
+                                    fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+
+                                    <children type="4017">
+
+                                    <styles
+                                    fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+
+                                    <styles
+                                    fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+
+                                    <styles
+                                    backgroundColor="16777215"
+                                    gradientEndColor="50431"
+                                    gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
+
+                                    <element href="//0/@process/@activity/@activity/@activities.0/@messages.1/@activity/@activity/@activities.21"/>
+
+                                    <layoutConstraint
+                                    height="40"
+                                    width="40"
+                                    x="429"
+                                    xsi:type="notation:Bounds" y="399"/>
+                                    </children>
+
+                                    <children type="4002 com.tibco.bw.core.design.process.editor.Activity_4002_Reply">
+
+                                    <children type="4017">
+
+                                    <styles
+                                    fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+
+                                    <children type="4017">
+
+                                    <styles
+                                    fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+
+                                    <children type="4017">
+
+                                    <styles
+                                    fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+
+                                    <children type="4017">
+
+                                    <styles
+                                    fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+
+                                    <styles
+                                    fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+
+                                    <styles
+                                    backgroundColor="16777215"
+                                    gradientEndColor="50431"
+                                    gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
+
+                                    <element href="//0/@process/@activity/@activity/@activities.0/@messages.1/@activity/@activity/@activities.22"/>
+
+                                    <layoutConstraint
+                                    height="40"
+                                    width="40"
+                                    x="429"
+                                    xsi:type="notation:Bounds" y="479"/>
+                                    </children>
+
+                                    <children type="4002 com.tibco.bw.core.design.process.editor.Activity_4002_Reply">
+
+                                    <children type="4017">
+
+                                    <styles
+                                    fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+
+                                    <children type="4017">
+
+                                    <styles
+                                    fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+
+                                    <children type="4017">
+
+                                    <styles
+                                    fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+
+                                    <children type="4017">
+
+                                    <styles
+                                    fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+
+                                    <styles
+                                    fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+
+                                    <styles
+                                    backgroundColor="16777215"
+                                    gradientEndColor="50431"
+                                    gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
+
+                                    <element href="//0/@process/@activity/@activity/@activities.0/@messages.1/@activity/@activity/@activities.23"/>
+
+                                    <layoutConstraint
+                                    height="40"
+                                    width="40"
+                                    x="429"
+                                    xsi:type="notation:Bounds" y="559"/>
                                     </children>
 
                                     <styles xsi:type="notation:DrawerStyle"/>
@@ -2562,8 +3146,8 @@
                                     <element href="//0/@process/@activity/@activity/@activities.0/@messages.1/@activity/@activity"/>
 
                                     <layoutConstraint
-                                    height="508"
-                                    width="686" xsi:type="notation:Bounds"/>
+                                    height="660"
+                                    width="983" xsi:type="notation:Bounds"/>
                                     </children>
 
                                     <styles xsi:type="notation:SortingStyle"/>
@@ -2582,8 +3166,8 @@
                                     <element href="//0/@process/@activity/@activity/@activities.0/@messages.1/@activity"/>
 
                                     <layoutConstraint
-                                    height="508"
-                                    width="689"
+                                    height="659"
+                                    width="986"
                                     x="15" xsi:type="notation:Bounds"/>
                                     </children>
                                     <styles xsi:type="notation:SortingStyle"/>
@@ -2597,8 +3181,8 @@
                                     <element href="//0/@process/@activity/@activity/@activities.0/@messages.1/@activity"/>
 
                                     <layoutConstraint
-                                    height="532"
-                                    width="729" xsi:type="notation:Bounds"/>
+                                    height="683"
+                                    width="1026" xsi:type="notation:Bounds"/>
                                     </children>
                                     <styles xsi:type="notation:SortingStyle"/>
                                     <styles xsi:type="notation:FilteringStyle"/>
@@ -2655,10 +3239,10 @@
                                     <styles xsi:type="bwnotation:ResizingStyle"/>
                                     <element href="//0/@process/@activity/@activity/@activities.0/@messages.1"/>
                                     <layoutConstraint
-                                    height="551"
-                                    width="791"
+                                    height="702"
+                                    width="1088"
                                     x="2"
-                                    xsi:type="notation:Bounds" y="249"/>
+                                    xsi:type="notation:Bounds" y="246"/>
                                     </children>
                                     <children type="4011">
                                     <children type="3012">
@@ -3467,8 +4051,8 @@
                                     <styles xsi:type="bwnotation:ResizingStyle"/>
                                     <element href="//0/@process/@activity/@activity/@activities.0"/>
                                     <layoutConstraint
-                                    height="1332"
-                                    width="810" xsi:type="notation:Bounds"/>
+                                    height="1480"
+                                    width="1107" xsi:type="notation:Bounds"/>
                                     </children>
                                     <styles xsi:type="notation:DrawerStyle"/>
                                     <styles xsi:type="notation:SortingStyle"/>
@@ -3482,8 +4066,8 @@
                                     gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
                                     <styles xsi:type="bwnotation:ResizingStyle"/>
                                     <element href="//0/@process/@activity/@activity"/>
-                                    <layoutConstraint height="1342"
-                                    width="820" xsi:type="notation:Bounds"/>
+                                    <layoutConstraint height="1490"
+                                    width="1117" xsi:type="notation:Bounds"/>
                                 </children>
                                 <styles xsi:type="notation:SortingStyle"/>
                                 <styles xsi:type="notation:FilteringStyle"/>
@@ -3492,7 +4076,7 @@
                             <styles xsi:type="bwnotation:BackgroundStyle"/>
                             <styles xsi:type="bwnotation:ResizingStyle"/>
                             <element href="//0/@process/@activity"/>
-                            <layoutConstraint height="1342" width="823" xsi:type="notation:Bounds"/>
+                            <layoutConstraint height="1490" width="1120" xsi:type="notation:Bounds"/>
                         </children>
                         <styles xsi:type="notation:SortingStyle"/>
                         <styles xsi:type="notation:FilteringStyle"/>
@@ -3502,7 +4086,7 @@
                     <styles xsi:type="bwnotation:BackgroundStyle"/>
                     <styles xsi:type="bwnotation:ResizingStyle"/>
                     <element href="//0/@process/@activity"/>
-                    <layoutConstraint height="1366" width="823" x="1"
+                    <layoutConstraint height="1514" width="1120" x="1"
                         xsi:type="notation:Bounds" y="1"/>
                 </children>
                 <styles xsi:type="notation:SortingStyle"/>
@@ -3511,7 +4095,7 @@
             </children>
             <styles fontName="Segoe UI" lineColor="0" xsi:type="notation:ShapeStyle"/>
             <element href="//0/@process"/>
-            <layoutConstraint height="1418" width="1165" xsi:type="notation:Bounds"/>
+            <layoutConstraint height="1566" width="1462" xsi:type="notation:Bounds"/>
         </children>
         <styles xsi:type="notation:DiagramStyle"/>
         <element href="//0"/>
@@ -3704,18 +4288,18 @@
         </edges>
         <edges
             source="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2/@children.1/@children.1/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.12"
-            target="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2/@children.1/@children.1/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.13" type="4006">
+            target="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2/@children.1/@children.1/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.1" type="4006">
             <children type="6002">
                 <layoutConstraint xsi:type="notation:Location" y="40"/>
             </children>
             <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
             <styles fontName="Segoe UI" xsi:type="notation:FontStyle"/>
             <element href="//0/@process/@activity/@activity/@activities.0/@messages.1/@activity/@activity/@links/@children.8"/>
-            <bendpoints points="[0, 0, 0, 0]$[0, 0, 0, 0]" xsi:type="notation:RelativeBendpoints"/>
+            <bendpoints points="[0, 25, 0, -55]$[0, 56, 0, -24]" xsi:type="notation:RelativeBendpoints"/>
         </edges>
         <edges
-            source="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2/@children.1/@children.1/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.13"
-            target="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2/@children.1/@children.1/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.14" type="4006">
+            source="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2/@children.1/@children.1/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.5"
+            target="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2/@children.1/@children.1/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.13" type="4006">
             <children type="6002">
                 <layoutConstraint xsi:type="notation:Location" y="40"/>
             </children>
@@ -3725,59 +4309,127 @@
             <bendpoints points="[0, 0, 0, 0]$[0, 0, 0, 0]" xsi:type="notation:RelativeBendpoints"/>
         </edges>
         <edges
-            source="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2/@children.1/@children.1/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.14"
-            target="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2/@children.1/@children.1/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.6" type="4006">
-            <children type="6002">
-                <layoutConstraint xsi:type="notation:Location" y="40"/>
-            </children>
-            <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
-            <styles fontName="Segoe UI" xsi:type="notation:FontStyle"/>
-            <element href="//0/@process/@activity/@activity/@activities.0/@messages.1/@activity/@activity/@links/@children.10"/>
-            <bendpoints points="[25, 0, -61, 0]$[62, 0, -24, 0]" xsi:type="notation:RelativeBendpoints"/>
-        </edges>
-        <edges
-            source="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2/@children.1/@children.1/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.14"
+            source="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2/@children.1/@children.1/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.13"
             target="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2/@children.1/@children.1/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.15" type="4006">
             <children type="6002">
                 <layoutConstraint xsi:type="notation:Location" y="40"/>
             </children>
             <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
             <styles fontName="Segoe UI" xsi:type="notation:FontStyle"/>
-            <element href="//0/@process/@activity/@activity/@activities.0/@messages.1/@activity/@activity/@links/@children.11"/>
-            <bendpoints points="[0, 0, 0, 0]$[0, 0, 0, 0]" xsi:type="notation:RelativeBendpoints"/>
+            <element href="//0/@process/@activity/@activity/@activities.0/@messages.1/@activity/@activity/@links/@children.10"/>
+            <bendpoints points="[25, 0, -85, 0]$[86, 0, -24, 0]" xsi:type="notation:RelativeBendpoints"/>
         </edges>
         <edges
-            source="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2/@children.1/@children.1/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.15"
-            target="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2/@children.1/@children.1/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.9" type="4006">
+            source="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2/@children.1/@children.1/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.13"
+            target="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2/@children.1/@children.1/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.14" type="4006">
+            <children type="6002">
+                <layoutConstraint xsi:type="notation:Location" y="40"/>
+            </children>
+            <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
+            <styles fontName="Segoe UI" xsi:type="notation:FontStyle"/>
+            <element href="//0/@process/@activity/@activity/@activities.0/@messages.1/@activity/@activity/@links/@children.11"/>
+            <bendpoints points="[25, 20, -85, -69]$[86, 69, -24, -20]" xsi:type="notation:RelativeBendpoints"/>
+        </edges>
+        <edges
+            source="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2/@children.1/@children.1/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.13"
+            target="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2/@children.1/@children.1/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.16" type="4006">
             <children type="6002">
                 <layoutConstraint xsi:type="notation:Location" y="40"/>
             </children>
             <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
             <styles fontName="Segoe UI" xsi:type="notation:FontStyle"/>
             <element href="//0/@process/@activity/@activity/@activities.0/@messages.1/@activity/@activity/@links/@children.12"/>
-            <bendpoints points="[25, 0, -61, 0]$[62, 0, -24, 0]" xsi:type="notation:RelativeBendpoints"/>
+            <bendpoints
+                points="[25, 14, -256, -145]$[257, 145, -24, -14]" xsi:type="notation:RelativeBendpoints"/>
         </edges>
         <edges
-            source="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2/@children.1/@children.1/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.12"
-            target="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2/@children.1/@children.1/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.1" type="4006">
+            source="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2/@children.1/@children.1/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.13"
+            target="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2/@children.1/@children.1/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.17" type="4006">
             <children type="6002">
                 <layoutConstraint xsi:type="notation:Location" y="40"/>
             </children>
             <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
             <styles fontName="Segoe UI" xsi:type="notation:FontStyle"/>
             <element href="//0/@process/@activity/@activity/@activities.0/@messages.1/@activity/@activity/@links/@children.13"/>
-            <bendpoints points="[0, 25, 0, -55]$[0, 56, 0, -24]" xsi:type="notation:RelativeBendpoints"/>
+            <bendpoints
+                points="[25, 21, -257, -226]$[258, 226, -24, -21]" xsi:type="notation:RelativeBendpoints"/>
         </edges>
         <edges
-            source="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2/@children.1/@children.1/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.13"
-            target="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2/@children.1/@children.1/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.7" type="4006">
+            source="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2/@children.1/@children.1/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.15"
+            target="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2/@children.1/@children.1/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.18" type="4006">
             <children type="6002">
                 <layoutConstraint xsi:type="notation:Location" y="40"/>
             </children>
             <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
             <styles fontName="Segoe UI" xsi:type="notation:FontStyle"/>
             <element href="//0/@process/@activity/@activity/@activities.0/@messages.1/@activity/@activity/@links/@children.14"/>
-            <bendpoints points="[0, 25, 0, -55]$[0, 56, 0, -24]" xsi:type="notation:RelativeBendpoints"/>
+            <bendpoints points="[0, 0, 0, 0]$[0, 0, 0, 0]" xsi:type="notation:RelativeBendpoints"/>
+        </edges>
+        <edges
+            source="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2/@children.1/@children.1/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.14"
+            target="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2/@children.1/@children.1/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.19" type="4006">
+            <children type="6002">
+                <layoutConstraint xsi:type="notation:Location" y="40"/>
+            </children>
+            <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
+            <styles fontName="Segoe UI" xsi:type="notation:FontStyle"/>
+            <element href="//0/@process/@activity/@activity/@activities.0/@messages.1/@activity/@activity/@links/@children.15"/>
+            <bendpoints points="[0, 0, 0, 0]$[0, 0, 0, 0]" xsi:type="notation:RelativeBendpoints"/>
+        </edges>
+        <edges
+            source="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2/@children.1/@children.1/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.16"
+            target="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2/@children.1/@children.1/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.20" type="4006">
+            <children type="6002">
+                <layoutConstraint xsi:type="notation:Location" y="40"/>
+            </children>
+            <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
+            <styles fontName="Segoe UI" xsi:type="notation:FontStyle"/>
+            <element href="//0/@process/@activity/@activity/@activities.0/@messages.1/@activity/@activity/@links/@children.16"/>
+            <bendpoints points="[0, 0, 0, 0]$[0, 0, 0, 0]" xsi:type="notation:RelativeBendpoints"/>
+        </edges>
+        <edges
+            source="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2/@children.1/@children.1/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.17"
+            target="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2/@children.1/@children.1/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.21" type="4006">
+            <children type="6002">
+                <layoutConstraint xsi:type="notation:Location" y="40"/>
+            </children>
+            <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
+            <styles fontName="Segoe UI" xsi:type="notation:FontStyle"/>
+            <element href="//0/@process/@activity/@activity/@activities.0/@messages.1/@activity/@activity/@links/@children.17"/>
+            <bendpoints points="[0, 0, 0, 0]$[0, 0, 0, 0]" xsi:type="notation:RelativeBendpoints"/>
+        </edges>
+        <edges
+            source="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2/@children.1/@children.1/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.12"
+            target="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2/@children.1/@children.1/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.6" type="4006">
+            <children type="6002">
+                <layoutConstraint xsi:type="notation:Location" y="40"/>
+            </children>
+            <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
+            <styles fontName="Segoe UI" xsi:type="notation:FontStyle"/>
+            <element href="//0/@process/@activity/@activity/@activities.0/@messages.1/@activity/@activity/@links/@children.18"/>
+            <bendpoints points="[25, 0, -66, 0]$[67, 0, -24, 0]" xsi:type="notation:RelativeBendpoints"/>
+        </edges>
+        <edges
+            source="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2/@children.1/@children.1/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.12"
+            target="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2/@children.1/@children.1/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.9" type="4006">
+            <children type="6002">
+                <layoutConstraint xsi:type="notation:Location" y="40"/>
+            </children>
+            <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
+            <styles fontName="Segoe UI" xsi:type="notation:FontStyle"/>
+            <element href="//0/@process/@activity/@activity/@activities.0/@messages.1/@activity/@activity/@links/@children.19"/>
+            <bendpoints points="[25, 22, -66, -58]$[67, 58, -24, -22]" xsi:type="notation:RelativeBendpoints"/>
+        </edges>
+        <edges
+            source="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2/@children.1/@children.1/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.12"
+            target="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2/@children.1/@children.1/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.7" type="4006">
+            <children type="6002">
+                <layoutConstraint xsi:type="notation:Location" y="40"/>
+            </children>
+            <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
+            <styles fontName="Segoe UI" xsi:type="notation:FontStyle"/>
+            <element href="//0/@process/@activity/@activity/@activities.0/@messages.1/@activity/@activity/@links/@children.20"/>
+            <bendpoints points="[25, 18, -81, -62]$[82, 62, -24, -18]" xsi:type="notation:RelativeBendpoints"/>
         </edges>
     </notation:Diagram>
     <tibex:NamespaceRegistry enabled="true">
@@ -3815,6 +4467,14 @@
             namespace="http://www.tibco.com/namespaces/tnt/plugins/jdbc+d4623d31-3d3a-491f-a4db-c788f592e026+input" prefix="tns13"/>
         <tibex:namespaceItem
             namespace="http://www.tibco.com/namespaces/tnt/plugins/jdbc+59f39d48-6e40-4b53-818e-22509fc438aa+input" prefix="tns14"/>
+        <tibex:namespaceItem
+            namespace="http://www.tibco.com/namespaces/tnt/plugins/jdbc+a4c7fc96-ec81-4db0-a1ca-b8cb7146a0f2+input" prefix="tns15"/>
+        <tibex:namespaceItem
+            namespace="http://www.tibco.com/namespaces/tnt/plugins/jdbc+49368f8b-ae50-4820-a865-89a67d96d069+input" prefix="tns16"/>
+        <tibex:namespaceItem
+            namespace="http://www.tibco.com/namespaces/tnt/plugins/jdbc+b24a88b9-5a9c-4584-bde6-1cf749538a2b+input" prefix="tns17"/>
+        <tibex:namespaceItem
+            namespace="http://www.tibco.com/namespaces/tnt/plugins/jdbc+be11d163-2b76-4408-950e-cb7efea7c6fe+input" prefix="tns18"/>
     </tibex:NamespaceRegistry>
     <bpws:import importType="http://www.w3.org/2001/XMLSchema" namespace="http://tns.tibco.com/bw/REST"/>
     <bpws:import importType="http://www.w3.org/2001/XMLSchema" namespace="http://www.example.org/BackEnd_Cars"/>
@@ -3887,31 +4547,58 @@
         <bpws:variable element="ns3:ActivityErrorData"
             name="_error_OnlyId" sca-bpel:internal="true"/>
         <bpws:variable element="ns19:jdbcQueryActivityInput"
-            name="OnlyCategory-input" sca-bpel:internal="true"/>
-        <bpws:variable element="ns20:resultSet" name="OnlyCategory" sca-bpel:internal="true"/>
+            name="CtgOnly-input" sca-bpel:internal="true"/>
+        <bpws:variable element="ns20:resultSet" name="CtgOnly" sca-bpel:internal="true"/>
         <bpws:variable element="ns3:ActivityErrorData"
-            name="_error_OnlyCategory" sca-bpel:internal="true"/>
+            name="_error_CtgOnly" sca-bpel:internal="true"/>
         <bpws:variable messageType="ns0:getResponse" name="Reply3-input" sca-bpel:internal="true"/>
         <bpws:variable messageType="ns0:getResponse" name="Reply4-input" sca-bpel:internal="true"/>
         <bpws:variable element="ns21:jdbcQueryActivityInput"
-            name="RicercaModelloBrand-input" sca-bpel:internal="true"/>
-        <bpws:variable element="ns22:resultSet"
-            name="RicercaModelloBrand" sca-bpel:internal="true"/>
+            name="BrandModel-input" sca-bpel:internal="true"/>
+        <bpws:variable element="ns22:resultSet" name="BrandModel" sca-bpel:internal="true"/>
         <bpws:variable element="ns3:ActivityErrorData"
             name="_error_RicercaModell" sca-bpel:internal="true"/>
         <bpws:variable element="ns23:jdbcQueryActivityInput"
             name="RicercaModello-input" sca-bpel:internal="true"/>
         <bpws:variable element="ns24:resultSet" name="RicercaModello" sca-bpel:internal="true"/>
         <bpws:variable element="ns3:ActivityErrorData"
-            name="_error_RicercaModelloBrand" sca-bpel:internal="true"/>
+            name="_error_BrandModel" sca-bpel:internal="true"/>
         <bpws:variable messageType="ns0:getResponse" name="Reply5-input" sca-bpel:internal="true"/>
         <bpws:variable element="ns25:jdbcQueryActivityInput"
-            name="RicercaBrand-input" sca-bpel:internal="true"/>
-        <bpws:variable element="ns26:resultSet" name="RicercaBrand" sca-bpel:internal="true"/>
+            name="CategoryBrandSearch-input" sca-bpel:internal="true"/>
+        <bpws:variable element="ns26:resultSet"
+            name="CategoryBrandSearch" sca-bpel:internal="true"/>
         <bpws:variable element="ns3:ActivityErrorData"
-            name="_error_RicercaBrand" sca-bpel:internal="true"/>
+            name="_error_CategoryBrandSearch" sca-bpel:internal="true"/>
         <bpws:variable messageType="ns0:getResponse" name="Reply6-input" sca-bpel:internal="true"/>
         <bpws:variable messageType="ns0:getResponse" name="Reply7-input" sca-bpel:internal="true"/>
+        <bpws:variable element="ns27:jdbcQueryActivityInput"
+            name="BrandSearch-input" sca-bpel:internal="true"/>
+        <bpws:variable element="ns28:resultSet" name="BrandSearch" sca-bpel:internal="true"/>
+        <bpws:variable element="ns3:ActivityErrorData"
+            name="_error_Modell" sca-bpel:internal="true"/>
+        <bpws:variable element="ns29:jdbcQueryActivityInput"
+            name="RicercaModelloBrand1-input" sca-bpel:internal="true"/>
+        <bpws:variable element="ns30:resultSet"
+            name="RicercaModelloBrand1" sca-bpel:internal="true"/>
+        <bpws:variable element="ns3:ActivityErrorData"
+            name="_error_RicercaModelloBrand1" sca-bpel:internal="true"/>
+        <bpws:variable element="ns35:jdbcQueryActivityInput"
+            name="JDBCQuery4-input" sca-bpel:internal="true"/>
+        <bpws:variable element="ns36:resultSet" name="JDBCQuery4" sca-bpel:internal="true"/>
+        <bpws:variable element="ns3:ActivityErrorData"
+            name="_error_JDBCQuery4" sca-bpel:internal="true"/>
+        <bpws:variable element="ns37:jdbcQueryActivityInput"
+            name="JDBCQuery3-input" sca-bpel:internal="true"/>
+        <bpws:variable element="ns38:resultSet" name="JDBCQuery3" sca-bpel:internal="true"/>
+        <bpws:variable element="ns3:ActivityErrorData"
+            name="_error_JDBCQuery3" sca-bpel:internal="true"/>
+        <bpws:variable messageType="ns0:getResponse" name="Reply8-input" sca-bpel:internal="true"/>
+        <bpws:variable messageType="ns0:getResponse" name="Reply9-input" sca-bpel:internal="true"/>
+        <bpws:variable messageType="ns0:getResponse"
+            name="Reply10-input" sca-bpel:internal="true"/>
+        <bpws:variable messageType="ns0:getResponse"
+            name="Reply11-input" sca-bpel:internal="true"/>
     </bpws:variables>
     <bpws:extensions>
         <bpws:extension mustUnderstand="no" namespace="http://www.eclipse.org/gmf/runtime/1.0.2/notation"/>
@@ -4148,14 +4835,25 @@
                                 <bpws:link name="JDBCQuery7ToReply7" tibex:linkType="SUCCESS"/>
                                 <bpws:link name="Empty2ToRicercaId" tibex:linkType="SUCCESSWITHCONDITION"/>
                                 <bpws:link name="CategoryToEmpty" tibex:linkType="SUCCESSWITHCONDITION"/>
-                                <bpws:link name="EmptyToEmpty1" tibex:linkType="SUCCESSWITHCONDITION"/>
-                                <bpws:link name="Empty1ToEmpty2" tibex:linkType="SUCCESSWITHCONDITION"/>
-                                <bpws:link
-                                    name="ModelToRicercaModelloBrand" tibex:linkType="SUCCESS"/>
-                                <bpws:link name="ModelToEmpty" tibex:linkType="SUCCESSWITHNOCONDITION"/>
-                                <bpws:link name="EmptyToRicercaBrand" tibex:linkType="SUCCESS"/>
                                 <bpws:link name="YToOnlyCategory" tibex:linkType="SUCCESSWITHNOCONDITION"/>
-                                <bpws:link name="BrandToRicercaModello" tibex:linkType="SUCCESS"/>
+                                <bpws:link name="CategoryToEmpty1" tibex:linkType="SUCCESSWITHNOCONDITION"/>
+                                <bpws:link
+                                    name="NoCategoryToRicercaModelloBrand1" tibex:linkType="SUCCESSWITHCONDITION"/>
+                                <bpws:link
+                                    name="NoCategoryToBrandSearch" tibex:linkType="SUCCESSWITHCONDITION"/>
+                                <bpws:link name="NoCategoryToJDBCQuery4" tibex:linkType="SUCCESSWITHCONDITION"/>
+                                <bpws:link name="NoCategoryToJDBCQuery3" tibex:linkType="SUCCESSWITHNOCONDITION"/>
+                                <bpws:link
+                                    name="RicercaModelloBrand1ToReply8" tibex:linkType="SUCCESS"/>
+                                <bpws:link name="BrandSearchToReply9" tibex:linkType="SUCCESS"/>
+                                <bpws:link name="JDBCQuery4ToReply10" tibex:linkType="SUCCESS"/>
+                                <bpws:link name="JDBCQuery3ToReply11" tibex:linkType="SUCCESS"/>
+                                <bpws:link
+                                    name="CategoryOnlyToBrandModel" tibex:linkType="SUCCESSWITHCONDITION"/>
+                                <bpws:link
+                                    name="CategoryOnlyToCategoryBrandSearch" tibex:linkType="SUCCESSWITHCONDITION"/>
+                                <bpws:link
+                                    name="CategoryOnlyToRicercaModello" tibex:linkType="SUCCESSWITHCONDITION"/>
                             </bpws:links>
                             <bpws:empty name="OnMessageStart1"
                                 tibex:constructor="onMessageStart" tibex:xpdlId="853aa62e-cc08-4919-9408-2d1b45b2c973"/>
@@ -4238,9 +4936,9 @@
                                 <tibex:activityExtension
                                     expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns11=&quot;http://www.tibco.com/namespaces/tnt/plugins/jdbc+8713e3a2-1367-4c85-ae80-2b17682e41f7+input&quot; xmlns:tns8=&quot;http://xmlns.example.com/Cars/parameters&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;get&quot;/>&lt;xsl:template name=&quot;JDBCQuery6-input&quot; match=&quot;/&quot;>&lt;tns11:jdbcQueryActivityInput>&lt;Category>&lt;xsl:choose>&lt;xsl:when test=&quot;exists($get/parameters/tns8:carsGetParameters/tns8:Category)&quot;>&lt;xsl:value-of select=&quot;$get/parameters/tns8:carsGetParameters/tns8:Category&quot;/>&lt;/xsl:when>&lt;xsl:otherwise>&lt;xsl:attribute name=&quot;xsi:nil&quot;>true&lt;/xsl:attribute>&lt;/xsl:otherwise>&lt;/xsl:choose>&lt;/Category>&lt;/tns11:jdbcQueryActivityInput>&lt;/xsl:template>&lt;/xsl:stylesheet>"
                                     expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"
-                                    inputVariable="OnlyCategory-input"
-                                    name="OnlyCategory"
-                                    outputVariable="OnlyCategory"
+                                    inputVariable="CtgOnly-input"
+                                    name="CtgOnly"
+                                    outputVariable="CtgOnly"
                                     tibex:xpdlId="8713e3a2-1367-4c85-ae80-2b17682e41f7" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
                                     <bpws:targets>
                                     <bpws:target linkName="YToOnlyCategory"/>
@@ -4312,12 +5010,12 @@
                                 tibex:xpdlId="5a368d49-b59c-40ee-a49f-99cdfae47850" variable="Reply3-input">
                                 <tibex:inputBinding expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:tns3="http://xmlns.example.com/20240608130601PLT" xmlns:tns1="http://www.example.org/BackEnd_Cars" xmlns:xsd="http://www.w3.org/2001/XMLSchema" version="2.0"&gt;
-    &lt;xsl:param name="OnlyCategory"/&gt;
+    &lt;xsl:param name="CtgOnly"/&gt;
     &lt;xsl:template name="Reply3-input" match="/"&gt;
         &lt;tns3:getResponse&gt;
             &lt;GetCarsResponse&gt;
                 &lt;tns1:GetCars&gt;
-                    &lt;xsl:for-each select="$OnlyCategory/Record"&gt;
+                    &lt;xsl:for-each select="$CtgOnly/Record"&gt;
                         &lt;tns1:GetCar&gt;
                             &lt;tns1:Id&gt;
                                 &lt;xsl:value-of select="xsd:positiveInteger(id)"/&gt;
@@ -4346,7 +5044,7 @@
 &lt;/xsl:stylesheet&gt;</tibex:inputBinding>
                                 <tibex:inputBindings>
                                     <tibex:partBinding
-                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns3=&quot;http://xmlns.example.com/20240608130601PLT&quot; xmlns:tns1=&quot;http://www.example.org/BackEnd_Cars&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:param name=&quot;OnlyCategory&quot;/>&#xa;    &lt;xsl:template name=&quot;Reply3-input&quot; match=&quot;/&quot;>&#xa;        &lt;tns1:GetCars>&#xa;            &lt;xsl:for-each select=&quot;$OnlyCategory/Record&quot;>&#xa;                &lt;tns1:GetCar>&#xa;                    &lt;tns1:Id>&#xa;                        &lt;xsl:value-of select=&quot;xsd:positiveInteger(id)&quot;/>&#xa;                    &lt;/tns1:Id>&#xa;                    &lt;tns1:IdCategory>&#xa;                        &lt;xsl:value-of select=&quot;xsd:positiveInteger(id_category)&quot;/>&#xa;                    &lt;/tns1:IdCategory>&#xa;                    &lt;tns1:Brand>&#xa;                        &lt;xsl:value-of select=&quot;brand&quot;/>&#xa;                    &lt;/tns1:Brand>&#xa;                    &lt;tns1:Model>&#xa;                        &lt;xsl:value-of select=&quot;model&quot;/>&#xa;                    &lt;/tns1:Model>&#xa;                    &lt;tns1:Optional>&#xa;                        &lt;xsl:value-of select=&quot;optional&quot;/>&#xa;                    &lt;/tns1:Optional>&#xa;                    &lt;tns1:Surcharge>&#xa;                        &lt;xsl:value-of select=&quot;surcharge&quot;/>&#xa;                    &lt;/tns1:Surcharge>&#xa;                &lt;/tns1:GetCar>&#xa;            &lt;/xsl:for-each>&#xa;        &lt;/tns1:GetCars>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns3=&quot;http://xmlns.example.com/20240608130601PLT&quot; xmlns:tns1=&quot;http://www.example.org/BackEnd_Cars&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:param name=&quot;CtgOnly&quot;/>&#xa;    &lt;xsl:template name=&quot;Reply3-input&quot; match=&quot;/&quot;>&#xa;        &lt;tns1:GetCars>&#xa;            &lt;xsl:for-each select=&quot;$CtgOnly/Record&quot;>&#xa;                &lt;tns1:GetCar>&#xa;                    &lt;tns1:Id>&#xa;                        &lt;xsl:value-of select=&quot;xsd:positiveInteger(id)&quot;/>&#xa;                    &lt;/tns1:Id>&#xa;                    &lt;tns1:IdCategory>&#xa;                        &lt;xsl:value-of select=&quot;xsd:positiveInteger(id_category)&quot;/>&#xa;                    &lt;/tns1:IdCategory>&#xa;                    &lt;tns1:Brand>&#xa;                        &lt;xsl:value-of select=&quot;brand&quot;/>&#xa;                    &lt;/tns1:Brand>&#xa;                    &lt;tns1:Model>&#xa;                        &lt;xsl:value-of select=&quot;model&quot;/>&#xa;                    &lt;/tns1:Model>&#xa;                    &lt;tns1:Optional>&#xa;                        &lt;xsl:value-of select=&quot;optional&quot;/>&#xa;                    &lt;/tns1:Optional>&#xa;                    &lt;tns1:Surcharge>&#xa;                        &lt;xsl:value-of select=&quot;surcharge&quot;/>&#xa;                    &lt;/tns1:Surcharge>&#xa;                &lt;/tns1:GetCar>&#xa;            &lt;/xsl:for-each>&#xa;        &lt;/tns1:GetCars>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                                 </tibex:inputBindings>
                                 <bpws:targets>
                                     <bpws:target linkName="JDBCQuery6ToReply3"/>
@@ -4427,18 +5125,25 @@
                                     </tibex:DesignExpression>
                                     <bpws:transitionCondition expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"><![CDATA[string-length($get.parameters/tns:Category)>0]]></bpws:transitionCondition>
                                     </bpws:source>
+                                    <bpws:source linkName="CategoryToEmpty1">
+                                    <tibex:DesignExpression>
+                                    <tibex:expression
+                                    expression="##otherwise##" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"/>
+                                    </tibex:DesignExpression>
+                                    <bpws:transitionCondition expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"><![CDATA[##otherwise##]]></bpws:transitionCondition>
+                                    </bpws:source>
                                 </bpws:sources>
                             </bpws:empty>
                             <bpws:extensionActivity>
                                 <tibex:activityExtension
                                     expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns12=&quot;http://www.tibco.com/namespaces/tnt/plugins/jdbc+a3238f10-a535-4d9b-8855-a2b8f2cc328d+input&quot; xmlns:tns8=&quot;http://xmlns.example.com/Cars/parameters&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;get&quot;/>&lt;xsl:template name=&quot;RicercaModelloBrand-input&quot; match=&quot;/&quot;>&lt;tns12:jdbcQueryActivityInput>&lt;Category>&lt;xsl:choose>&lt;xsl:when test=&quot;exists($get/parameters/tns8:carsGetParameters/tns8:Category)&quot;>&lt;xsl:value-of select=&quot;$get/parameters/tns8:carsGetParameters/tns8:Category&quot;/>&lt;/xsl:when>&lt;xsl:otherwise>&lt;xsl:attribute name=&quot;xsi:nil&quot;>true&lt;/xsl:attribute>&lt;/xsl:otherwise>&lt;/xsl:choose>&lt;/Category>&lt;Brand>&lt;xsl:choose>&lt;xsl:when test=&quot;exists($get/parameters/tns8:carsGetParameters/tns8:Brand)&quot;>&lt;xsl:value-of select=&quot;$get/parameters/tns8:carsGetParameters/tns8:Brand&quot;/>&lt;/xsl:when>&lt;xsl:otherwise>&lt;xsl:attribute name=&quot;xsi:nil&quot;>true&lt;/xsl:attribute>&lt;/xsl:otherwise>&lt;/xsl:choose>&lt;/Brand>&lt;Model>&lt;xsl:choose>&lt;xsl:when test=&quot;exists($get/parameters/tns8:carsGetParameters/tns8:Model)&quot;>&lt;xsl:value-of select=&quot;$get/parameters/tns8:carsGetParameters/tns8:Model&quot;/>&lt;/xsl:when>&lt;xsl:otherwise>&lt;xsl:attribute name=&quot;xsi:nil&quot;>true&lt;/xsl:attribute>&lt;/xsl:otherwise>&lt;/xsl:choose>&lt;/Model>&lt;/tns12:jdbcQueryActivityInput>&lt;/xsl:template>&lt;/xsl:stylesheet>"
                                     expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"
-                                    inputVariable="RicercaModelloBrand-input"
-                                    name="RicercaModelloBrand"
-                                    outputVariable="RicercaModelloBrand"
+                                    inputVariable="BrandModel-input"
+                                    name="BrandModel"
+                                    outputVariable="BrandModel"
                                     tibex:xpdlId="a3238f10-a535-4d9b-8855-a2b8f2cc328d" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
                                     <bpws:targets>
-                                    <bpws:target linkName="ModelToRicercaModelloBrand"/>
+                                    <bpws:target linkName="CategoryOnlyToBrandModel"/>
                                     </bpws:targets>
                                     <bpws:sources>
                                     <bpws:source linkName="JDBCQuery5ToReply5"/>
@@ -4519,7 +5224,7 @@
                                     outputVariable="RicercaModello"
                                     tibex:xpdlId="59f39d48-6e40-4b53-818e-22509fc438aa" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
                                     <bpws:targets>
-                                    <bpws:target linkName="BrandToRicercaModello"/>
+                                    <bpws:target linkName="CategoryOnlyToRicercaModello"/>
                                     </bpws:targets>
                                     <bpws:sources>
                                     <bpws:source linkName="JDBCQuery7ToReply7"/>
@@ -4592,12 +5297,12 @@
                                 tibex:xpdlId="c9d95571-914c-4259-8ddd-089142705e21" variable="Reply5-input">
                                 <tibex:inputBinding expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:tns3="http://xmlns.example.com/20240608130601PLT" xmlns:tns1="http://www.example.org/BackEnd_Cars" xmlns:xsd="http://www.w3.org/2001/XMLSchema" version="2.0"&gt;
-    &lt;xsl:param name="RicercaModelloBrand"/&gt;
+    &lt;xsl:param name="BrandModel"/&gt;
     &lt;xsl:template name="Reply5-input" match="/"&gt;
         &lt;tns3:getResponse&gt;
             &lt;GetCarsResponse&gt;
                 &lt;tns1:GetCars&gt;
-                    &lt;xsl:for-each select="$RicercaModelloBrand/Record"&gt;
+                    &lt;xsl:for-each select="$BrandModel/Record"&gt;
                         &lt;tns1:GetCar&gt;
                             &lt;tns1:Id&gt;
                                 &lt;xsl:value-of select="xsd:positiveInteger(id)"/&gt;
@@ -4626,7 +5331,7 @@
 &lt;/xsl:stylesheet&gt;</tibex:inputBinding>
                                 <tibex:inputBindings>
                                     <tibex:partBinding
-                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns3=&quot;http://xmlns.example.com/20240608130601PLT&quot; xmlns:tns1=&quot;http://www.example.org/BackEnd_Cars&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:param name=&quot;RicercaModelloBrand&quot;/>&#xa;    &lt;xsl:template name=&quot;Reply5-input&quot; match=&quot;/&quot;>&#xa;        &lt;tns1:GetCars>&#xa;            &lt;xsl:for-each select=&quot;$RicercaModelloBrand/Record&quot;>&#xa;                &lt;tns1:GetCar>&#xa;                    &lt;tns1:Id>&#xa;                        &lt;xsl:value-of select=&quot;xsd:positiveInteger(id)&quot;/>&#xa;                    &lt;/tns1:Id>&#xa;                    &lt;tns1:IdCategory>&#xa;                        &lt;xsl:value-of select=&quot;xsd:positiveInteger(id_category)&quot;/>&#xa;                    &lt;/tns1:IdCategory>&#xa;                    &lt;tns1:Brand>&#xa;                        &lt;xsl:value-of select=&quot;brand&quot;/>&#xa;                    &lt;/tns1:Brand>&#xa;                    &lt;tns1:Model>&#xa;                        &lt;xsl:value-of select=&quot;model&quot;/>&#xa;                    &lt;/tns1:Model>&#xa;                    &lt;tns1:Optional>&#xa;                        &lt;xsl:value-of select=&quot;optional&quot;/>&#xa;                    &lt;/tns1:Optional>&#xa;                    &lt;tns1:Surcharge>&#xa;                        &lt;xsl:value-of select=&quot;surcharge&quot;/>&#xa;                    &lt;/tns1:Surcharge>&#xa;                &lt;/tns1:GetCar>&#xa;            &lt;/xsl:for-each>&#xa;        &lt;/tns1:GetCars>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns3=&quot;http://xmlns.example.com/20240608130601PLT&quot; xmlns:tns1=&quot;http://www.example.org/BackEnd_Cars&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:param name=&quot;BrandModel&quot;/>&#xa;    &lt;xsl:template name=&quot;Reply5-input&quot; match=&quot;/&quot;>&#xa;        &lt;tns1:GetCars>&#xa;            &lt;xsl:for-each select=&quot;$BrandModel/Record&quot;>&#xa;                &lt;tns1:GetCar>&#xa;                    &lt;tns1:Id>&#xa;                        &lt;xsl:value-of select=&quot;xsd:positiveInteger(id)&quot;/>&#xa;                    &lt;/tns1:Id>&#xa;                    &lt;tns1:IdCategory>&#xa;                        &lt;xsl:value-of select=&quot;xsd:positiveInteger(id_category)&quot;/>&#xa;                    &lt;/tns1:IdCategory>&#xa;                    &lt;tns1:Brand>&#xa;                        &lt;xsl:value-of select=&quot;brand&quot;/>&#xa;                    &lt;/tns1:Brand>&#xa;                    &lt;tns1:Model>&#xa;                        &lt;xsl:value-of select=&quot;model&quot;/>&#xa;                    &lt;/tns1:Model>&#xa;                    &lt;tns1:Optional>&#xa;                        &lt;xsl:value-of select=&quot;optional&quot;/>&#xa;                    &lt;/tns1:Optional>&#xa;                    &lt;tns1:Surcharge>&#xa;                        &lt;xsl:value-of select=&quot;surcharge&quot;/>&#xa;                    &lt;/tns1:Surcharge>&#xa;                &lt;/tns1:GetCar>&#xa;            &lt;/xsl:for-each>&#xa;        &lt;/tns1:GetCars>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                                 </tibex:inputBindings>
                                 <bpws:targets>
                                     <bpws:target linkName="JDBCQuery5ToReply5"/>
@@ -4636,12 +5341,12 @@
                                 <tibex:activityExtension
                                     expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns13=&quot;http://www.tibco.com/namespaces/tnt/plugins/jdbc+d4623d31-3d3a-491f-a4db-c788f592e026+input&quot; xmlns:tns8=&quot;http://xmlns.example.com/Cars/parameters&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;get&quot;/>&lt;xsl:template name=&quot;RicercaBrand-input&quot; match=&quot;/&quot;>&lt;tns13:jdbcQueryActivityInput>&lt;Category>&lt;xsl:choose>&lt;xsl:when test=&quot;exists($get/parameters/tns8:carsGetParameters/tns8:Category)&quot;>&lt;xsl:value-of select=&quot;$get/parameters/tns8:carsGetParameters/tns8:Category&quot;/>&lt;/xsl:when>&lt;xsl:otherwise>&lt;xsl:attribute name=&quot;xsi:nil&quot;>true&lt;/xsl:attribute>&lt;/xsl:otherwise>&lt;/xsl:choose>&lt;/Category>&lt;Brand>&lt;xsl:choose>&lt;xsl:when test=&quot;exists($get/parameters/tns8:carsGetParameters/tns8:Brand)&quot;>&lt;xsl:value-of select=&quot;$get/parameters/tns8:carsGetParameters/tns8:Brand&quot;/>&lt;/xsl:when>&lt;xsl:otherwise>&lt;xsl:attribute name=&quot;xsi:nil&quot;>true&lt;/xsl:attribute>&lt;/xsl:otherwise>&lt;/xsl:choose>&lt;/Brand>&lt;/tns13:jdbcQueryActivityInput>&lt;/xsl:template>&lt;/xsl:stylesheet>"
                                     expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"
-                                    inputVariable="RicercaBrand-input"
-                                    name="RicercaBrand"
-                                    outputVariable="RicercaBrand"
+                                    inputVariable="CategoryBrandSearch-input"
+                                    name="CategoryBrandSearch"
+                                    outputVariable="CategoryBrandSearch"
                                     tibex:xpdlId="d4623d31-3d3a-491f-a4db-c788f592e026" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
                                     <bpws:targets>
-                                    <bpws:target linkName="EmptyToRicercaBrand"/>
+                                    <bpws:target linkName="CategoryOnlyToCategoryBrandSearch"/>
                                     </bpws:targets>
                                     <bpws:sources>
                                     <bpws:source linkName="JDBCQuery8ToReply6"/>
@@ -4714,12 +5419,12 @@
                                 tibex:xpdlId="300fb9ba-caa3-4e33-a49b-b87bbb6fe4e2" variable="Reply6-input">
                                 <tibex:inputBinding expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:tns3="http://xmlns.example.com/20240608130601PLT" xmlns:tns1="http://www.example.org/BackEnd_Cars" xmlns:xsd="http://www.w3.org/2001/XMLSchema" version="2.0"&gt;
-    &lt;xsl:param name="RicercaBrand"/&gt;
+    &lt;xsl:param name="CategoryBrandSearch"/&gt;
     &lt;xsl:template name="Reply6-input" match="/"&gt;
         &lt;tns3:getResponse&gt;
             &lt;GetCarsResponse&gt;
                 &lt;tns1:GetCars&gt;
-                    &lt;xsl:for-each select="$RicercaBrand/Record"&gt;
+                    &lt;xsl:for-each select="$CategoryBrandSearch/Record"&gt;
                         &lt;tns1:GetCar&gt;
                             &lt;tns1:Id&gt;
                                 &lt;xsl:value-of select="xsd:positiveInteger(id)"/&gt;
@@ -4748,7 +5453,7 @@
 &lt;/xsl:stylesheet&gt;</tibex:inputBinding>
                                 <tibex:inputBindings>
                                     <tibex:partBinding
-                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns3=&quot;http://xmlns.example.com/20240608130601PLT&quot; xmlns:tns1=&quot;http://www.example.org/BackEnd_Cars&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:param name=&quot;RicercaBrand&quot;/>&#xa;    &lt;xsl:template name=&quot;Reply6-input&quot; match=&quot;/&quot;>&#xa;        &lt;tns1:GetCars>&#xa;            &lt;xsl:for-each select=&quot;$RicercaBrand/Record&quot;>&#xa;                &lt;tns1:GetCar>&#xa;                    &lt;tns1:Id>&#xa;                        &lt;xsl:value-of select=&quot;xsd:positiveInteger(id)&quot;/>&#xa;                    &lt;/tns1:Id>&#xa;                    &lt;tns1:IdCategory>&#xa;                        &lt;xsl:value-of select=&quot;xsd:positiveInteger(id_category)&quot;/>&#xa;                    &lt;/tns1:IdCategory>&#xa;                    &lt;tns1:Brand>&#xa;                        &lt;xsl:value-of select=&quot;brand&quot;/>&#xa;                    &lt;/tns1:Brand>&#xa;                    &lt;tns1:Model>&#xa;                        &lt;xsl:value-of select=&quot;model&quot;/>&#xa;                    &lt;/tns1:Model>&#xa;                    &lt;tns1:Optional>&#xa;                        &lt;xsl:value-of select=&quot;optional&quot;/>&#xa;                    &lt;/tns1:Optional>&#xa;                    &lt;tns1:Surcharge>&#xa;                        &lt;xsl:value-of select=&quot;surcharge&quot;/>&#xa;                    &lt;/tns1:Surcharge>&#xa;                &lt;/tns1:GetCar>&#xa;            &lt;/xsl:for-each>&#xa;        &lt;/tns1:GetCars>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns3=&quot;http://xmlns.example.com/20240608130601PLT&quot; xmlns:tns1=&quot;http://www.example.org/BackEnd_Cars&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:param name=&quot;CategoryBrandSearch&quot;/>&#xa;    &lt;xsl:template name=&quot;Reply6-input&quot; match=&quot;/&quot;>&#xa;        &lt;tns1:GetCars>&#xa;            &lt;xsl:for-each select=&quot;$CategoryBrandSearch/Record&quot;>&#xa;                &lt;tns1:GetCar>&#xa;                    &lt;tns1:Id>&#xa;                        &lt;xsl:value-of select=&quot;xsd:positiveInteger(id)&quot;/>&#xa;                    &lt;/tns1:Id>&#xa;                    &lt;tns1:IdCategory>&#xa;                        &lt;xsl:value-of select=&quot;xsd:positiveInteger(id_category)&quot;/>&#xa;                    &lt;/tns1:IdCategory>&#xa;                    &lt;tns1:Brand>&#xa;                        &lt;xsl:value-of select=&quot;brand&quot;/>&#xa;                    &lt;/tns1:Brand>&#xa;                    &lt;tns1:Model>&#xa;                        &lt;xsl:value-of select=&quot;model&quot;/>&#xa;                    &lt;/tns1:Model>&#xa;                    &lt;tns1:Optional>&#xa;                        &lt;xsl:value-of select=&quot;optional&quot;/>&#xa;                    &lt;/tns1:Optional>&#xa;                    &lt;tns1:Surcharge>&#xa;                        &lt;xsl:value-of select=&quot;surcharge&quot;/>&#xa;                    &lt;/tns1:Surcharge>&#xa;                &lt;/tns1:GetCar>&#xa;            &lt;/xsl:for-each>&#xa;        &lt;/tns1:GetCars>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                                 </tibex:inputBindings>
                                 <bpws:targets>
                                     <bpws:target linkName="JDBCQuery8ToReply6"/>
@@ -4799,18 +5504,11 @@
                                     <bpws:target linkName="JDBCQuery7ToReply7"/>
                                 </bpws:targets>
                             </bpws:reply>
-                            <bpws:empty name="Y" tibex:xpdlId="7bba9468-a334-4518-ad1f-769f99a15827">
+                            <bpws:empty name="CategoryOnly" tibex:xpdlId="7bba9468-a334-4518-ad1f-769f99a15827">
                                 <bpws:targets>
                                     <bpws:target linkName="CategoryToEmpty"/>
                                 </bpws:targets>
                                 <bpws:sources>
-                                    <bpws:source linkName="EmptyToEmpty1">
-                                    <tibex:DesignExpression>
-                                    <tibex:expression
-                                    expression="string-length($get/parameters/tns:carsGetParameters/tns:Brand)>0" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"/>
-                                    </tibex:DesignExpression>
-                                    <bpws:transitionCondition expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"><![CDATA[string-length($get.parameters/tns:Brand)>0]]></bpws:transitionCondition>
-                                    </bpws:source>
                                     <bpws:source linkName="YToOnlyCategory">
                                     <tibex:DesignExpression>
                                     <tibex:expression
@@ -4818,30 +5516,56 @@
                                     </tibex:DesignExpression>
                                     <bpws:transitionCondition expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"><![CDATA[##otherwise##]]></bpws:transitionCondition>
                                     </bpws:source>
-                                </bpws:sources>
-                            </bpws:empty>
-                            <bpws:empty name="Brand" tibex:xpdlId="3b0db3c4-d0f1-4ddb-ae31-946bab9aec37">
-                                <bpws:targets>
-                                    <bpws:target linkName="EmptyToEmpty1"/>
-                                </bpws:targets>
-                                <bpws:sources>
-                                    <bpws:source linkName="Empty1ToEmpty2">
+                                    <bpws:source linkName="CategoryOnlyToRicercaModello">
                                     <tibex:DesignExpression>
                                     <tibex:expression
-                                    expression="string-length($get/parameters/tns:carsGetParameters/tns:Model)>0" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"/>
+                                    expression="string-length($get/parameters/tns:carsGetParameters/tns:Brand)=0 and string-length($get/parameters/tns:carsGetParameters/tns:Model)>0" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"/>
                                     </tibex:DesignExpression>
-                                    <bpws:transitionCondition expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"><![CDATA[string-length($get.parameters/tns:Model)>0]]></bpws:transitionCondition>
+                                    <bpws:transitionCondition expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"><![CDATA[string-length($get.parameters/tns:Brand)=0 and string-length($get.parameters/tns:Model)>0]]></bpws:transitionCondition>
                                     </bpws:source>
-                                    <bpws:source linkName="BrandToRicercaModello"/>
+                                    <bpws:source linkName="CategoryOnlyToBrandModel">
+                                    <tibex:DesignExpression>
+                                    <tibex:expression
+                                    expression="string-length($get/parameters/tns:carsGetParameters/tns:Brand)>0 and string-length($get/parameters/tns:carsGetParameters/tns:Model)>0" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"/>
+                                    </tibex:DesignExpression>
+                                    <bpws:transitionCondition expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"><![CDATA[string-length($get.parameters/tns:Brand)>0 and string-length($get.parameters/tns:Model)>0]]></bpws:transitionCondition>
+                                    </bpws:source>
+                                    <bpws:source linkName="CategoryOnlyToCategoryBrandSearch">
+                                    <tibex:DesignExpression>
+                                    <tibex:expression
+                                    expression="string-length($get/parameters/tns:carsGetParameters/tns:Brand)>0 and string-length($get/parameters/tns:carsGetParameters/tns:Model)=0" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"/>
+                                    </tibex:DesignExpression>
+                                    <bpws:transitionCondition expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"><![CDATA[string-length($get.parameters/tns:Brand)>0 and string-length($get.parameters/tns:Model)=0]]></bpws:transitionCondition>
+                                    </bpws:source>
                                 </bpws:sources>
                             </bpws:empty>
-                            <bpws:empty name="Model" tibex:xpdlId="23f4a6ce-2271-4dd0-9ee7-723aa9598fe9">
+                            <bpws:empty name="NoCategory" tibex:xpdlId="8cbe48c8-82a8-4b21-b2b7-84ec75c4ce86">
                                 <bpws:targets>
-                                    <bpws:target linkName="Empty1ToEmpty2"/>
+                                    <bpws:target linkName="CategoryToEmpty1"/>
                                 </bpws:targets>
                                 <bpws:sources>
-                                    <bpws:source linkName="ModelToRicercaModelloBrand"/>
-                                    <bpws:source linkName="ModelToEmpty">
+                                    <bpws:source linkName="NoCategoryToRicercaModelloBrand1">
+                                    <tibex:DesignExpression>
+                                    <tibex:expression
+                                    expression="string-length($get/parameters/tns:carsGetParameters/tns:Model)>0 and string-length($get/parameters/tns:carsGetParameters/tns:Brand)>0" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"/>
+                                    </tibex:DesignExpression>
+                                    <bpws:transitionCondition expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"><![CDATA[string-length($get.parameters/tns:Model)>0 and string-length($get.parameters/tns:Brand)>0]]></bpws:transitionCondition>
+                                    </bpws:source>
+                                    <bpws:source linkName="NoCategoryToBrandSearch">
+                                    <tibex:DesignExpression>
+                                    <tibex:expression
+                                    expression="string-length($get/parameters/tns:carsGetParameters/tns:Brand)>0 and string-length($get/parameters/tns:carsGetParameters/tns:Model)=0" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"/>
+                                    </tibex:DesignExpression>
+                                    <bpws:transitionCondition expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"><![CDATA[string-length($get.parameters/tns:Brand)>0 and string-length($get.parameters/tns:Model)=0]]></bpws:transitionCondition>
+                                    </bpws:source>
+                                    <bpws:source linkName="NoCategoryToJDBCQuery4">
+                                    <tibex:DesignExpression>
+                                    <tibex:expression
+                                    expression="string-length($get/parameters/tns:carsGetParameters/tns:Brand)=0 and string-length($get/parameters/tns:carsGetParameters/tns:Model)>0" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"/>
+                                    </tibex:DesignExpression>
+                                    <bpws:transitionCondition expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"><![CDATA[string-length($get.parameters/tns:Brand)=0 and string-length($get.parameters/tns:Model)>0]]></bpws:transitionCondition>
+                                    </bpws:source>
+                                    <bpws:source linkName="NoCategoryToJDBCQuery3">
                                     <tibex:DesignExpression>
                                     <tibex:expression
                                     expression="##otherwise##" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"/>
@@ -4850,14 +5574,348 @@
                                     </bpws:source>
                                 </bpws:sources>
                             </bpws:empty>
-                            <bpws:empty name="Empty" tibex:xpdlId="0c28493e-15da-4194-be19-b5455cd8bfc2">
+                            <bpws:extensionActivity>
+                                <tibex:activityExtension
+                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns17=&quot;http://www.tibco.com/namespaces/tnt/plugins/jdbc+b24a88b9-5a9c-4584-bde6-1cf749538a2b+input&quot; xmlns:tns8=&quot;http://xmlns.example.com/Cars/parameters&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;get&quot;/>&lt;xsl:template name=&quot;BrandSearch-input&quot; match=&quot;/&quot;>&lt;tns17:jdbcQueryActivityInput>&lt;Brand>&lt;xsl:choose>&lt;xsl:when test=&quot;exists($get/parameters/tns8:carsGetParameters/tns8:Brand)&quot;>&lt;xsl:value-of select=&quot;$get/parameters/tns8:carsGetParameters/tns8:Brand&quot;/>&lt;/xsl:when>&lt;xsl:otherwise>&lt;xsl:attribute name=&quot;xsi:nil&quot;>true&lt;/xsl:attribute>&lt;/xsl:otherwise>&lt;/xsl:choose>&lt;/Brand>&lt;/tns17:jdbcQueryActivityInput>&lt;/xsl:template>&lt;/xsl:stylesheet>"
+                                    expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"
+                                    inputVariable="BrandSearch-input"
+                                    name="BrandSearch"
+                                    outputVariable="BrandSearch"
+                                    tibex:xpdlId="b24a88b9-5a9c-4584-bde6-1cf749538a2b" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
+                                    <bpws:targets>
+                                    <bpws:target linkName="NoCategoryToBrandSearch"/>
+                                    </bpws:targets>
+                                    <bpws:sources>
+                                    <bpws:source linkName="BrandSearchToReply9"/>
+                                    </bpws:sources>
+                                    <tibex:inputBindings>
+                                    <tibex:inputBinding
+                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns17=&quot;http://www.tibco.com/namespaces/tnt/plugins/jdbc+b24a88b9-5a9c-4584-bde6-1cf749538a2b+input&quot; xmlns:tns8=&quot;http://xmlns.example.com/Cars/parameters&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:param name=&quot;get.parameters&quot;/>&#xa;    &lt;xsl:template name=&quot;BrandSearch-input&quot; match=&quot;/&quot;>&#xa;        &lt;tns17:jdbcQueryActivityInput>&#xa;            &lt;Brand>&#xa;                &lt;xsl:choose>&#xa;                    &lt;xsl:when test=&quot;exists($get.parameters/tns8:Brand)&quot;>&#xa;                        &lt;xsl:value-of select=&quot;$get.parameters/tns8:Brand&quot;/>&#xa;                    &lt;/xsl:when>&#xa;                    &lt;xsl:otherwise>&#xa;                        &lt;xsl:attribute name=&quot;xsi:nil&quot;>true&lt;/xsl:attribute>&#xa;                    &lt;/xsl:otherwise>&#xa;                &lt;/xsl:choose>&#xa;            &lt;/Brand>&#xa;        &lt;/tns17:jdbcQueryActivityInput>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                                    </tibex:inputBindings>
+                                    <tibex:config>
+                                    <bwext:BWActivity
+                                    activityTypeID="bw.jdbc.JDBCQuery"
+                                    xmlns:activityconfig="http://tns.tibco.com/bw/model/activityconfig"
+                                    xmlns:bwext="http://tns.tibco.com/bw/model/core/bwext"
+                                    xmlns:jdbcPalette="http://ns.tibco.com/bw/palette/jdbc" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                                    <activityConfig>
+                                    <properties
+                                    name="config" xsi:type="activityconfig:EMFProperty">
+                                    <type href="http://ns.tibco.com/bw/palette/jdbc#//JDBCQueryActivity"/>
+                                    <value maxRows="100"
+                                    sharedResourceProperty="jdbcProperty"
+                                    sqlStatement="SELECT CR.ID,CR.ID_CATEGORY,CR.BRAND,CR.MODEL,CR.OPTIONAL,CR.SURCHARGE&#xa;  FROM CARS AS CR&#xa;  JOIN CATEGORY AS CT&#xa;    ON CR.ID_CATEGORY=CT.ID&#xa;  WHERE BRAND=?"
+                                    timeout="10" xsi:type="jdbcPalette:JDBCQueryActivity">
+
+                                    <PreparedParameters
+                                    DataType="12"
+                                    DataTypeDisplayValue="VARCHAR" ParameterName="Brand"/>
+                                    <columnMetadata
+                                    columnIndex="1"
+                                    columnName="id"
+                                    dataType="4"
+                                    status="OptionalElement" typeName="INTEGER"/>
+                                    <columnMetadata
+                                    columnIndex="2"
+                                    columnName="id_category"
+                                    dataType="4"
+                                    status="OptionalElement" typeName="INTEGER"/>
+                                    <columnMetadata
+                                    columnIndex="3"
+                                    columnName="brand"
+                                    dataType="12"
+                                    status="OptionalElement" typeName="CHARACTER VARYING"/>
+                                    <columnMetadata
+                                    columnIndex="4"
+                                    columnName="model"
+                                    dataType="12"
+                                    status="OptionalElement" typeName="CHARACTER VARYING"/>
+                                    <columnMetadata
+                                    columnIndex="5"
+                                    columnName="optional"
+                                    dataType="16"
+                                    status="OptionalElement" typeName="BOOLEAN"/>
+                                    <columnMetadata
+                                    columnIndex="6"
+                                    columnName="surcharge"
+                                    dataType="12"
+                                    status="OptionalElement" typeName="CHARACTER VARYING"/>
+                                    </value>
+                                    </properties>
+                                    </activityConfig>
+                                    </bwext:BWActivity>
+                                    </tibex:config>
+                                </tibex:activityExtension>
+                            </bpws:extensionActivity>
+                            <bpws:extensionActivity>
+                                <tibex:activityExtension
+                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns16=&quot;http://www.tibco.com/namespaces/tnt/plugins/jdbc+49368f8b-ae50-4820-a865-89a67d96d069+input&quot; xmlns:tns8=&quot;http://xmlns.example.com/Cars/parameters&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;get&quot;/>&lt;xsl:template name=&quot;RicercaModelloBrand1-input&quot; match=&quot;/&quot;>&lt;tns16:jdbcQueryActivityInput>&lt;Brand>&lt;xsl:choose>&lt;xsl:when test=&quot;exists($get/parameters/tns8:carsGetParameters/tns8:Brand)&quot;>&lt;xsl:value-of select=&quot;$get/parameters/tns8:carsGetParameters/tns8:Brand&quot;/>&lt;/xsl:when>&lt;xsl:otherwise>&lt;xsl:attribute name=&quot;xsi:nil&quot;>true&lt;/xsl:attribute>&lt;/xsl:otherwise>&lt;/xsl:choose>&lt;/Brand>&lt;Model>&lt;xsl:choose>&lt;xsl:when test=&quot;exists($get/parameters/tns8:carsGetParameters/tns8:Model)&quot;>&lt;xsl:value-of select=&quot;$get/parameters/tns8:carsGetParameters/tns8:Model&quot;/>&lt;/xsl:when>&lt;xsl:otherwise>&lt;xsl:attribute name=&quot;xsi:nil&quot;>true&lt;/xsl:attribute>&lt;/xsl:otherwise>&lt;/xsl:choose>&lt;/Model>&lt;/tns16:jdbcQueryActivityInput>&lt;/xsl:template>&lt;/xsl:stylesheet>"
+                                    expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"
+                                    inputVariable="RicercaModelloBrand1-input"
+                                    name="RicercaModelloBrand1"
+                                    outputVariable="RicercaModelloBrand1"
+                                    tibex:xpdlId="49368f8b-ae50-4820-a865-89a67d96d069" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
+                                    <bpws:targets>
+                                    <bpws:target linkName="NoCategoryToRicercaModelloBrand1"/>
+                                    </bpws:targets>
+                                    <bpws:sources>
+                                    <bpws:source linkName="RicercaModelloBrand1ToReply8"/>
+                                    </bpws:sources>
+                                    <tibex:inputBindings>
+                                    <tibex:inputBinding
+                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns16=&quot;http://www.tibco.com/namespaces/tnt/plugins/jdbc+49368f8b-ae50-4820-a865-89a67d96d069+input&quot; xmlns:tns8=&quot;http://xmlns.example.com/Cars/parameters&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:param name=&quot;get.parameters&quot;/>&#xa;    &lt;xsl:template name=&quot;RicercaModelloBrand1-input&quot; match=&quot;/&quot;>&#xa;        &lt;tns16:jdbcQueryActivityInput>&#xa;            &lt;Brand>&#xa;                &lt;xsl:choose>&#xa;                    &lt;xsl:when test=&quot;exists($get.parameters/tns8:Brand)&quot;>&#xa;                        &lt;xsl:value-of select=&quot;$get.parameters/tns8:Brand&quot;/>&#xa;                    &lt;/xsl:when>&#xa;                    &lt;xsl:otherwise>&#xa;                        &lt;xsl:attribute name=&quot;xsi:nil&quot;>true&lt;/xsl:attribute>&#xa;                    &lt;/xsl:otherwise>&#xa;                &lt;/xsl:choose>&#xa;            &lt;/Brand>&#xa;            &lt;Model>&#xa;                &lt;xsl:choose>&#xa;                    &lt;xsl:when test=&quot;exists($get.parameters/tns8:Model)&quot;>&#xa;                        &lt;xsl:value-of select=&quot;$get.parameters/tns8:Model&quot;/>&#xa;                    &lt;/xsl:when>&#xa;                    &lt;xsl:otherwise>&#xa;                        &lt;xsl:attribute name=&quot;xsi:nil&quot;>true&lt;/xsl:attribute>&#xa;                    &lt;/xsl:otherwise>&#xa;                &lt;/xsl:choose>&#xa;            &lt;/Model>&#xa;        &lt;/tns16:jdbcQueryActivityInput>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                                    </tibex:inputBindings>
+                                    <tibex:config>
+                                    <bwext:BWActivity
+                                    activityTypeID="bw.jdbc.JDBCQuery"
+                                    xmlns:activityconfig="http://tns.tibco.com/bw/model/activityconfig"
+                                    xmlns:bwext="http://tns.tibco.com/bw/model/core/bwext"
+                                    xmlns:jdbcPalette="http://ns.tibco.com/bw/palette/jdbc" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                                    <activityConfig>
+                                    <properties
+                                    name="config" xsi:type="activityconfig:EMFProperty">
+                                    <type href="http://ns.tibco.com/bw/palette/jdbc#//JDBCQueryActivity"/>
+                                    <value maxRows="100"
+                                    sharedResourceProperty="jdbcProperty"
+                                    sqlStatement="SELECT CR.ID,CR.ID_CATEGORY,CR.BRAND,CR.MODEL,CR.OPTIONAL,CR.SURCHARGE&#xa;  FROM CARS AS CR&#xa;  JOIN CATEGORY AS CT&#xa;    ON CR.ID_CATEGORY=CT.ID&#xa;  WHERE CR.BRAND=? AND CR.MODEL=? &#xa;"
+                                    timeout="10" xsi:type="jdbcPalette:JDBCQueryActivity">
+
+                                    <PreparedParameters
+                                    DataType="12"
+                                    DataTypeDisplayValue="VARCHAR" ParameterName="Brand"/>
+
+                                    <PreparedParameters
+                                    DataType="12"
+                                    DataTypeDisplayValue="VARCHAR" ParameterName="Model"/>
+                                    <columnMetadata
+                                    columnIndex="1"
+                                    columnName="id"
+                                    dataType="4"
+                                    status="OptionalElement" typeName="INTEGER"/>
+                                    <columnMetadata
+                                    columnIndex="2"
+                                    columnName="id_category"
+                                    dataType="4"
+                                    status="OptionalElement" typeName="INTEGER"/>
+                                    <columnMetadata
+                                    columnIndex="3"
+                                    columnName="brand"
+                                    dataType="12"
+                                    status="OptionalElement" typeName="CHARACTER VARYING"/>
+                                    <columnMetadata
+                                    columnIndex="4"
+                                    columnName="model"
+                                    dataType="12"
+                                    status="OptionalElement" typeName="CHARACTER VARYING"/>
+                                    <columnMetadata
+                                    columnIndex="5"
+                                    columnName="optional"
+                                    dataType="16"
+                                    status="OptionalElement" typeName="BOOLEAN"/>
+                                    <columnMetadata
+                                    columnIndex="6"
+                                    columnName="surcharge"
+                                    dataType="12"
+                                    status="OptionalElement" typeName="CHARACTER VARYING"/>
+                                    </value>
+                                    </properties>
+                                    </activityConfig>
+                                    </bwext:BWActivity>
+                                    </tibex:config>
+                                </tibex:activityExtension>
+                            </bpws:extensionActivity>
+                            <bpws:extensionActivity>
+                                <tibex:activityExtension
+                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns18=&quot;http://www.tibco.com/namespaces/tnt/plugins/jdbc+be11d163-2b76-4408-950e-cb7efea7c6fe+input&quot; xmlns:tns8=&quot;http://xmlns.example.com/Cars/parameters&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;get&quot;/>&lt;xsl:template name=&quot;JDBCQuery4-input&quot; match=&quot;/&quot;>&lt;tns18:jdbcQueryActivityInput>&lt;Model>&lt;xsl:choose>&lt;xsl:when test=&quot;exists($get/parameters/tns8:carsGetParameters/tns8:Model)&quot;>&lt;xsl:value-of select=&quot;$get/parameters/tns8:carsGetParameters/tns8:Model&quot;/>&lt;/xsl:when>&lt;xsl:otherwise>&lt;xsl:attribute name=&quot;xsi:nil&quot;>true&lt;/xsl:attribute>&lt;/xsl:otherwise>&lt;/xsl:choose>&lt;/Model>&lt;/tns18:jdbcQueryActivityInput>&lt;/xsl:template>&lt;/xsl:stylesheet>"
+                                    expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"
+                                    inputVariable="JDBCQuery4-input"
+                                    name="JDBCQuery4"
+                                    outputVariable="JDBCQuery4"
+                                    tibex:xpdlId="be11d163-2b76-4408-950e-cb7efea7c6fe" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
+                                    <bpws:targets>
+                                    <bpws:target linkName="NoCategoryToJDBCQuery4"/>
+                                    </bpws:targets>
+                                    <bpws:sources>
+                                    <bpws:source linkName="JDBCQuery4ToReply10"/>
+                                    </bpws:sources>
+                                    <tibex:inputBindings>
+                                    <tibex:inputBinding
+                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns18=&quot;http://www.tibco.com/namespaces/tnt/plugins/jdbc+be11d163-2b76-4408-950e-cb7efea7c6fe+input&quot; xmlns:tns8=&quot;http://xmlns.example.com/Cars/parameters&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:param name=&quot;get.parameters&quot;/>&#xa;    &lt;xsl:template name=&quot;JDBCQuery4-input&quot; match=&quot;/&quot;>&#xa;        &lt;tns18:jdbcQueryActivityInput>&#xa;            &lt;Model>&#xa;                &lt;xsl:choose>&#xa;                    &lt;xsl:when test=&quot;exists($get.parameters/tns8:Model)&quot;>&#xa;                        &lt;xsl:value-of select=&quot;$get.parameters/tns8:Model&quot;/>&#xa;                    &lt;/xsl:when>&#xa;                    &lt;xsl:otherwise>&#xa;                        &lt;xsl:attribute name=&quot;xsi:nil&quot;>true&lt;/xsl:attribute>&#xa;                    &lt;/xsl:otherwise>&#xa;                &lt;/xsl:choose>&#xa;            &lt;/Model>&#xa;        &lt;/tns18:jdbcQueryActivityInput>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                                    </tibex:inputBindings>
+                                    <tibex:config>
+                                    <bwext:BWActivity
+                                    activityTypeID="bw.jdbc.JDBCQuery"
+                                    xmlns:activityconfig="http://tns.tibco.com/bw/model/activityconfig"
+                                    xmlns:bwext="http://tns.tibco.com/bw/model/core/bwext"
+                                    xmlns:jdbcPalette="http://ns.tibco.com/bw/palette/jdbc" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                                    <activityConfig>
+                                    <properties
+                                    name="config" xsi:type="activityconfig:EMFProperty">
+                                    <type href="http://ns.tibco.com/bw/palette/jdbc#//JDBCQueryActivity"/>
+                                    <value maxRows="100"
+                                    sharedResourceProperty="jdbcProperty"
+                                    sqlStatement="SELECT *&#xa;  FROM CARS&#xa;  WHERE MODEL=?&#xa;"
+                                    timeout="10" xsi:type="jdbcPalette:JDBCQueryActivity">
+
+                                    <PreparedParameters
+                                    DataType="12"
+                                    DataTypeDisplayValue="VARCHAR" ParameterName="Model"/>
+                                    <columnMetadata
+                                    columnIndex="1"
+                                    columnName="id"
+                                    dataType="4"
+                                    status="OptionalElement" typeName="INTEGER"/>
+                                    <columnMetadata
+                                    columnIndex="2"
+                                    columnName="id_category"
+                                    dataType="4"
+                                    status="OptionalElement" typeName="INTEGER"/>
+                                    <columnMetadata
+                                    columnIndex="3"
+                                    columnName="brand"
+                                    dataType="12"
+                                    status="OptionalElement" typeName="CHARACTER VARYING"/>
+                                    <columnMetadata
+                                    columnIndex="4"
+                                    columnName="model"
+                                    dataType="12"
+                                    status="OptionalElement" typeName="CHARACTER VARYING"/>
+                                    <columnMetadata
+                                    columnIndex="5"
+                                    columnName="optional"
+                                    dataType="16"
+                                    status="OptionalElement" typeName="BOOLEAN"/>
+                                    <columnMetadata
+                                    columnIndex="6"
+                                    columnName="surcharge"
+                                    dataType="12"
+                                    status="OptionalElement" typeName="CHARACTER VARYING"/>
+                                    </value>
+                                    </properties>
+                                    </activityConfig>
+                                    </bwext:BWActivity>
+                                    </tibex:config>
+                                </tibex:activityExtension>
+                            </bpws:extensionActivity>
+                            <bpws:extensionActivity>
+                                <tibex:activityExtension
+                                    inputVariable="JDBCQuery3-input"
+                                    name="JDBCQuery3"
+                                    outputVariable="JDBCQuery3"
+                                    tibex:xpdlId="6b8d5d40-ab45-4d77-a30d-2ea59664df22" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
+                                    <bpws:targets>
+                                    <bpws:target linkName="NoCategoryToJDBCQuery3"/>
+                                    </bpws:targets>
+                                    <bpws:sources>
+                                    <bpws:source linkName="JDBCQuery3ToReply11"/>
+                                    </bpws:sources>
+                                    <tibex:inputBindings>
+                                    <tibex:inputBinding
+                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns19=&quot;http://www.tibco.com/namespaces/tnt/plugins/jdbc+6b8d5d40-ab45-4d77-a30d-2ea59664df22+input&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:template name=&quot;JDBCQuery3-input&quot; match=&quot;/&quot;>&#xa;        &lt;tns19:jdbcQueryActivityInput/>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                                    </tibex:inputBindings>
+                                    <tibex:config>
+                                    <bwext:BWActivity
+                                    activityTypeID="bw.jdbc.JDBCQuery"
+                                    xmlns:activityconfig="http://tns.tibco.com/bw/model/activityconfig"
+                                    xmlns:bwext="http://tns.tibco.com/bw/model/core/bwext"
+                                    xmlns:jdbcPalette="http://ns.tibco.com/bw/palette/jdbc" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                                    <activityConfig>
+                                    <properties
+                                    name="config" xsi:type="activityconfig:EMFProperty">
+                                    <type href="http://ns.tibco.com/bw/palette/jdbc#//JDBCQueryActivity"/>
+                                    <value maxRows="100"
+                                    sharedResourceProperty="jdbcProperty"
+                                    sqlStatement="SELECT *&#xa;  FROM CARS&#xa;"
+                                    timeout="10" xsi:type="jdbcPalette:JDBCQueryActivity">
+                                    <columnMetadata
+                                    columnIndex="1"
+                                    columnName="id"
+                                    dataType="4"
+                                    status="OptionalElement" typeName="INTEGER"/>
+                                    <columnMetadata
+                                    columnIndex="2"
+                                    columnName="id_category"
+                                    dataType="4"
+                                    status="OptionalElement" typeName="INTEGER"/>
+                                    <columnMetadata
+                                    columnIndex="3"
+                                    columnName="brand"
+                                    dataType="12"
+                                    status="OptionalElement" typeName="CHARACTER VARYING"/>
+                                    <columnMetadata
+                                    columnIndex="4"
+                                    columnName="model"
+                                    dataType="12"
+                                    status="OptionalElement" typeName="CHARACTER VARYING"/>
+                                    <columnMetadata
+                                    columnIndex="5"
+                                    columnName="optional"
+                                    dataType="16"
+                                    status="OptionalElement" typeName="BOOLEAN"/>
+                                    <columnMetadata
+                                    columnIndex="6"
+                                    columnName="surcharge"
+                                    dataType="12"
+                                    status="OptionalElement" typeName="CHARACTER VARYING"/>
+                                    </value>
+                                    </properties>
+                                    </activityConfig>
+                                    </bwext:BWActivity>
+                                    </tibex:config>
+                                </tibex:activityExtension>
+                            </bpws:extensionActivity>
+                            <bpws:reply name="Reply8" operation="get"
+                                partnerLink="cars" portType="ns0:cars"
+                                tibex:xpdlId="75cc2cab-c739-4eae-bdef-7c18c56f11c3" variable="Reply8-input">
+                                <tibex:inputBinding expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:tns3="http://xmlns.example.com/20240608130601PLT" xmlns:tns1="http://www.example.org/BackEnd_Cars" xmlns:xsd="http://www.w3.org/2001/XMLSchema" version="2.0"&gt;&lt;xsl:param name="RicercaModelloBrand1"/&gt;&lt;xsl:template name="Reply8-input" match="/"&gt;&lt;tns3:getResponse&gt;&lt;GetCarsResponse&gt;&lt;tns1:GetCars&gt;&lt;xsl:for-each select="$RicercaModelloBrand1/Record"&gt;&lt;tns1:GetCar&gt;&lt;tns1:Id&gt;&lt;xsl:value-of select="xsd:positiveInteger(id)"/&gt;&lt;/tns1:Id&gt;&lt;tns1:IdCategory&gt;&lt;xsl:value-of select="xsd:positiveInteger(id_category)"/&gt;&lt;/tns1:IdCategory&gt;&lt;tns1:Brand&gt;&lt;xsl:value-of select="brand"/&gt;&lt;/tns1:Brand&gt;&lt;tns1:Model&gt;&lt;xsl:value-of select="model"/&gt;&lt;/tns1:Model&gt;&lt;tns1:Optional&gt;&lt;xsl:value-of select="optional"/&gt;&lt;/tns1:Optional&gt;&lt;tns1:Surcharge&gt;&lt;xsl:value-of select="surcharge"/&gt;&lt;/tns1:Surcharge&gt;&lt;/tns1:GetCar&gt;&lt;/xsl:for-each&gt;&lt;/tns1:GetCars&gt;&lt;/GetCarsResponse&gt;&lt;/tns3:getResponse&gt;&lt;/xsl:template&gt;&lt;/xsl:stylesheet&gt;</tibex:inputBinding>
+                                <tibex:inputBindings>
+                                    <tibex:partBinding
+                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns3=&quot;http://xmlns.example.com/20240608130601PLT&quot; xmlns:tns1=&quot;http://www.example.org/BackEnd_Cars&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:param name=&quot;RicercaModelloBrand1&quot;/>&#xa;    &lt;xsl:template name=&quot;Reply8-input&quot; match=&quot;/&quot;>&#xa;        &lt;tns1:GetCars>&#xa;            &lt;xsl:for-each select=&quot;$RicercaModelloBrand1/Record&quot;>&#xa;                &lt;tns1:GetCar>&#xa;                    &lt;tns1:Id>&#xa;                        &lt;xsl:value-of select=&quot;xsd:positiveInteger(id)&quot;/>&#xa;                    &lt;/tns1:Id>&#xa;                    &lt;tns1:IdCategory>&#xa;                        &lt;xsl:value-of select=&quot;xsd:positiveInteger(id_category)&quot;/>&#xa;                    &lt;/tns1:IdCategory>&#xa;                    &lt;tns1:Brand>&#xa;                        &lt;xsl:value-of select=&quot;brand&quot;/>&#xa;                    &lt;/tns1:Brand>&#xa;                    &lt;tns1:Model>&#xa;                        &lt;xsl:value-of select=&quot;model&quot;/>&#xa;                    &lt;/tns1:Model>&#xa;                    &lt;tns1:Optional>&#xa;                        &lt;xsl:value-of select=&quot;optional&quot;/>&#xa;                    &lt;/tns1:Optional>&#xa;                    &lt;tns1:Surcharge>&#xa;                        &lt;xsl:value-of select=&quot;surcharge&quot;/>&#xa;                    &lt;/tns1:Surcharge>&#xa;                &lt;/tns1:GetCar>&#xa;            &lt;/xsl:for-each>&#xa;        &lt;/tns1:GetCars>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                                </tibex:inputBindings>
                                 <bpws:targets>
-                                    <bpws:target linkName="ModelToEmpty"/>
+                                    <bpws:target linkName="RicercaModelloBrand1ToReply8"/>
                                 </bpws:targets>
-                                <bpws:sources>
-                                    <bpws:source linkName="EmptyToRicercaBrand"/>
-                                </bpws:sources>
-                            </bpws:empty>
+                            </bpws:reply>
+                            <bpws:reply name="Reply9" operation="get"
+                                partnerLink="cars" portType="ns0:cars"
+                                tibex:xpdlId="0cc10066-9253-4ae9-a1fd-28b365b82c7b" variable="Reply9-input">
+                                <tibex:inputBinding expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:tns3="http://xmlns.example.com/20240608130601PLT" xmlns:tns1="http://www.example.org/BackEnd_Cars" xmlns:xsd="http://www.w3.org/2001/XMLSchema" version="2.0"&gt;&lt;xsl:param name="BrandSearch"/&gt;&lt;xsl:template name="Reply9-input" match="/"&gt;&lt;tns3:getResponse&gt;&lt;GetCarsResponse&gt;&lt;tns1:GetCars&gt;&lt;xsl:for-each select="$BrandSearch/Record"&gt;&lt;tns1:GetCar&gt;&lt;tns1:Id&gt;&lt;xsl:value-of select="xsd:positiveInteger(id)"/&gt;&lt;/tns1:Id&gt;&lt;tns1:IdCategory&gt;&lt;xsl:value-of select="xsd:positiveInteger(id_category)"/&gt;&lt;/tns1:IdCategory&gt;&lt;tns1:Brand&gt;&lt;xsl:value-of select="brand"/&gt;&lt;/tns1:Brand&gt;&lt;tns1:Model&gt;&lt;xsl:value-of select="model"/&gt;&lt;/tns1:Model&gt;&lt;tns1:Optional&gt;&lt;xsl:value-of select="optional"/&gt;&lt;/tns1:Optional&gt;&lt;tns1:Surcharge&gt;&lt;xsl:value-of select="surcharge"/&gt;&lt;/tns1:Surcharge&gt;&lt;/tns1:GetCar&gt;&lt;/xsl:for-each&gt;&lt;/tns1:GetCars&gt;&lt;/GetCarsResponse&gt;&lt;/tns3:getResponse&gt;&lt;/xsl:template&gt;&lt;/xsl:stylesheet&gt;</tibex:inputBinding>
+                                <tibex:inputBindings>
+                                    <tibex:partBinding
+                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns3=&quot;http://xmlns.example.com/20240608130601PLT&quot; xmlns:tns1=&quot;http://www.example.org/BackEnd_Cars&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:param name=&quot;BrandSearch&quot;/>&#xa;    &lt;xsl:template name=&quot;Reply9-input&quot; match=&quot;/&quot;>&#xa;        &lt;tns1:GetCars>&#xa;            &lt;xsl:for-each select=&quot;$BrandSearch/Record&quot;>&#xa;                &lt;tns1:GetCar>&#xa;                    &lt;tns1:Id>&#xa;                        &lt;xsl:value-of select=&quot;xsd:positiveInteger(id)&quot;/>&#xa;                    &lt;/tns1:Id>&#xa;                    &lt;tns1:IdCategory>&#xa;                        &lt;xsl:value-of select=&quot;xsd:positiveInteger(id_category)&quot;/>&#xa;                    &lt;/tns1:IdCategory>&#xa;                    &lt;tns1:Brand>&#xa;                        &lt;xsl:value-of select=&quot;brand&quot;/>&#xa;                    &lt;/tns1:Brand>&#xa;                    &lt;tns1:Model>&#xa;                        &lt;xsl:value-of select=&quot;model&quot;/>&#xa;                    &lt;/tns1:Model>&#xa;                    &lt;tns1:Optional>&#xa;                        &lt;xsl:value-of select=&quot;optional&quot;/>&#xa;                    &lt;/tns1:Optional>&#xa;                    &lt;tns1:Surcharge>&#xa;                        &lt;xsl:value-of select=&quot;surcharge&quot;/>&#xa;                    &lt;/tns1:Surcharge>&#xa;                &lt;/tns1:GetCar>&#xa;            &lt;/xsl:for-each>&#xa;        &lt;/tns1:GetCars>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                                </tibex:inputBindings>
+                                <bpws:targets>
+                                    <bpws:target linkName="BrandSearchToReply9"/>
+                                </bpws:targets>
+                            </bpws:reply>
+                            <bpws:reply name="Reply10" operation="get"
+                                partnerLink="cars" portType="ns0:cars"
+                                tibex:xpdlId="f2037661-7ed6-4e43-95da-dcb2a129aed5" variable="Reply10-input">
+                                <tibex:inputBinding expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:tns3="http://xmlns.example.com/20240608130601PLT" xmlns:tns1="http://www.example.org/BackEnd_Cars" xmlns:xsd="http://www.w3.org/2001/XMLSchema" version="2.0"&gt;&lt;xsl:param name="JDBCQuery4"/&gt;&lt;xsl:template name="Reply10-input" match="/"&gt;&lt;tns3:getResponse&gt;&lt;GetCarsResponse&gt;&lt;tns1:GetCars&gt;&lt;xsl:for-each select="$JDBCQuery4/Record"&gt;&lt;tns1:GetCar&gt;&lt;tns1:Id&gt;&lt;xsl:value-of select="xsd:positiveInteger(id)"/&gt;&lt;/tns1:Id&gt;&lt;tns1:IdCategory&gt;&lt;xsl:value-of select="xsd:positiveInteger(id_category)"/&gt;&lt;/tns1:IdCategory&gt;&lt;tns1:Brand&gt;&lt;xsl:value-of select="brand"/&gt;&lt;/tns1:Brand&gt;&lt;tns1:Model&gt;&lt;xsl:value-of select="model"/&gt;&lt;/tns1:Model&gt;&lt;tns1:Optional&gt;&lt;xsl:value-of select="optional"/&gt;&lt;/tns1:Optional&gt;&lt;tns1:Surcharge&gt;&lt;xsl:value-of select="surcharge"/&gt;&lt;/tns1:Surcharge&gt;&lt;/tns1:GetCar&gt;&lt;/xsl:for-each&gt;&lt;/tns1:GetCars&gt;&lt;/GetCarsResponse&gt;&lt;/tns3:getResponse&gt;&lt;/xsl:template&gt;&lt;/xsl:stylesheet&gt;</tibex:inputBinding>
+                                <tibex:inputBindings>
+                                    <tibex:partBinding
+                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns3=&quot;http://xmlns.example.com/20240608130601PLT&quot; xmlns:tns1=&quot;http://www.example.org/BackEnd_Cars&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:param name=&quot;JDBCQuery4&quot;/>&#xa;    &lt;xsl:template name=&quot;Reply10-input&quot; match=&quot;/&quot;>&#xa;        &lt;tns1:GetCars>&#xa;            &lt;xsl:for-each select=&quot;$JDBCQuery4/Record&quot;>&#xa;                &lt;tns1:GetCar>&#xa;                    &lt;tns1:Id>&#xa;                        &lt;xsl:value-of select=&quot;xsd:positiveInteger(id)&quot;/>&#xa;                    &lt;/tns1:Id>&#xa;                    &lt;tns1:IdCategory>&#xa;                        &lt;xsl:value-of select=&quot;xsd:positiveInteger(id_category)&quot;/>&#xa;                    &lt;/tns1:IdCategory>&#xa;                    &lt;tns1:Brand>&#xa;                        &lt;xsl:value-of select=&quot;brand&quot;/>&#xa;                    &lt;/tns1:Brand>&#xa;                    &lt;tns1:Model>&#xa;                        &lt;xsl:value-of select=&quot;model&quot;/>&#xa;                    &lt;/tns1:Model>&#xa;                    &lt;tns1:Optional>&#xa;                        &lt;xsl:value-of select=&quot;optional&quot;/>&#xa;                    &lt;/tns1:Optional>&#xa;                    &lt;tns1:Surcharge>&#xa;                        &lt;xsl:value-of select=&quot;surcharge&quot;/>&#xa;                    &lt;/tns1:Surcharge>&#xa;                &lt;/tns1:GetCar>&#xa;            &lt;/xsl:for-each>&#xa;        &lt;/tns1:GetCars>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                                </tibex:inputBindings>
+                                <bpws:targets>
+                                    <bpws:target linkName="JDBCQuery4ToReply10"/>
+                                </bpws:targets>
+                            </bpws:reply>
+                            <bpws:reply name="Reply11" operation="get"
+                                partnerLink="cars" portType="ns0:cars"
+                                tibex:xpdlId="b84634e0-05cf-4bd5-9693-347a4fa974ec" variable="Reply11-input">
+                                <tibex:inputBinding expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:tns3="http://xmlns.example.com/20240608130601PLT" xmlns:tns1="http://www.example.org/BackEnd_Cars" xmlns:xsd="http://www.w3.org/2001/XMLSchema" version="2.0"&gt;&lt;xsl:param name="JDBCQuery3"/&gt;&lt;xsl:template name="Reply11-input" match="/"&gt;&lt;tns3:getResponse&gt;&lt;GetCarsResponse&gt;&lt;tns1:GetCars&gt;&lt;xsl:for-each select="$JDBCQuery3/Record"&gt;&lt;tns1:GetCar&gt;&lt;tns1:Id&gt;&lt;xsl:value-of select="xsd:positiveInteger(id)"/&gt;&lt;/tns1:Id&gt;&lt;tns1:IdCategory&gt;&lt;xsl:value-of select="xsd:positiveInteger(id_category)"/&gt;&lt;/tns1:IdCategory&gt;&lt;tns1:Brand&gt;&lt;xsl:value-of select="brand"/&gt;&lt;/tns1:Brand&gt;&lt;tns1:Model&gt;&lt;xsl:value-of select="model"/&gt;&lt;/tns1:Model&gt;&lt;tns1:Optional&gt;&lt;xsl:value-of select="optional"/&gt;&lt;/tns1:Optional&gt;&lt;tns1:Surcharge&gt;&lt;xsl:value-of select="surcharge"/&gt;&lt;/tns1:Surcharge&gt;&lt;/tns1:GetCar&gt;&lt;/xsl:for-each&gt;&lt;/tns1:GetCars&gt;&lt;/GetCarsResponse&gt;&lt;/tns3:getResponse&gt;&lt;/xsl:template&gt;&lt;/xsl:stylesheet&gt;</tibex:inputBinding>
+                                <tibex:inputBindings>
+                                    <tibex:partBinding
+                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns3=&quot;http://xmlns.example.com/20240608130601PLT&quot; xmlns:tns1=&quot;http://www.example.org/BackEnd_Cars&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:param name=&quot;JDBCQuery3&quot;/>&#xa;    &lt;xsl:template name=&quot;Reply11-input&quot; match=&quot;/&quot;>&#xa;        &lt;tns1:GetCars>&#xa;            &lt;xsl:for-each select=&quot;$JDBCQuery3/Record&quot;>&#xa;                &lt;tns1:GetCar>&#xa;                    &lt;tns1:Id>&#xa;                        &lt;xsl:value-of select=&quot;xsd:positiveInteger(id)&quot;/>&#xa;                    &lt;/tns1:Id>&#xa;                    &lt;tns1:IdCategory>&#xa;                        &lt;xsl:value-of select=&quot;xsd:positiveInteger(id_category)&quot;/>&#xa;                    &lt;/tns1:IdCategory>&#xa;                    &lt;tns1:Brand>&#xa;                        &lt;xsl:value-of select=&quot;brand&quot;/>&#xa;                    &lt;/tns1:Brand>&#xa;                    &lt;tns1:Model>&#xa;                        &lt;xsl:value-of select=&quot;model&quot;/>&#xa;                    &lt;/tns1:Model>&#xa;                    &lt;tns1:Optional>&#xa;                        &lt;xsl:value-of select=&quot;optional&quot;/>&#xa;                    &lt;/tns1:Optional>&#xa;                    &lt;tns1:Surcharge>&#xa;                        &lt;xsl:value-of select=&quot;surcharge&quot;/>&#xa;                    &lt;/tns1:Surcharge>&#xa;                &lt;/tns1:GetCar>&#xa;            &lt;/xsl:for-each>&#xa;        &lt;/tns1:GetCars>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                                </tibex:inputBindings>
+                                <bpws:targets>
+                                    <bpws:target linkName="JDBCQuery3ToReply11"/>
+                                </bpws:targets>
+                            </bpws:reply>
                         </bpws:flow>
                     </bpws:scope>
                 </bpws:onMessage>
