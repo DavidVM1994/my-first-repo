@@ -5604,7 +5604,7 @@
                                     <type href="http://ns.tibco.com/bw/palette/jdbc#//JDBCQueryActivity"/>
                                     <value maxRows="100"
                                     sharedResourceProperty="jdbcProperty"
-                                    sqlStatement="SELECT CR.ID,CR.ID_CATEGORY,CR.BRAND,CR.MODEL,CR.OPTIONAL,CR.SURCHARGE&#xa;  FROM CARS AS CR&#xa;  JOIN CATEGORY AS CT&#xa;    ON CR.ID_CATEGORY=CT.ID&#xa;  WHERE BRAND=?"
+                                    sqlStatement="SELECT* &#xa;  FROM CARS&#xa;  WHERE BRAND=?"
                                     timeout="10" xsi:type="jdbcPalette:JDBCQueryActivity">
 
                                     <PreparedParameters
@@ -5677,7 +5677,7 @@
                                     <type href="http://ns.tibco.com/bw/palette/jdbc#//JDBCQueryActivity"/>
                                     <value maxRows="100"
                                     sharedResourceProperty="jdbcProperty"
-                                    sqlStatement="SELECT CR.ID,CR.ID_CATEGORY,CR.BRAND,CR.MODEL,CR.OPTIONAL,CR.SURCHARGE&#xa;  FROM CARS AS CR&#xa;  JOIN CATEGORY AS CT&#xa;    ON CR.ID_CATEGORY=CT.ID&#xa;  WHERE CR.BRAND=? AND CR.MODEL=? &#xa;"
+                                    sqlStatement="SELECT* &#xa;  FROM CARS&#xa;  WHERE BRAND=? AND MODEL=? &#xa;"
                                     timeout="10" xsi:type="jdbcPalette:JDBCQueryActivity">
 
                                     <PreparedParameters
