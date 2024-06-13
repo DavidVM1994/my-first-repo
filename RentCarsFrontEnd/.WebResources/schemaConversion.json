@@ -1,0 +1,17 @@
+{"records": [
+    {
+        "jsonSchemaLocation": "/RentCarsFrontEnd/Service Descriptors/rentcarsfrontend.Users-Users.json",
+        "conversionType": "linked",
+        "xsdSchemaTargetNamespace": "http://www.example.org/FrontEnd_User"
+    },
+    {
+        "jsonSchemaLocation": "/RentCarsFrontEnd/Service Descriptors/rentcarsfrontend.Check-Check.json",
+        "conversionType": "linked",
+        "xsdSchemaTargetNamespace": "http://www.example.org/FrontEnd_Check"
+    },
+    {
+        "jsonSchemaLocation": "/RentCarsFrontEnd/Service Descriptors/rentcarsfrontend.Rent-Rent.json",
+        "conversionType": "linked",
+        "xsdSchemaTargetNamespace": "http://www.example.org/FrontEnd_Rent"
+    }
+]}

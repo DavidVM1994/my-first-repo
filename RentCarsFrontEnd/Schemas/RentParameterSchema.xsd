@@ -1,0 +1,494 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns:source="bw.rest" xmlns:tns="http://xmlns.example.com/Rent/parameters" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://xmlns.example.com/Rent/parameters">
+                    
+  
+  
+  
+  
+  
+  
+  
+  
+  <xs:element name="rentPostParameters">
+                                        
+    
+    
+    
+    
+    
+    
+    
+    
+    <xs:complexType>
+                                                            
+      
+      
+      
+      
+      
+      
+      
+      
+      <xs:sequence>
+                                                                                
+        
+        
+        
+        
+        
+        
+        
+        
+        <xs:element maxOccurs="1" minOccurs="1" name="IdCar" type="xs:string"/>
+                                                                              
+      
+      
+      
+      
+      
+      
+      
+      
+      </xs:sequence>
+                                                          
+    
+    
+    
+    
+    
+    
+    
+    
+    </xs:complexType>
+                                      
+  
+  
+  
+  
+  
+  
+  
+  
+  </xs:element>
+                      
+  
+  
+  
+  
+  
+  
+  
+  
+  <xs:element name="users-check-usernameGetParameters">
+                                    
+    
+    
+    
+    
+    
+    
+    
+    <xs:complexType>
+                                                      
+      
+      
+      
+      
+      
+      
+      
+      <xs:sequence>
+                                                                        
+        
+        
+        
+        
+        
+        
+        
+        <xs:element maxOccurs="1" minOccurs="1" name="username" type="xs:string"/>
+                                                                      
+      
+      
+      
+      
+      
+      
+      
+      </xs:sequence>
+                                                    
+    
+    
+    
+    
+    
+    
+    
+    </xs:complexType>
+                                  
+  
+  
+  
+  
+  
+  
+  
+  </xs:element>
+                  
+    
+  
+  
+  
+  
+  
+  
+  
+  <xs:element name="carsGetParameters">
+                                
+    
+    
+    
+    
+    
+    
+    <xs:complexType>
+                                                
+      
+      
+      
+      
+      
+      
+      <xs:sequence>
+                                                                
+        
+        
+        
+        
+        
+        
+        <xs:element maxOccurs="1" minOccurs="0" name="Brand" type="xs:string"/>
+                                                                
+        
+        
+        
+        
+        
+        
+        <xs:element maxOccurs="1" minOccurs="0" name="Category" type="xs:string"/>
+                                                                
+        
+        
+        
+        
+        
+        
+        <xs:element maxOccurs="1" minOccurs="0" name="Model" type="xs:string"/>
+                                                                
+        
+        
+        
+        
+        
+        
+        <xs:element maxOccurs="1" minOccurs="0" name="Id" type="xs:integer"/>
+                                                              
+      
+      
+      
+      
+      
+      
+      </xs:sequence>
+                                              
+    
+    
+    
+    
+    
+    
+    </xs:complexType>
+                              
+  
+  
+  
+  
+  
+  
+  </xs:element>
+                    
+  
+  
+  
+  
+  
+  
+  
+  <xs:element name="carsDeleteParameters">
+                                
+    
+    
+    
+    
+    
+    
+    <xs:complexType>
+                                                
+      
+      
+      
+      
+      
+      
+      <xs:sequence>
+                                                                
+        
+        
+        
+        
+        
+        
+        <xs:element maxOccurs="1" minOccurs="1" name="Id" type="xs:integer"/>
+                                                              
+      
+      
+      
+      
+      
+      
+      </xs:sequence>
+                                              
+    
+    
+    
+    
+    
+    
+    </xs:complexType>
+                              
+  
+  
+  
+  
+  
+  
+  </xs:element>
+                    
+  
+  
+  
+  
+  
+  
+  
+  <xs:element name="carsPutParameters">
+                                
+    
+    
+    
+    
+    
+    
+    <xs:complexType>
+                                                
+      
+      
+      
+      
+      
+      
+      <xs:sequence>
+                                                                
+        
+        
+        
+        
+        
+        
+        <xs:element maxOccurs="1" minOccurs="1" name="Id" type="xs:integer"/>
+                                                              
+      
+      
+      
+      
+      
+      
+      </xs:sequence>
+                                              
+    
+    
+    
+    
+    
+    
+    </xs:complexType>
+                              
+  
+  
+  
+  
+  
+  
+  </xs:element>
+                
+
+    
+  
+  
+  
+  
+  
+  <xs:element name="reservationGetParameters">
+                        
+    
+    
+    
+    
+    <xs:complexType>
+                                    
+      
+      
+      
+      
+      <xs:sequence>
+                                                
+        
+        
+        
+        
+        <xs:element maxOccurs="1" minOccurs="0" name="IdCar" type="xs:integer"/>
+                                                
+        
+        
+        
+        
+        <xs:element maxOccurs="1" minOccurs="0" name="FromDate" type="xs:date"/>
+                                                
+        
+        
+        
+        
+        <xs:element maxOccurs="1" minOccurs="0" name="ToDate" type="xs:date"/>
+                                                
+        
+        
+        
+        
+        <xs:element maxOccurs="1" minOccurs="0" name="Id" type="xs:integer"/>
+                                                
+        
+        
+        
+        
+        <xs:element maxOccurs="1" minOccurs="0" name="IdUser" type="xs:integer"/>
+                                              
+      
+      
+      
+      
+      </xs:sequence>
+                                  
+    
+    
+    
+    
+    </xs:complexType>
+                      
+  
+  
+  
+  
+  </xs:element>
+                
+  
+  
+  
+  
+  
+  <xs:element name="reservationDeleteParameters">
+                        
+    
+    
+    
+    
+    <xs:complexType>
+                                    
+      
+      
+      
+      
+      <xs:sequence>
+                                                
+        
+        
+        
+        
+        <xs:element maxOccurs="1" minOccurs="1" name="Id" type="xs:integer"/>
+                                              
+      
+      
+      
+      
+      </xs:sequence>
+                                  
+    
+    
+    
+    
+    </xs:complexType>
+                      
+  
+  
+  
+  
+  </xs:element>
+                
+  
+  
+  
+  
+  
+  <xs:element name="reservationPutParameters">
+                        
+    
+    
+    
+    
+    <xs:complexType>
+                                    
+      
+      
+      
+      
+      <xs:sequence>
+                                                
+        
+        
+        
+        
+        <xs:element maxOccurs="1" minOccurs="1" name="Id" type="xs:integer"/>
+                                              
+      
+      
+      
+      
+      </xs:sequence>
+                                  
+    
+    
+    
+    
+    </xs:complexType>
+                      
+  
+  
+  
+  
+  </xs:element>
+            
+
+
+
+
+
+</xs:schema>

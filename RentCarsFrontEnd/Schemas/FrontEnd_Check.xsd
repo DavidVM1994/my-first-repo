@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/FrontEnd_Check" xmlns:tns="http://www.example.org/FrontEnd_Check" elementFormDefault="qualified">
+
+<element name="CarInput">
+  <complexType>
+    <sequence>
+      <element minOccurs="1" maxOccurs="1" name="Brand" type="string"/>
+      <element minOccurs="1" maxOccurs="1" name="Model" type="string"/>
+    </sequence>
+  </complexType>
+</element>
+
+<element name="CarOutput">
+  <complexType>
+    <sequence>
+      <element minOccurs="1" maxOccurs="1" name="Id" type="positiveInteger"/> 
+      <element minOccurs="1" maxOccurs="1" name="IdCategory" type="positiveInteger"/>
+      <element minOccurs="1" maxOccurs="1" name="Brand" type="string"/>
+      <element minOccurs="1" maxOccurs="1" name="Model" type="string"/>
+      <element minOccurs="1" maxOccurs="1" name="Optional" type="boolean"/>
+      <element minOccurs="1" maxOccurs="1" name="Surcharge" type="string"/>
+    </sequence>
+  </complexType>
+</element>
+
+<element name="CarsOutput">
+  <complexType>
+    <sequence>
+      <choice>
+        <element minOccurs="0" maxOccurs="unbounded" ref="tns:CarOutput"/>
+        <element minOccurs="1" maxOccurs="1" name="FailedAuthentication" type="string"/>
+      </choice>
+    </sequence>
+  </complexType>
+</element>
+
+</schema>

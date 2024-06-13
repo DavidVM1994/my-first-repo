@@ -1,0 +1,21 @@
+{
+    "records": [{
+        "name": "Cloud",
+        "items": [],
+        "url": "https://integration.cloud.tibco.com:443"
+    }],
+    "resources": [
+        {
+            "location": "Service Descriptors/rentcarsfrontend.Users-Users.json",
+            "type": "generated"
+        },
+        {
+            "location": "Service Descriptors/rentcarsfrontend.Check-Check.json",
+            "type": "generated"
+        },
+        {
+            "location": "Service Descriptors/rentcarsfrontend.Rent-Rent.json",
+            "type": "generated"
+        }
+    ]
+}

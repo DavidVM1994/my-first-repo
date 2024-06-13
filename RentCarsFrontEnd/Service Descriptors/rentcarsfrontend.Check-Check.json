@@ -1,0 +1,105 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "version" : "1.0",
+    "title" : "Check",
+    "description" : "Check service"
+  },
+  "host" : "192.168.56.1:8081",
+  "basePath" : "/",
+  "schemes" : [ "http" ],
+  "paths" : {
+    "/check" : {
+      "post" : {
+        "summary" : "postCheck",
+        "description" : "postCheck",
+        "operationId" : "post-check",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "body",
+          "in" : "body",
+          "description" : "",
+          "schema" : {
+            "$ref" : "#/definitions/CarInput"
+          },
+          "required" : true
+        }, {
+          "name" : "Category",
+          "in" : "query",
+          "description" : "",
+          "type" : "string",
+          "required" : false
+        }, {
+          "name" : "Username",
+          "in" : "header",
+          "description" : "",
+          "type" : "string",
+          "required" : false
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "a CarsOutput to be returned",
+            "schema" : {
+              "$ref" : "#/definitions/CarsOutput"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions" : {
+    "CarOutput" : {
+      "type" : "object",
+      "required" : [ "IdCategory", "Brand", "Surcharge", "Optional", "Model", "Id" ],
+      "properties" : {
+        "Id" : {
+          "type" : "string"
+        },
+        "IdCategory" : {
+          "type" : "string"
+        },
+        "Brand" : {
+          "type" : "string"
+        },
+        "Model" : {
+          "type" : "string"
+        },
+        "Optional" : {
+          "type" : "boolean"
+        },
+        "Surcharge" : {
+          "type" : "string"
+        }
+      }
+    },
+    "CarInput" : {
+      "type" : "object",
+      "required" : [ "Brand", "Model" ],
+      "properties" : {
+        "Brand" : {
+          "type" : "string"
+        },
+        "Model" : {
+          "type" : "string"
+        }
+      }
+    },
+    "CarsOutput" : {
+      "type" : "object",
+      "required" : [ "CarOutput", "FailedAuthentication" ],
+      "properties" : {
+        "CarOutput" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/CarOutput",
+            "uniqueItems" : false
+          }
+        },
+        "FailedAuthentication" : {
+          "type" : "string"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/FrontEnd_Rent" xmlns:tns="http://www.example.org/FrontEnd_Rent" elementFormDefault="qualified">
+
+<element name="ReservationInput">
+  <complexType>
+    <sequence>
+      <element minOccurs="1" maxOccurs="1" name="IdUser" type="positiveInteger"/>
+      <element minOccurs="1" maxOccurs="1" name="FromDate" type="date"/>
+      <element minOccurs="1" maxOccurs="1" name="ToDate" type="date"/>
+    </sequence>
+  </complexType>
+</element>
+
+
+
+</schema>

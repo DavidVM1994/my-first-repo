@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/FrontEnd_User" xmlns:tns="http://www.example.org/FrontEnd_User" elementFormDefault="qualified">
+
+<element name="CredentialInput">
+  <complexType>
+    <sequence>
+      <element minOccurs="1" maxOccurs="1" name="Name" type="string"/>
+      <element minOccurs="1" maxOccurs="1" name="Surname" type="string"/>
+      <element minOccurs="1" maxOccurs="1" name="Street" type="string"/>
+      <element minOccurs="1" maxOccurs="1" name="City" type="string"/>
+      <element minOccurs="1" maxOccurs="1" name="Zipcode" type="string"/>
+      <element minOccurs="1" maxOccurs="1" name="Username" type="string"/>
+      <element minOccurs="1" maxOccurs="1" name="Password" type="string"/>
+    </sequence>
+  </complexType>
+</element>
+
+</schema>
